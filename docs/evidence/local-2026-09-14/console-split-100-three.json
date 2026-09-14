@@ -1,0 +1,43 @@
+{
+  "shares": [
+    "$33.34",
+    "$33.33",
+    "$33.33"
+  ],
+  "closed": {
+    "id": "79d96b0c-6291-466e-a76f-dfc3a1d79a31",
+    "aggregateVersion": 8,
+    "hostMemberId": "MEMBER-001",
+    "totalAmount": 100,
+    "currency": "USD",
+    "status": "COMPLETED",
+    "fixtureRunId": null,
+    "lastEventId": "ab2b2767-9f23-4856-bb5c-e95214fdf3b1",
+    "createdAt": "2026-09-14T18:58:43.852Z",
+    "closedAt": "2026-09-14T18:58:44.302Z",
+    "updatedAt": "2026-09-14T18:58:44.302Z",
+    "participants": [
+      {
+        "id": "ba8b7eed-e338-4655-9728-4ffbd907522a",
+        "memberId": "MEMBER-001",
+        "shareAmount": 33.34,
+        "authorized": true,
+        "paymentReference": "584ef545-2161-4886-8015-030580035141"
+      },
+      {
+        "id": "eec59e2d-8800-457b-8b01-f0160754e625",
+        "memberId": "ANA-002",
+        "shareAmount": 33.33,
+        "authorized": true,
+        "paymentReference": "ce9906bc-e840-4ffc-992f-680a0b1291bd"
+      },
+      {
+        "id": "b5a56634-08e6-405f-8bbc-ea962c99ee27",
+        "memberId": "CARLOS-003",
+        "shareAmount": 33.33,
+        "authorized": true,
+        "paymentReference": "188798a4-261a-4c27-b8b5-8f3922c3ae3c"
+      }
+    ]
+  }
+}

@@ -66,7 +66,7 @@ npm run browser-test
 
 Resiliencia tarda aproximadamente dos minutos: corta el broker, conserva un commit en el outbox, recupera, reinicia analítica, repite un evento real y observa un vencimiento de 120 s sin nuevas acciones. Las pruebas de proyección usan exclusivamente el esquema `analytics_contract_test`.
 
-El navegador ejecuta **al menos 100 operaciones secuenciales**, comprueba ID y número visible, calidad VIGENTE, y mide con `performance.now()` de la misma página hasta dos frames posteriores al render. Registra todas las pérdidas y errores; p95 >1 s bloquea. También desconecta y reconecta la misma pestaña. `artifacts/browser/` contiene muestras y capturas. No ejecutar otra carga de negocio mientras corre esa medición.
+El navegador ejecuta **al menos 100 operaciones secuenciales**, comprueba evento/revisión, el contador y B-K1 visibles, calidad VIGENTE, y mide con `performance.now()` de la misma página hasta dos frames posteriores al render. Registra todas las pérdidas y errores; p95 >1 s bloquea. También desconecta y reconecta la misma pestaña. `artifacts/browser/` contiene muestras y capturas. No ejecutar otra carga de negocio mientras corre esa medición.
 
 ## Correspondencia con issues del equipo
 

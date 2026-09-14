@@ -1,0 +1,262 @@
+{
+  "fixtureRunId": "resilience-784658b3-6208-4990-923f-af2f370d5833",
+  "checks": [
+    {
+      "name": "commit survives broker outage in outbox",
+      "passed": true
+    },
+    {
+      "name": "broker recovery loses no aggregate",
+      "passed": true
+    },
+    {
+      "name": "consumer restart retains projection/checkpoints without double count",
+      "passed": true
+    },
+    {
+      "name": "duplicate old source event adds no logical event",
+      "passed": true
+    },
+    {
+      "name": "120 second threshold persists within one second without new traffic",
+      "passed": true
+    },
+    {
+      "name": "expired fixture contributes exactly 60 authorized USD",
+      "passed": true
+    },
+    {
+      "name": "no closed sessions is NO_SAMPLE",
+      "passed": true
+    },
+    {
+      "name": "timers do not manufacture domain events",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "timerSession": {
+      "id": "a7f687b6-11c8-4994-bf24-6a0906d50cbc",
+      "aggregateVersion": 3,
+      "hostMemberId": "DEMO",
+      "totalAmount": 100.0,
+      "currency": "USD",
+      "status": "OPEN",
+      "fixtureRunId": "resilience-784658b3-6208-4990-923f-af2f370d5833",
+      "lastEventId": "33978fc1-cf16-4bf4-ba37-124c1f85a3e5",
+      "createdAt": "2026-09-14T18:48:36.923Z",
+      "closedAt": null,
+      "updatedAt": "2026-09-14T18:48:36.988Z",
+      "participants": [
+        {
+          "id": "ff4d3855-2c7b-4c08-a9dd-362bb1c0758d",
+          "memberId": "DEMO-1",
+          "shareAmount": 60.0,
+          "authorized": true,
+          "paymentReference": "DEMO-REF"
+        }
+      ]
+    },
+    "initial": {
+      "schemaVersion": 1,
+      "snapshotId": "4185",
+      "revision": 4185,
+      "computedAt": "2026-09-14T18:48:37.672246+00:00",
+      "sourceEventId": "33978fc1-cf16-4bf4-ba37-124c1f85a3e5",
+      "watermark": {
+        "occurredAt": "2026-09-14T18:48:36.988Z",
+        "partitionOffsets": {
+          "0": 141
+        }
+      },
+      "quality": {
+        "status": "FRESH",
+        "reason": {
+          "gaps": 0,
+          "rejected": 0,
+          "lag": 0,
+          "outboxPending": 0,
+          "brokerOk": true
+        }
+      },
+      "coverage": {
+        "complete": true,
+        "aggregateCount": 113,
+        "eventCount": 141
+      },
+      "fixtureRunId": null,
+      "kpis": {
+        "USD": {
+          "B-K1": {
+            "value": 100.0,
+            "status": "OK",
+            "numerator": 2,
+            "denominator": 2,
+            "unit": "percent"
+          },
+          "B-K2": {
+            "value": "0.00",
+            "unit": "USD",
+            "status": "OK"
+          },
+          "B-K3": {
+            "value": "260.00",
+            "unit": "USD",
+            "status": "OK",
+            "backlogSessions": 110
+          }
+        }
+      },
+      "stream": {
+        "connected": true,
+        "error": null
+      }
+    },
+    "outage": {
+      "session": {
+        "id": "e51abf07-eda9-440b-9a5e-4b6a48c21e55",
+        "aggregateVersion": 1,
+        "hostMemberId": "OUTAGE-DEMO",
+        "totalAmount": 10.0,
+        "currency": "USD",
+        "status": "OPEN",
+        "fixtureRunId": "resilience-784658b3-6208-4990-923f-af2f370d5833-outage",
+        "lastEventId": "1f7fa7c3-12fb-4b61-8fec-63571d2dd807",
+        "createdAt": "2026-09-14T18:48:38.267Z",
+        "closedAt": null,
+        "updatedAt": "2026-09-14T18:48:38.267Z",
+        "participants": []
+      },
+      "outbox": {
+        "total": 142,
+        "versionSum": 142,
+        "aggregateCount": 114,
+        "pending": 1
+      }
+    },
+    "brokerRecovered": {
+      "schemaVersion": 1,
+      "snapshotId": "4229",
+      "revision": 4229,
+      "computedAt": "2026-09-14T18:48:44.514709+00:00",
+      "sourceEventId": "1f7fa7c3-12fb-4b61-8fec-63571d2dd807",
+      "watermark": {
+        "occurredAt": "2026-09-14T18:48:38.267Z",
+        "partitionOffsets": {
+          "0": 142
+        }
+      },
+      "quality": {
+        "status": "FRESH",
+        "reason": {
+          "gaps": 0,
+          "rejected": 0,
+          "lag": 0,
+          "outboxPending": 0,
+          "brokerOk": true
+        }
+      },
+      "coverage": {
+        "complete": true,
+        "aggregateCount": 114,
+        "eventCount": 142
+      },
+      "fixtureRunId": null,
+      "kpis": {
+        "USD": {
+          "B-K1": {
+            "value": 100.0,
+            "status": "OK",
+            "numerator": 2,
+            "denominator": 2,
+            "unit": "percent"
+          },
+          "B-K2": {
+            "value": "0.00",
+            "unit": "USD",
+            "status": "OK"
+          },
+          "B-K3": {
+            "value": "260.00",
+            "unit": "USD",
+            "status": "OK",
+            "backlogSessions": 110
+          }
+        }
+      },
+      "stream": {
+        "connected": true,
+        "error": null
+      }
+    },
+    "replay": {
+      "eventId": "6fcfbaae-d40a-4f08-8f15-7176ce18879e",
+      "coverage": {
+        "complete": true,
+        "aggregateCount": 114,
+        "eventCount": 142
+      }
+    },
+    "timer": {
+      "persistedSnapshot": {
+        "kpis": {
+          "USD": {
+            "B-K1": {
+              "unit": "percent",
+              "value": 100.0,
+              "status": "OK",
+              "numerator": 1,
+              "denominator": 1
+            },
+            "B-K2": {
+              "unit": "USD",
+              "value": "0.00",
+              "status": "OK"
+            },
+            "B-K3": {
+              "unit": "USD",
+              "value": "320.00",
+              "status": "OK",
+              "backlogSessions": 111
+            }
+          }
+        },
+        "stream": {
+          "error": null,
+          "connected": true
+        },
+        "quality": {
+          "reason": {
+            "lag": 0,
+            "gaps": 0,
+            "brokerOk": true,
+            "rejected": 0,
+            "outboxPending": 0
+          },
+          "status": "FRESH"
+        },
+        "coverage": {
+          "complete": true,
+          "eventCount": 142,
+          "aggregateCount": 114
+        },
+        "revision": 4740,
+        "watermark": {
+          "occurredAt": "2026-09-14T18:48:38.267Z",
+          "partitionOffsets": {
+            "0": 143
+          }
+        },
+        "computedAt": "2026-09-14T18:50:36.957852+00:00",
+        "snapshotId": "4740",
+        "fixtureRunId": null,
+        "schemaVersion": 1,
+        "sourceEventId": "1f7fa7c3-12fb-4b61-8fec-63571d2dd807"
+      },
+      "deadline": 1789411836.923,
+      "observedAt": 1789411837.008416,
+      "delaySeconds": 0.08541584014892578
+    }
+  },
+  "passed": true
+}

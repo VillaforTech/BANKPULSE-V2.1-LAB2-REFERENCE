@@ -32,6 +32,7 @@ await page.waitForFunction(() => document.querySelector('#splitStatus')?.textCon
 if (Number(closed.participants.find(p => p.memberId === 'MEMBER-001')?.shareAmount) !== 33.34) throw new Error('Remainder cent did not stay with the host');
 if (!closedResponse.ok() || closed.status !== 'COMPLETED' || Number(closed.totalAmount) !== 100 || new Set(closed.participants.map(p => p.paymentReference)).size !== 3 || !(await page.locator('#closeSplit').isDisabled())) throw new Error('UI closure did not persist exact demo references');
 fs.writeFileSync(path.join(out, 'console-split-100-three.json'), JSON.stringify({ shares, closed }, null, 2));
+await page.waitForFunction(() => { const bar = document.querySelector('#splitProgressBar'); return Math.abs(bar.getBoundingClientRect().width - bar.parentElement.getBoundingClientRect().width) < 1; });
 await page.screenshot({ path: path.join(out, 'console-split-100-three.png'), fullPage: true });
 const login = await context.request.post(grafana + '/login', { data: { user: 'admin', password: process.env.GRAFANA_PASSWORD || 'bankpulse_demo' } });
 if (!login.ok()) throw new Error('Grafana lab login failed: ' + login.status());

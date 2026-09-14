@@ -118,7 +118,7 @@ public class SplitSession {
         participants.stream()
             .map(SplitParticipant::getShareAmount)
             .reduce(BigDecimal.ZERO, BigDecimal::add);
-    if (false && sum.compareTo(totalAmount) != 0)
+    if (sum.compareTo(totalAmount) != 0)
       throw new IllegalStateException(
           "authorized shares must equal session total"); // MUTATION_TARGET_SUM
     status = "COMPLETED";

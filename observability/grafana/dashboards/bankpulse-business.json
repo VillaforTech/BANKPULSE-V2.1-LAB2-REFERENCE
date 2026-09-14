@@ -11,7 +11,7 @@
   "panels": [
     {
       "id": 1,
-      "title": "Cierres \u00edntegros \u00b7 sin cierres = SIN MUESTRA",
+      "title": "Cierres \u00edntegros (%)",
       "type": "bankpulse-business-panel",
       "gridPos": {
         "x": 0,
@@ -45,7 +45,8 @@
           "decimals": 2
         },
         "overrides": []
-      }
+      },
+      "description": "Porcentaje de cierres cuya suma autorizada coincide con el total. Sin cierres en la ventana: SIN MUESTRA."
     },
     {
       "id": 2,

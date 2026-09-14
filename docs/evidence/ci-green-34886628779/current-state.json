@@ -1,0 +1,431 @@
+{
+  "commit": "3fcfa686dcedf5b41ec6f0cf152ddcb7f21fccb0",
+  "startedAt": "2026-09-14T19:31:58.432244+00:00",
+  "scope": "post-test observations; does not replace the business oracle",
+  "fixtureRunId": "business-b36dd154-5e16-4442-a5ae-8393eb49ea23",
+  "cases": {
+    "under": {
+      "aggregate": {
+        "startedAt": "2026-09-14T19:31:58.432474+00:00",
+        "observedAt": "2026-09-14T19:31:58.453137+00:00",
+        "http": 200,
+        "body": {
+          "id": "3bfa3079-a4d9-45d0-8a96-11784e14e78a",
+          "aggregateVersion": 5,
+          "hostMemberId": "HOST-DEMO",
+          "totalAmount": 100.0,
+          "currency": "USD",
+          "status": "OPEN",
+          "fixtureRunId": "business-b36dd154-5e16-4442-a5ae-8393eb49ea23-under",
+          "lastEventId": "eb5e53ce-7aa8-4bef-b056-7a82f01b2dc3",
+          "createdAt": "2026-09-14T19:27:59.712Z",
+          "closedAt": null,
+          "updatedAt": "2026-09-14T19:27:59.910Z",
+          "participants": [
+            {
+              "id": "ea34c92e-6217-47c6-a2ef-c535c8e1e2fd",
+              "memberId": "MEMBER-0",
+              "shareAmount": 60.0,
+              "authorized": true,
+              "paymentReference": "DEMO-ea34c92e-6217-47c6-a2ef-c535c8e1e2fd"
+            },
+            {
+              "id": "075e5a83-3046-412a-b797-9d01eec0b99e",
+              "memberId": "MEMBER-1",
+              "shareAmount": 30.0,
+              "authorized": true,
+              "paymentReference": "DEMO-075e5a83-3046-412a-b797-9d01eec0b99e"
+            }
+          ]
+        }
+      },
+      "projection": {
+        "startedAt": "2026-09-14T19:31:58.453364+00:00",
+        "observedAt": "2026-09-14T19:31:58.470047+00:00",
+        "http": 200,
+        "body": {
+          "schemaVersion": 1,
+          "snapshotId": "1322",
+          "revision": 1322,
+          "computedAt": "2026-09-14T19:31:58.454993+00:00",
+          "sourceEventId": "c8f95b60-ff43-416d-8fd1-4371a6385643",
+          "watermark": {
+            "occurredAt": "2026-09-14T19:29:59.266Z",
+            "partitionOffsets": {
+              "0": 134
+            }
+          },
+          "quality": {
+            "status": "FRESH",
+            "reason": {
+              "gaps": 0,
+              "rejected": 0,
+              "lag": 0,
+              "outboxPending": 0,
+              "brokerOk": true
+            }
+          },
+          "coverage": {
+            "complete": true,
+            "aggregateCount": 109,
+            "eventCount": 133
+          },
+          "fixtureRunId": "business-b36dd154-5e16-4442-a5ae-8393eb49ea23-under",
+          "kpis": {
+            "USD": {
+              "B-K1": {
+                "value": null,
+                "status": "NO_SAMPLE",
+                "numerator": 0,
+                "denominator": 0,
+                "unit": "percent"
+              },
+              "B-K2": {
+                "value": "0.00",
+                "unit": "USD",
+                "status": "NO_SAMPLE"
+              },
+              "B-K3": {
+                "value": "90.00",
+                "unit": "USD",
+                "status": "OK",
+                "backlogSessions": 1
+              }
+            }
+          },
+          "stream": {
+            "connected": true,
+            "error": null
+          }
+        }
+      }
+    },
+    "over": {
+      "aggregate": {
+        "startedAt": "2026-09-14T19:31:58.470167+00:00",
+        "observedAt": "2026-09-14T19:31:58.473243+00:00",
+        "http": 200,
+        "body": {
+          "id": "fecad646-c530-4187-b8b6-ba012929b7d2",
+          "aggregateVersion": 5,
+          "hostMemberId": "HOST-DEMO",
+          "totalAmount": 100.0,
+          "currency": "USD",
+          "status": "OPEN",
+          "fixtureRunId": "business-b36dd154-5e16-4442-a5ae-8393eb49ea23-over",
+          "lastEventId": "f3c7b5ce-dbf6-4c33-a7ac-bdf1e2789638",
+          "createdAt": "2026-09-14T19:27:59.930Z",
+          "closedAt": null,
+          "updatedAt": "2026-09-14T19:27:59.980Z",
+          "participants": [
+            {
+              "id": "e45d0048-2b48-4d7a-ad62-6367542099b0",
+              "memberId": "MEMBER-0",
+              "shareAmount": 60.0,
+              "authorized": true,
+              "paymentReference": "DEMO-e45d0048-2b48-4d7a-ad62-6367542099b0"
+            },
+            {
+              "id": "aec5288e-8735-4df4-bbc9-00fff1a84bcf",
+              "memberId": "MEMBER-1",
+              "shareAmount": 50.0,
+              "authorized": true,
+              "paymentReference": "DEMO-aec5288e-8735-4df4-bbc9-00fff1a84bcf"
+            }
+          ]
+        }
+      },
+      "projection": {
+        "startedAt": "2026-09-14T19:31:58.473335+00:00",
+        "observedAt": "2026-09-14T19:31:58.486871+00:00",
+        "http": 200,
+        "body": {
+          "schemaVersion": 1,
+          "snapshotId": "1323",
+          "revision": 1323,
+          "computedAt": "2026-09-14T19:31:58.474381+00:00",
+          "sourceEventId": "c8f95b60-ff43-416d-8fd1-4371a6385643",
+          "watermark": {
+            "occurredAt": "2026-09-14T19:29:59.266Z",
+            "partitionOffsets": {
+              "0": 134
+            }
+          },
+          "quality": {
+            "status": "FRESH",
+            "reason": {
+              "gaps": 0,
+              "rejected": 0,
+              "lag": 0,
+              "outboxPending": 0,
+              "brokerOk": true
+            }
+          },
+          "coverage": {
+            "complete": true,
+            "aggregateCount": 109,
+            "eventCount": 133
+          },
+          "fixtureRunId": "business-b36dd154-5e16-4442-a5ae-8393eb49ea23-over",
+          "kpis": {
+            "USD": {
+              "B-K1": {
+                "value": null,
+                "status": "NO_SAMPLE",
+                "numerator": 0,
+                "denominator": 0,
+                "unit": "percent"
+              },
+              "B-K2": {
+                "value": "0.00",
+                "unit": "USD",
+                "status": "NO_SAMPLE"
+              },
+              "B-K3": {
+                "value": "110.00",
+                "unit": "USD",
+                "status": "OK",
+                "backlogSessions": 1
+              }
+            }
+          },
+          "stream": {
+            "connected": true,
+            "error": null
+          }
+        }
+      }
+    },
+    "healthy": {
+      "aggregate": {
+        "startedAt": "2026-09-14T19:31:58.486982+00:00",
+        "observedAt": "2026-09-14T19:31:58.490060+00:00",
+        "http": 200,
+        "body": {
+          "id": "99a312c7-b5e1-4392-a40e-ef9566f27424",
+          "aggregateVersion": 6,
+          "hostMemberId": "HOST-DEMO",
+          "totalAmount": 100.0,
+          "currency": "USD",
+          "status": "COMPLETED",
+          "fixtureRunId": "business-b36dd154-5e16-4442-a5ae-8393eb49ea23-healthy",
+          "lastEventId": "f2daa2c0-1826-453f-92e8-bdb437637a3f",
+          "createdAt": "2026-09-14T19:27:59.605Z",
+          "closedAt": "2026-09-14T19:27:59.671Z",
+          "updatedAt": "2026-09-14T19:27:59.671Z",
+          "participants": [
+            {
+              "id": "8c5d26ee-6f55-4174-b8f5-7cf919953c60",
+              "memberId": "MEMBER-0",
+              "shareAmount": 60.0,
+              "authorized": true,
+              "paymentReference": "DEMO-8c5d26ee-6f55-4174-b8f5-7cf919953c60"
+            },
+            {
+              "id": "bdf9099d-7f66-4c51-8bdb-7479c2ff9801",
+              "memberId": "MEMBER-1",
+              "shareAmount": 40.0,
+              "authorized": true,
+              "paymentReference": "DEMO-bdf9099d-7f66-4c51-8bdb-7479c2ff9801"
+            }
+          ]
+        }
+      },
+      "projection": {
+        "startedAt": "2026-09-14T19:31:58.490265+00:00",
+        "observedAt": "2026-09-14T19:31:58.503866+00:00",
+        "http": 200,
+        "body": {
+          "schemaVersion": 1,
+          "snapshotId": "1324",
+          "revision": 1324,
+          "computedAt": "2026-09-14T19:31:58.491304+00:00",
+          "sourceEventId": "c8f95b60-ff43-416d-8fd1-4371a6385643",
+          "watermark": {
+            "occurredAt": "2026-09-14T19:29:59.266Z",
+            "partitionOffsets": {
+              "0": 134
+            }
+          },
+          "quality": {
+            "status": "FRESH",
+            "reason": {
+              "gaps": 0,
+              "rejected": 0,
+              "lag": 0,
+              "outboxPending": 0,
+              "brokerOk": true
+            }
+          },
+          "coverage": {
+            "complete": true,
+            "aggregateCount": 109,
+            "eventCount": 133
+          },
+          "fixtureRunId": "business-b36dd154-5e16-4442-a5ae-8393eb49ea23-healthy",
+          "kpis": {
+            "USD": {
+              "B-K1": {
+                "value": 100.0,
+                "status": "OK",
+                "numerator": 1,
+                "denominator": 1,
+                "unit": "percent"
+              },
+              "B-K2": {
+                "value": "0.00",
+                "unit": "USD",
+                "status": "OK"
+              },
+              "B-K3": {
+                "value": "0.00",
+                "unit": "USD",
+                "status": "OK",
+                "backlogSessions": 0
+              }
+            }
+          },
+          "stream": {
+            "connected": true,
+            "error": null
+          }
+        }
+      }
+    }
+  },
+  "services": {
+    "payments": {
+      "startedAt": "2026-09-14T19:31:58.503968+00:00",
+      "observedAt": "2026-09-14T19:31:58.507848+00:00",
+      "http": 200,
+      "body": {
+        "status": "UP",
+        "groups": [
+          "liveness",
+          "readiness"
+        ]
+      }
+    },
+    "audit": {
+      "startedAt": "2026-09-14T19:31:58.507936+00:00",
+      "observedAt": "2026-09-14T19:31:58.512468+00:00",
+      "http": 200,
+      "body": {
+        "status": "UP",
+        "groups": [
+          "liveness",
+          "readiness"
+        ]
+      }
+    },
+    "experiences": {
+      "startedAt": "2026-09-14T19:31:58.512525+00:00",
+      "observedAt": "2026-09-14T19:31:58.516708+00:00",
+      "http": 200,
+      "body": {
+        "status": "UP",
+        "groups": [
+          "liveness",
+          "readiness"
+        ]
+      }
+    },
+    "travel": {
+      "startedAt": "2026-09-14T19:31:58.516785+00:00",
+      "observedAt": "2026-09-14T19:31:58.525722+00:00",
+      "http": 200,
+      "body": {
+        "status": "UP",
+        "groups": [
+          "liveness",
+          "readiness"
+        ]
+      }
+    },
+    "events": {
+      "startedAt": "2026-09-14T19:31:58.525802+00:00",
+      "observedAt": "2026-09-14T19:31:58.530762+00:00",
+      "http": 200,
+      "body": {
+        "status": "UP",
+        "groups": [
+          "liveness",
+          "readiness"
+        ]
+      }
+    },
+    "social-split": {
+      "startedAt": "2026-09-14T19:31:58.530839+00:00",
+      "observedAt": "2026-09-14T19:31:58.533546+00:00",
+      "http": 200,
+      "body": {
+        "status": "UP",
+        "groups": [
+          "liveness",
+          "readiness"
+        ]
+      }
+    }
+  },
+  "snapshot": {
+    "startedAt": "2026-09-14T19:31:58.533611+00:00",
+    "observedAt": "2026-09-14T19:31:58.551497+00:00",
+    "http": 200,
+    "body": {
+      "schemaVersion": 1,
+      "snapshotId": "1325",
+      "revision": 1325,
+      "computedAt": "2026-09-14T19:31:58.534842+00:00",
+      "sourceEventId": "c8f95b60-ff43-416d-8fd1-4371a6385643",
+      "watermark": {
+        "occurredAt": "2026-09-14T19:29:59.266Z",
+        "partitionOffsets": {
+          "0": 134
+        }
+      },
+      "quality": {
+        "status": "FRESH",
+        "reason": {
+          "gaps": 0,
+          "rejected": 0,
+          "lag": 0,
+          "outboxPending": 0,
+          "brokerOk": true
+        }
+      },
+      "coverage": {
+        "complete": true,
+        "aggregateCount": 109,
+        "eventCount": 133
+      },
+      "fixtureRunId": null,
+      "kpis": {
+        "USD": {
+          "B-K1": {
+            "value": 100.0,
+            "status": "OK",
+            "numerator": 2,
+            "denominator": 2,
+            "unit": "percent"
+          },
+          "B-K2": {
+            "value": "0.00",
+            "unit": "USD",
+            "status": "OK"
+          },
+          "B-K3": {
+            "value": "260.00",
+            "unit": "USD",
+            "status": "OK",
+            "backlogSessions": 106
+          }
+        }
+      },
+      "stream": {
+        "connected": true,
+        "error": null
+      }
+    }
+  },
+  "completedAt": "2026-09-14T19:31:58.551603+00:00"
+}

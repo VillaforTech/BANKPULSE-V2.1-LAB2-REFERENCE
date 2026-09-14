@@ -1,0 +1,609 @@
+{
+  "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3",
+  "checks": [
+    {
+      "name": "health payments",
+      "passed": true
+    },
+    {
+      "name": "health audit",
+      "passed": true
+    },
+    {
+      "name": "health experiences",
+      "passed": true
+    },
+    {
+      "name": "health travel",
+      "passed": true
+    },
+    {
+      "name": "health events",
+      "passed": true
+    },
+    {
+      "name": "health social-split",
+      "passed": true
+    },
+    {
+      "name": "100=60+40 completes",
+      "passed": true
+    },
+    {
+      "name": "amount and shares preserved",
+      "passed": true
+    },
+    {
+      "name": "close retry has no new effect",
+      "passed": true
+    },
+    {
+      "name": "completed aggregate immutable",
+      "passed": true
+    },
+    {
+      "name": "under rejected without partial close",
+      "passed": false
+    },
+    {
+      "name": "over rejected without partial close",
+      "passed": false
+    },
+    {
+      "name": "consent rejected without partial close",
+      "passed": true
+    },
+    {
+      "name": "empty rejected without partial close",
+      "passed": true
+    },
+    {
+      "name": "empty reference rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid total 0 rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid total -1 rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid total None rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid total 1.001 rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid total 100000000000000000 rejected",
+      "passed": true
+    },
+    {
+      "name": "projection complete and fresh",
+      "passed": true
+    },
+    {
+      "name": "independent healthy KPI",
+      "passed": true
+    },
+    {
+      "name": "under has no closures",
+      "passed": false
+    },
+    {
+      "name": "over has no closures",
+      "passed": false
+    },
+    {
+      "name": "payment response stable across persistence",
+      "passed": true
+    },
+    {
+      "name": "key reuse with different payload conflicts",
+      "passed": true
+    },
+    {
+      "name": "concurrent retries return one payment",
+      "passed": true
+    },
+    {
+      "name": "one persisted payment visible",
+      "passed": true
+    },
+    {
+      "name": "exact payment has one audit event",
+      "passed": true
+    }
+  ],
+  "observations": {
+    "healthy": {
+      "http": 200,
+      "close": {
+        "id": "7653e5cd-0a5f-41c1-8fce-6dc13e5e5004",
+        "aggregateVersion": 6,
+        "hostMemberId": "HOST-DEMO",
+        "totalAmount": 100.0,
+        "currency": "USD",
+        "status": "COMPLETED",
+        "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-healthy",
+        "lastEventId": "fda9a444-2b52-4235-92e7-dc24939c3284",
+        "createdAt": "2026-09-14T19:50:27.200Z",
+        "closedAt": "2026-09-14T19:50:27.269Z",
+        "updatedAt": "2026-09-14T19:50:27.269Z",
+        "participants": [
+          {
+            "id": "bf23259a-1a77-40e9-963e-2fcadc21a1da",
+            "memberId": "MEMBER-0",
+            "shareAmount": 60.0,
+            "authorized": true,
+            "paymentReference": "DEMO-bf23259a-1a77-40e9-963e-2fcadc21a1da"
+          },
+          {
+            "id": "c0cd2679-b9c3-4ef2-a388-b43b7a1699d8",
+            "memberId": "MEMBER-1",
+            "shareAmount": 40.0,
+            "authorized": true,
+            "paymentReference": "DEMO-c0cd2679-b9c3-4ef2-a388-b43b7a1699d8"
+          }
+        ]
+      },
+      "persisted": {
+        "id": "7653e5cd-0a5f-41c1-8fce-6dc13e5e5004",
+        "aggregateVersion": 6,
+        "hostMemberId": "HOST-DEMO",
+        "totalAmount": 100.0,
+        "currency": "USD",
+        "status": "COMPLETED",
+        "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-healthy",
+        "lastEventId": "fda9a444-2b52-4235-92e7-dc24939c3284",
+        "createdAt": "2026-09-14T19:50:27.200Z",
+        "closedAt": "2026-09-14T19:50:27.269Z",
+        "updatedAt": "2026-09-14T19:50:27.269Z",
+        "participants": [
+          {
+            "id": "bf23259a-1a77-40e9-963e-2fcadc21a1da",
+            "memberId": "MEMBER-0",
+            "shareAmount": 60.0,
+            "authorized": true,
+            "paymentReference": "DEMO-bf23259a-1a77-40e9-963e-2fcadc21a1da"
+          },
+          {
+            "id": "c0cd2679-b9c3-4ef2-a388-b43b7a1699d8",
+            "memberId": "MEMBER-1",
+            "shareAmount": 40.0,
+            "authorized": true,
+            "paymentReference": "DEMO-c0cd2679-b9c3-4ef2-a388-b43b7a1699d8"
+          }
+        ]
+      }
+    },
+    "under": {
+      "http": 200,
+      "close": {
+        "id": "3aecd371-d131-4853-9570-e37bc11c9781",
+        "aggregateVersion": 6,
+        "hostMemberId": "HOST-DEMO",
+        "totalAmount": 100.0,
+        "currency": "USD",
+        "status": "COMPLETED",
+        "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-under",
+        "lastEventId": "027ac4ef-ca2b-494b-84e5-a7a0c693e8c9",
+        "createdAt": "2026-09-14T19:50:27.484Z",
+        "closedAt": "2026-09-14T19:50:27.638Z",
+        "updatedAt": "2026-09-14T19:50:27.638Z",
+        "participants": [
+          {
+            "id": "786672b1-b9f3-43d2-8aa4-0553ac03ce6b",
+            "memberId": "MEMBER-0",
+            "shareAmount": 60.0,
+            "authorized": true,
+            "paymentReference": "DEMO-786672b1-b9f3-43d2-8aa4-0553ac03ce6b"
+          },
+          {
+            "id": "c1d8b8be-4ac7-44bb-9be9-74eb359d9fcc",
+            "memberId": "MEMBER-1",
+            "shareAmount": 30.0,
+            "authorized": true,
+            "paymentReference": "DEMO-c1d8b8be-4ac7-44bb-9be9-74eb359d9fcc"
+          }
+        ]
+      },
+      "persisted": {
+        "id": "3aecd371-d131-4853-9570-e37bc11c9781",
+        "aggregateVersion": 6,
+        "hostMemberId": "HOST-DEMO",
+        "totalAmount": 100.0,
+        "currency": "USD",
+        "status": "COMPLETED",
+        "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-under",
+        "lastEventId": "027ac4ef-ca2b-494b-84e5-a7a0c693e8c9",
+        "createdAt": "2026-09-14T19:50:27.484Z",
+        "closedAt": "2026-09-14T19:50:27.638Z",
+        "updatedAt": "2026-09-14T19:50:27.638Z",
+        "participants": [
+          {
+            "id": "786672b1-b9f3-43d2-8aa4-0553ac03ce6b",
+            "memberId": "MEMBER-0",
+            "shareAmount": 60.0,
+            "authorized": true,
+            "paymentReference": "DEMO-786672b1-b9f3-43d2-8aa4-0553ac03ce6b"
+          },
+          {
+            "id": "c1d8b8be-4ac7-44bb-9be9-74eb359d9fcc",
+            "memberId": "MEMBER-1",
+            "shareAmount": 30.0,
+            "authorized": true,
+            "paymentReference": "DEMO-c1d8b8be-4ac7-44bb-9be9-74eb359d9fcc"
+          }
+        ]
+      }
+    },
+    "over": {
+      "http": 200,
+      "close": {
+        "id": "7caf8ae1-9532-4950-b76b-bbeff445b540",
+        "aggregateVersion": 6,
+        "hostMemberId": "HOST-DEMO",
+        "totalAmount": 100.0,
+        "currency": "USD",
+        "status": "COMPLETED",
+        "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-over",
+        "lastEventId": "8a0429a1-866f-4fa1-b489-b198e6aa89b3",
+        "createdAt": "2026-09-14T19:50:27.704Z",
+        "closedAt": "2026-09-14T19:50:27.800Z",
+        "updatedAt": "2026-09-14T19:50:27.800Z",
+        "participants": [
+          {
+            "id": "a6f27ff9-779a-4bdc-aa73-732d725810b3",
+            "memberId": "MEMBER-0",
+            "shareAmount": 60.0,
+            "authorized": true,
+            "paymentReference": "DEMO-a6f27ff9-779a-4bdc-aa73-732d725810b3"
+          },
+          {
+            "id": "21b8bcf6-2370-4555-8583-b95c9e02866d",
+            "memberId": "MEMBER-1",
+            "shareAmount": 50.0,
+            "authorized": true,
+            "paymentReference": "DEMO-21b8bcf6-2370-4555-8583-b95c9e02866d"
+          }
+        ]
+      },
+      "persisted": {
+        "id": "7caf8ae1-9532-4950-b76b-bbeff445b540",
+        "aggregateVersion": 6,
+        "hostMemberId": "HOST-DEMO",
+        "totalAmount": 100.0,
+        "currency": "USD",
+        "status": "COMPLETED",
+        "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-over",
+        "lastEventId": "8a0429a1-866f-4fa1-b489-b198e6aa89b3",
+        "createdAt": "2026-09-14T19:50:27.704Z",
+        "closedAt": "2026-09-14T19:50:27.800Z",
+        "updatedAt": "2026-09-14T19:50:27.800Z",
+        "participants": [
+          {
+            "id": "a6f27ff9-779a-4bdc-aa73-732d725810b3",
+            "memberId": "MEMBER-0",
+            "shareAmount": 60.0,
+            "authorized": true,
+            "paymentReference": "DEMO-a6f27ff9-779a-4bdc-aa73-732d725810b3"
+          },
+          {
+            "id": "21b8bcf6-2370-4555-8583-b95c9e02866d",
+            "memberId": "MEMBER-1",
+            "shareAmount": 50.0,
+            "authorized": true,
+            "paymentReference": "DEMO-21b8bcf6-2370-4555-8583-b95c9e02866d"
+          }
+        ]
+      }
+    },
+    "consent": {
+      "http": 409,
+      "close": {
+        "error": "all positive shares need authorization references"
+      },
+      "persisted": {
+        "id": "9d5e4104-dcd8-423e-9b8f-ad4ee962d8a7",
+        "aggregateVersion": 2,
+        "hostMemberId": "HOST-DEMO",
+        "totalAmount": 100.0,
+        "currency": "USD",
+        "status": "OPEN",
+        "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-consent",
+        "lastEventId": "72a3d7d0-00d6-4d66-9a59-b736399a645c",
+        "createdAt": "2026-09-14T19:50:27.813Z",
+        "closedAt": null,
+        "updatedAt": "2026-09-14T19:50:27.828Z",
+        "participants": [
+          {
+            "id": "14724427-ea77-40fa-9f24-a78486e0b82d",
+            "memberId": "MEMBER-0",
+            "shareAmount": 100.0,
+            "authorized": false,
+            "paymentReference": null
+          }
+        ]
+      }
+    },
+    "empty": {
+      "http": 409,
+      "close": {
+        "error": "all positive shares need authorization references"
+      },
+      "persisted": {
+        "id": "beafbc78-d047-461f-a355-0ee1626f8d38",
+        "aggregateVersion": 1,
+        "hostMemberId": "HOST-DEMO",
+        "totalAmount": 100.0,
+        "currency": "USD",
+        "status": "OPEN",
+        "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-empty",
+        "lastEventId": "46278c08-c1be-437e-a7c4-c7fe214f9086",
+        "createdAt": "2026-09-14T19:50:27.853Z",
+        "closedAt": null,
+        "updatedAt": "2026-09-14T19:50:27.853Z",
+        "participants": []
+      }
+    },
+    "healthyProjection": {
+      "schemaVersion": 1,
+      "snapshotId": "130",
+      "revision": 130,
+      "computedAt": "2026-09-14T19:50:29.529324+00:00",
+      "sourceEventId": "46278c08-c1be-437e-a7c4-c7fe214f9086",
+      "watermark": {
+        "occurredAt": "2026-09-14T19:50:27.853Z",
+        "partitionOffsets": {
+          "0": 23
+        }
+      },
+      "quality": {
+        "status": "FRESH",
+        "reason": {
+          "gaps": 0,
+          "rejected": 0,
+          "lag": 0,
+          "outboxPending": 0,
+          "brokerOk": true
+        }
+      },
+      "coverage": {
+        "complete": true,
+        "aggregateCount": 6,
+        "eventCount": 23
+      },
+      "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-healthy",
+      "kpis": {
+        "USD": {
+          "B-K1": {
+            "value": 100.0,
+            "status": "OK",
+            "numerator": 1,
+            "denominator": 1,
+            "unit": "percent"
+          },
+          "B-K2": {
+            "value": "0.00",
+            "unit": "USD",
+            "status": "OK"
+          },
+          "B-K3": {
+            "value": "0.00",
+            "unit": "USD",
+            "status": "OK",
+            "backlogSessions": 0
+          }
+        }
+      },
+      "stream": {
+        "connected": true,
+        "error": null
+      }
+    },
+    "underProjection": {
+      "schemaVersion": 1,
+      "snapshotId": "131",
+      "revision": 131,
+      "computedAt": "2026-09-14T19:50:29.545086+00:00",
+      "sourceEventId": "46278c08-c1be-437e-a7c4-c7fe214f9086",
+      "watermark": {
+        "occurredAt": "2026-09-14T19:50:27.853Z",
+        "partitionOffsets": {
+          "0": 23
+        }
+      },
+      "quality": {
+        "status": "FRESH",
+        "reason": {
+          "gaps": 0,
+          "rejected": 0,
+          "lag": 0,
+          "outboxPending": 0,
+          "brokerOk": true
+        }
+      },
+      "coverage": {
+        "complete": true,
+        "aggregateCount": 6,
+        "eventCount": 23
+      },
+      "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-under",
+      "kpis": {
+        "USD": {
+          "B-K1": {
+            "value": 0.0,
+            "status": "OK",
+            "numerator": 0,
+            "denominator": 1,
+            "unit": "percent"
+          },
+          "B-K2": {
+            "value": "10.00",
+            "unit": "USD",
+            "status": "OK"
+          },
+          "B-K3": {
+            "value": "0.00",
+            "unit": "USD",
+            "status": "OK",
+            "backlogSessions": 0
+          }
+        }
+      },
+      "stream": {
+        "connected": true,
+        "error": null
+      }
+    },
+    "overProjection": {
+      "schemaVersion": 1,
+      "snapshotId": "132",
+      "revision": 132,
+      "computedAt": "2026-09-14T19:50:29.559885+00:00",
+      "sourceEventId": "46278c08-c1be-437e-a7c4-c7fe214f9086",
+      "watermark": {
+        "occurredAt": "2026-09-14T19:50:27.853Z",
+        "partitionOffsets": {
+          "0": 23
+        }
+      },
+      "quality": {
+        "status": "FRESH",
+        "reason": {
+          "gaps": 0,
+          "rejected": 0,
+          "lag": 0,
+          "outboxPending": 0,
+          "brokerOk": true
+        }
+      },
+      "coverage": {
+        "complete": true,
+        "aggregateCount": 6,
+        "eventCount": 23
+      },
+      "fixtureRunId": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-over",
+      "kpis": {
+        "USD": {
+          "B-K1": {
+            "value": 0.0,
+            "status": "OK",
+            "numerator": 0,
+            "denominator": 1,
+            "unit": "percent"
+          },
+          "B-K2": {
+            "value": "10.00",
+            "unit": "USD",
+            "status": "OK"
+          },
+          "B-K3": {
+            "value": "0.00",
+            "unit": "USD",
+            "status": "OK",
+            "backlogSessions": 0
+          }
+        }
+      },
+      "stream": {
+        "connected": true,
+        "error": null
+      }
+    },
+    "payment": {
+      "initial": {
+        "id": "e1417b46-af42-44c3-af3f-0445e86f4cd6",
+        "idempotencyKey": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-payment",
+        "account": "EC-DEMO",
+        "amount": 27.5,
+        "currency": "USD",
+        "status": "ACCEPTED",
+        "createdAt": "2026-09-14T19:50:29.579Z"
+      },
+      "retry": {
+        "id": "e1417b46-af42-44c3-af3f-0445e86f4cd6",
+        "idempotencyKey": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-payment",
+        "account": "EC-DEMO",
+        "amount": 27.5,
+        "currency": "USD",
+        "status": "ACCEPTED",
+        "createdAt": "2026-09-14T19:50:29.579Z"
+      },
+      "audit": [
+        {
+          "eventId": "f721c635-a136-42f5-9e9f-57a4369d02a1",
+          "eventType": "PAYMENT_CREATED",
+          "aggregateId": "e1417b46-af42-44c3-af3f-0445e86f4cd6",
+          "occurredAt": "2026-09-14T19:50:29.579Z",
+          "receivedAt": "2026-09-14T19:50:30.434Z",
+          "payload": {
+            "eventId": "f721c635-a136-42f5-9e9f-57a4369d02a1",
+            "eventType": "PAYMENT_CREATED",
+            "aggregateId": "e1417b46-af42-44c3-af3f-0445e86f4cd6",
+            "occurredAt": "2026-09-14T19:50:29.579Z",
+            "account": "EC-DEMO",
+            "amount": 27.5,
+            "currency": "USD"
+          },
+          "id": "6aa850063ff13b41690c48ac"
+        }
+      ],
+      "concurrent": [
+        [
+          200,
+          {
+            "id": "1a89c889-883f-4726-af83-5b2e09917e45",
+            "idempotencyKey": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-payment-concurrent",
+            "account": "EC-DEMO",
+            "amount": 27.5,
+            "currency": "USD",
+            "status": "ACCEPTED",
+            "createdAt": "2026-09-14T19:50:29.619Z"
+          }
+        ],
+        [
+          200,
+          {
+            "id": "1a89c889-883f-4726-af83-5b2e09917e45",
+            "idempotencyKey": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-payment-concurrent",
+            "account": "EC-DEMO",
+            "amount": 27.5,
+            "currency": "USD",
+            "status": "ACCEPTED",
+            "createdAt": "2026-09-14T19:50:29.619Z"
+          }
+        ],
+        [
+          200,
+          {
+            "id": "1a89c889-883f-4726-af83-5b2e09917e45",
+            "idempotencyKey": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-payment-concurrent",
+            "account": "EC-DEMO",
+            "amount": 27.5,
+            "currency": "USD",
+            "status": "ACCEPTED",
+            "createdAt": "2026-09-14T19:50:29.619Z"
+          }
+        ],
+        [
+          200,
+          {
+            "id": "1a89c889-883f-4726-af83-5b2e09917e45",
+            "idempotencyKey": "business-5edb3966-db87-4d0a-99a0-acbbae9a82f3-payment-concurrent",
+            "account": "EC-DEMO",
+            "amount": 27.5,
+            "currency": "USD",
+            "status": "ACCEPTED",
+            "createdAt": "2026-09-14T19:50:29.619Z"
+          }
+        ]
+      ]
+    }
+  },
+  "passed": false
+}

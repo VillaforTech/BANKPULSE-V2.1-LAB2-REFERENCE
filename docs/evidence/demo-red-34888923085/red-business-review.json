@@ -1,0 +1,93 @@
+{
+  "repository": "VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE",
+  "headSha": "90745a4a58a84078b8557c0616dd8df5764ba2a6",
+  "run": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085",
+  "pr": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/pull/2",
+  "technicalSmokePassed": true,
+  "contemporaneousHealthUp": true,
+  "businessInvariantViolated": true,
+  "oracleFailedForThatViolation": true,
+  "observedFacts": [
+    "Inspección manual y recálculo independiente del run34888923085 intento1. Provenance, current-state, unit commit y captura GitHub coinciden con SHA90745a4a58a84078b8557c0616dd8df5764ba2a6; PR2 OPEN, ready, BLOCKED y Release gate obligatorio fallido según captura conservada.",
+    "El commit mutante cambia únicamente SplitSession.java:121: desactiva con false && la guarda sum.compareTo(totalAmount)!=0. No modifica tests ni workflows en ese commit; se revisó git show del SHA exacto.",
+    "Smoke técnico success y log Smoke test OK. Las respuestas originales/reintento de pago guardadas son idénticas byte a byte; el smoke no detecta la inconsistencia de Social Split.",
+    "Business result29 checks:25 true y4 false, exactamente under/over rejected without partial close y under/over has no closures. No es un fallo por dependencia caída: las seis comprobaciones health del negocio pasan.",
+    "Under: total100, participaciones autorizadas60+30=90. POST close devuelve200 y persiste COMPLETED, closedAt no nulo; GET posterior conserva la misma identidad/versión6 y cierre inválido. Proyección FRESH completa de esa fixture: B-K1=0/1=0%, B-K2=10.00USD.",
+    "Over: total100, participaciones autorizadas60+50=110. POST close devuelve200 y persiste COMPLETED, closedAt no nulo; GET posterior conserva la misma identidad/versión6 y cierre inválido. Proyección FRESH completa: B-K1=0/1=0%, B-K2=10.00USD.",
+    "Current-state relee las tres fixtures y luego seis servicios HTTP200/UP entre19:52:31.899434 y19:52:32.098405UTC: ventana total0.198971s. Los cierres inválidos permanecen observables mientras liveness/readiness están UP; no se infiere simultaneidad a resolución inferior a esa ventana.",
+    "JUnit10 tests,2 fallos de aserción y0 errores/skipped: underpaymentRemainsOpen y overpaymentRemainsOpen esperaban IllegalStateException que no ocurrió. Coinciden con la guarda desactivada y con la violación HTTP/persistencia.",
+    "Inspección visual de grafana-live.png: revisión776, B-K1=50 y B-K2=20 en rojo VIGENTE·ALERTA, B-K3=0,131 eventos/cobertura1/frescura1. Es cohorte global mixta:2 cierres íntegros de4 (healthy y consola válidos, under y over inválidos), no debe rotularse como la fixture under aislada0/10. Current-state revisión794 confirma numerador2/denominador4/B-K2=20.",
+    "La fase browser pasó aunque business falló; eso no convierte la ejecución en verde. Resilience quedó skipped en este run rojo y no se usa como evidencia de recuperación. La restauración y su ejecución verde todavía son posteriores a esta revisión."
+  ],
+  "reviewedAt": "2026-09-14T20:12:15.529054+00:00",
+  "artifacts": [
+    {
+      "path": "summary.json",
+      "sha256": "04b97906849c6734462486b80b8de498e42d15bdc33454065e594301628e91c2"
+    },
+    {
+      "path": "pr.json",
+      "sha256": "5d6e810d7eec2525ab9698212f72371136911bcfdf8d7a0dec81808c60a96cce"
+    },
+    {
+      "path": "run.json",
+      "sha256": "1c200eb43b16c33f0dc66a391878639f85ccca459d1dbe0c13be4fd198638a39"
+    },
+    {
+      "path": "protection.json",
+      "sha256": "8352c6789db6f842a7fcfb0a6646e9ca3ade5f76f068e90d0699da863b778579"
+    },
+    {
+      "path": "artifacts/bankpulse-gate-34888923085-1/release-gate.json",
+      "sha256": "bcee24de95a677dc76c89f6e90c5359ebb073b5392c042bcc95bc2021ec6e023"
+    },
+    {
+      "path": "artifacts/bankpulse-lab-34888923085-1/ci/provenance.json",
+      "sha256": "fd3e98f6f63cd5c193a5a38bc9d1ebee0f4d9d7f77b1e30bfd179ca530e7e2f7"
+    },
+    {
+      "path": "artifacts/bankpulse-lab-34888923085-1/ci/stage-results.json",
+      "sha256": "4e281e8279f0c7828d032098bfb782fe5454b5347773f02e58ced853d0e1996c"
+    },
+    {
+      "path": "artifacts/bankpulse-lab-34888923085-1/ci/smoke.log",
+      "sha256": "931ee30aca8dd1e58341d1cc799c14648f6d5e36d1080e23c893a160de802825"
+    },
+    {
+      "path": "artifacts/bankpulse-lab-34888923085-1/ci/bankpulse-payment.json",
+      "sha256": "b7c98ba40b1e97e818b64267330c2be3d66525c9ee53bb1a1c19e91a2d4660ba"
+    },
+    {
+      "path": "artifacts/bankpulse-lab-34888923085-1/ci/bankpulse-payment-retry.json",
+      "sha256": "b7c98ba40b1e97e818b64267330c2be3d66525c9ee53bb1a1c19e91a2d4660ba"
+    },
+    {
+      "path": "artifacts/bankpulse-lab-34888923085-1/business/result.json",
+      "sha256": "27d1430334ccaa4a2dc00a0043f0cf86b510c50701ec92b71bd4506773cf9db5"
+    },
+    {
+      "path": "artifacts/bankpulse-lab-34888923085-1/business/current-state.json",
+      "sha256": "a4655787df79895e2948e67305ebc5763ff29f9e12f9ebe408ea98cc98eb268e"
+    },
+    {
+      "path": "artifacts/bankpulse-lab-34888923085-1/browser/grafana-live.png",
+      "sha256": "089acbeb1f3bf1b2442928e9882d760cfc25929d0e8f18a2701bb4bca12e0752"
+    },
+    {
+      "path": "artifacts/bankpulse-lab-34888923085-1/browser/console-split-100-three.json",
+      "sha256": "31c66fa81e4829e5ff51e8d9f9fbd9861162342df9901949443809926db80fed"
+    },
+    {
+      "path": "artifacts/bankpulse-unit-34888923085-1/artifacts/unit/commit.txt",
+      "sha256": "4c03c5eb9c079ddbdd99693f3d82ef619db9fedc3d2814bfc5a7307eb93a25d6"
+    },
+    {
+      "path": "artifacts/bankpulse-unit-34888923085-1/services/social-split-api/target/surefire-reports/TEST-com.bankpulse.split.SplitSessionTest.xml",
+      "sha256": "fc079dfce3e8fa06093c5ca31db8a51b762d0d43e52f12da6baba55715b6499a"
+    },
+    {
+      "path": "artifacts/bankpulse-unit-34888923085-1/services/social-split-api/target/surefire-reports/TEST-com.bankpulse.split.SplitTransactionTest.xml",
+      "sha256": "9ab2be61a5e6452a0a3156187b34d7825f41b6ba2cce8f9c4dcb28e3aa6e318f"
+    }
+  ]
+}

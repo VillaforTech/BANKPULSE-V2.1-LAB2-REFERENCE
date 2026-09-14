@@ -14,9 +14,11 @@ fi
 if [[ -n "${CODESPACE_NAME:-}" && -n "${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-}" ]]; then
   grafana_origin="https://${CODESPACE_NAME}-13000.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
   console_origin="https://${CODESPACE_NAME}-18080.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
+  local_origins="http://localhost:13000,http://127.0.0.1:13000"
+  local_origins+=",http://localhost:18080,http://127.0.0.1:18080"
   {
     printf 'GRAFANA_ROOT_URL=%s/\n' "$grafana_origin"
-    printf 'GRAFANA_LIVE_ORIGINS=%s,%s\n' "$grafana_origin" "$console_origin"
+    printf 'GRAFANA_LIVE_ORIGINS=%s,%s,%s\n' "$local_origins" "$grafana_origin" "$console_origin"
   } > observability/.env
 fi
 

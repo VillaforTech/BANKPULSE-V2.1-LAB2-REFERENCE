@@ -1,54 +1,75 @@
-# Ejecutar BankPulse completamente online
+# Ejecutar el gemelo BankPulse en Codespaces
 
-GitHub Codespaces proporciona un entorno aislado por estudiante con VS Code, Java 21, GitHub CLI y Docker Compose. El laboratorio utiliza Docker-in-Docker dentro del Codespace; no requiere Docker Desktop en el equipo del participante.
+Esta guía corresponde a [BANKPULSE-V2.1-LAB2-REFERENCE](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE). No hay que subir otra copia ni trabajar sobre el repositorio compartido. Los datos, cuentas y autorizaciones son demo; cada Codespace conserva sus propias bases y red.
 
-## 1. Crear el Codespace
+La reproducción en GitHub Codespaces está **pendiente de login y ejecución cloud**. Un CI verde o una prueba local del devcontainer no acredita que un integrante haya reproducido un Codespace.
 
-1. Suba esta carpeta a un repositorio de GitHub.
-2. Abra el repositorio y seleccione **Code → Codespaces → Create codespace on main**.
-3. Espere a que finalicen las tareas **postCreateCommand** y **postStartCommand**. El primer build descarga imágenes y dependencias Maven, por lo que puede tardar varios minutos.
-4. Cuando aparezca la notificación del puerto, seleccione **Open in Browser**.
+## Crear y arrancar
 
-La consola se publica en el puerto `8080`. MariaDB (`3306`) y MongoDB (`27017`) permanecen como puertos privados del laboratorio.
-
-## 2. Verificar el entorno
-
-En el terminal integrado:
+1. Iniciar sesión en GitHub, abrir el gemelo y seleccionar **Code → Codespaces → Create codespace**. Elegir la rama o revisión que se va a evaluar; registrar el SHA con `git rev-parse HEAD`.
+2. Usar como objetivo 4 CPU, 8 GB de RAM y 32 GB de disco, tal como declara `.devcontainer/devcontainer.json`.
+3. Esperar a que termine `postCreateCommand` (`.devcontainer/setup.sh`): prepara los archivos locales de entorno y construye los servicios con un máximo de dos builds simultáneos.
+4. Esperar `postStartCommand` (`.devcontainer/start-lab.sh`): arranca la plataforma y exige sus health checks. Después iniciar observabilidad, que usa otro archivo Compose:
 
 ```bash
-docker compose ps
-bash scripts/smoke.sh
+docker compose -f observability/compose.yaml up -d prometheus grafana
+bash scripts/readiness.sh
 ```
 
-El smoke test comprueba health checks, pago idempotente, publicación del outbox y recepción del evento de auditoría.
-
-## 3. Ejecutar el chaos drill
+Si se necesita ejecutar manualmente los pasos del devcontainer, desde la raíz del gemelo:
 
 ```bash
-docker compose stop mongo audit-api
+bash .devcontainer/setup.sh
+bash .devcontainer/start-lab.sh
+docker compose -f observability/compose.yaml up -d prometheus grafana
+bash scripts/readiness.sh
 ```
 
-Cree un pago desde la consola. El pago debe quedar confirmado en MariaDB y el evento permanecer pendiente en el outbox. Después recupere el servicio:
+El devcontainer incluye Java 21, Node 22, Python 3.12, Docker-in-Docker y GitHub CLI. La primera construcción descarga imágenes y dependencias; revisar el error real si un paso falla antes de repetirlo.
+
+## Abrir la consola y el panel
+
+En la pestaña **Ports**, mantener visibilidad **Private** y usar el enlace reenviado de cada puerto:
+
+| Puerto | Contenido | Ruta |
+|---|---|---|
+| 18080 | Consola demo y APIs | `/` |
+| 13000 | Grafana Live | `/d/bankpulse-business` |
+| 19090 | Prometheus | `/` |
+| 18088 | cAdvisor opcional; no se inicia en los comandos anteriores | `/` |
+
+Las bases no publican puertos al host. La consola adapta sus enlaces al hostname de Codespaces. El setup escribe `observability/.env` con el root URL de Grafana, los dos orígenes HTTPS exactos para 13000 y 18080, y los orígenes loopback del harness interno; no usa wildcard. Si cambian las URLs, repetir el setup y recrear Grafana:
 
 ```bash
-docker compose up -d --wait mongo audit-api
+docker compose -f observability/compose.yaml up -d --force-recreate grafana
 ```
 
-La consola debe mostrar el drenaje del backlog y completar la misión de recuperación.
+Desde el terminal del Codespace las pruebas usan `http://localhost:18080` y `http://localhost:13000`. El navegador humano entra por los enlaces privados de GitHub. Esos recorridos se verifican por separado: el benchmark interno no prueba por sí solo el proxy, el login ni el WebSocket externo de Codespaces.
 
-## 4. Detener o reconstruir
+## Verificar el laboratorio
 
 ```bash
-docker compose down             # conserva los volúmenes
-docker compose up -d --wait     # reanuda el laboratorio
-docker compose down -v          # borra las bases; acción destructiva
+bash scripts/unit-test.sh
+bash scripts/projection-test.sh
+bash scripts/smoke-v2.sh
+bash scripts/business-test.sh
+npm ci
+npx playwright install --with-deps chromium
+npm run browser-test
+python3 scripts/resilience_test.py
 ```
 
-Al detener el Codespace desde GitHub se deja de consumir cómputo. El almacenamiento del Codespace continúa existiendo hasta que se elimine o expire.
+El smoke mantiene la comparación del pago idempotente. Negocio comprueba cierre válido e inválidos por API y persistencia. Proyección usa un esquema SQL aislado. El navegador crea al menos 100 operaciones y mide hasta el render correlacionado de las tarjetas, con p95 ≤1 s, cero pérdidas y recuperación de la misma pestaña; no generar otras fixtures durante esa medición. Resiliencia interrumpe el broker, reinicia analítica y observa el vencimiento real de 120 s sin tráfico nuevo, conservando volúmenes e historia.
 
-## Seguridad para clases
+Revisión manual: abrir la consola, elegir total USD 100 y tres participantes, autorizar las tres cuotas y cerrar. Deben mostrarse 33,34 + 33,33 + 33,33 y estado COMPLETED. En Grafana deben avanzar revisión y timestamp aunque el auto-refresh esté apagado; si faltan cobertura o heartbeats, los valores dejan de presentarse como vigentes.
 
-- Mantenga el puerto `8080` con visibilidad **Private** para trabajo individual.
-- Use visibilidad **Public** únicamente durante demostraciones y sin datos reales.
-- No almacene tokens en `.env` ni en el código. Configure credenciales de publicación como Codespaces secrets o GitHub Actions secrets.
-- Cada estudiante debe trabajar en su propio Codespace o fork para aislar bases y experimentos de caos.
+Guardar `artifacts/`, SHA, comandos, recursos, identidad de quien reprodujo y resultado. La reproducción del navegador humano debe incluir los enlaces privados, el panel realmente abierto y su conexión Live; no guardar credenciales ni tokens. [Evidencia y alcance del deber](deber-01.md).
+
+## Parar y reanudar
+
+```bash
+docker compose -f observability/compose.yaml down
+docker compose down
+```
+
+Estos comandos conservan los volúmenes. Para reanudar, ejecutar el script de inicio y levantar observabilidad como arriba. No usar `down -v` para aparentar recuperación. Al terminar, detener también el Codespace desde GitHub; parar los contenedores no detiene el entorno cloud.

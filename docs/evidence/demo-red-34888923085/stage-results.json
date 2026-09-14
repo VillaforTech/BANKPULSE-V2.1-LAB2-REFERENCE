@@ -1,0 +1,12 @@
+{
+  "build": "success",
+  "deploy": "success",
+  "observability": "success",
+  "edge": "success",
+  "smoke": "success",
+  "projection": "success",
+  "business": "failure",
+  "browser-setup": "success",
+  "browser": "success",
+  "resilience": "skipped"
+}

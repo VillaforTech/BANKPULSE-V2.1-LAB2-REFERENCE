@@ -1,11 +1,14 @@
 {
-  "name": "BANKdragon V2.1 Interactive Platform Lab",
+  "name": "BankPulse REFERENCE",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
       "version": "latest",
       "dockerDashComposeVersion": "v2"
     },
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
   },
   "hostRequirements": {
     "cpus": 4,
@@ -13,36 +16,28 @@
     "storage": "32gb"
   },
   "forwardPorts": [
-    8080,
-    3000,
-    9090,
-    8088
+    18080,
+    13000,
+    19090,
+    18088
   ],
   "portsAttributes": {
-    "8080": {
+    "18080": {
       "label": "BankPulse Interactive Banking",
       "onAutoForward": "openBrowser",
       "protocol": "http"
     },
-    "3306": {
-      "label": "MariaDB (internal lab)",
-      "onAutoForward": "silent"
-    },
-    "27017": {
-      "label": "MongoDB (internal lab)",
-      "onAutoForward": "silent"
-    },
-    "3000": {
+    "13000": {
       "label": "Grafana",
       "onAutoForward": "silent",
       "protocol": "http"
     },
-    "9090": {
+    "19090": {
       "label": "Prometheus",
       "onAutoForward": "silent",
       "protocol": "http"
     },
-    "8088": {
+    "18088": {
       "label": "cAdvisor",
       "onAutoForward": "silent",
       "protocol": "http"

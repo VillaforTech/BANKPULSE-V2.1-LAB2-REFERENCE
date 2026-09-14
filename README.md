@@ -1,155 +1,87 @@
-# BANKdragon / BankPulse V2.1 — Interactive Banking Experience
+# BankPulse: referencia completa de El Falso Verde
 
-> **V2.1:** además de la plataforma de microservicios, el puerto `8080` ofrece una experiencia bancaria interactiva con modos Cliente/Arquitecto, gastronomía, viajes offline, seat holds, Social Split y visualización de arquitectura. Todo consume APIs reales del laboratorio.
+Este **gemelo académico independiente** parte de [BANKPULSE-V2.1-LAB2](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2), conserva sus seis servicios y el historial ADR, y desarrolla la solución de referencia de Roberto Villafuerte para CMP4008. No sustituye los aportes ni los PR del equipo. Revisar y adaptar sus cambios antes de integrarlos en el repositorio original.
 
-Plataforma docente de microservicios desplegables para Arquitectura de Software, DDD, DevOps, CI y Observabilidad. Esta version conserva el core financiero de BankPulse y transforma las cuatro epicas de negocio en servicios independientes con contratos, ownership de datos, health checks y metricas.
+**Laboratorio:** cuentas, importes, referencias y autorizaciones son demo. Payments registra `ACCEPTED`; no demuestra un cobro o liquidación financiera real. Los KPIs expresan integridad y exposición del laboratorio.
 
-**Equipo:** consulta [CONTRIBUTING.md](CONTRIBUTING.md) para el reparto del Deber 01, el flujo de ramas y los requisitos de revisión de Roberto antes de integrar a `main`.
+## Arrancar y parar el gemelo
 
-## Arquitectura V2
-
-| Servicio | Epica / contexto | Puerto interno | Persistencia |
-|---|---|---:|---|
-| `payments-api` | Core financiero | 8081 | MariaDB |
-| `audit-api` | Auditoria | 8082 | MongoDB `audit` |
-| `experiences-api` | Gastronomia | 8083 | MongoDB `experiences` |
-| `travel-benefits-api` | Viajes | 8084 | MongoDB `travel` |
-| `events-api` | Eventos premium | 8085 | PostgreSQL `events` + Redis TTL |
-| `social-split-api` | Social Split | 8086 | PostgreSQL `social_split` |
-| `console` | Edge + UI | 8080 host | Nginx |
-
-Los puertos 8081-8086 permanecen dentro de la red Docker. El navegador entra por `console:8080`, que funciona como edge/reverse proxy de laboratorio.
-
-
-## Frontend interactivo V2.1
-
-La UI del puerto `8080` ahora permite recorrer las cuatro épicas desde una experiencia bancaria:
-
-- **Experiencias:** consulta MongoDB a través de `experiences-api` y genera una garantía demo en `payments-api`.
-- **Viajes:** consulta elegibilidad, emite credencial firmada y permite demostrar disponibilidad offline local.
-- **Eventos:** renderiza un mapa de asientos y crea HOLDs reales en Redis con TTL; un segundo intento obtiene HTTP 409.
-- **Social Split:** crea sesiones/participantes reales, usa referencias de pagos y aplica la invariante de cierre.
-- **Platform:** muestra health de seis servicios, C4 simplificado, ownership y enlaces a la observabilidad real.
-
-Use el selector **Cliente / Arquitecto** para alternar entre experiencia de usuario y explicaciones técnicas.
-
-## Data ownership
-
-La V2 aplica **single-writer ownership**. Compartir un motor fisico en Codespaces no significa compartir modelo de datos:
-
-- `payments-api` es la unica autoridad financiera.
-- `events-api` posee eventos y holds; Redis solo contiene estado temporal.
-- `social-split-api` almacena referencias de pago, no transacciones financieras.
-- `experiences-api` y `travel-benefits-api` usan bases Mongo separadas.
-- `audit-api` es una proyeccion de auditoria y no modifica dominios de origen.
-
-Consulte `docs/architecture/DATA-OWNERSHIP.md` y use `docs/adr/ADR-TEMPLATE-DATA-OWNERSHIP.md` como entregable de equipo.
-
-## Inicio rapido en GitHub Codespaces
-
-El Dev Container incluye el fix de Yarn requerido por Docker-in-Docker:
-
-```dockerfile
-FROM mcr.microsoft.com/devcontainers/java:1-21-bookworm
-RUN rm -f /etc/apt/sources.list.d/yarn.list
-```
-
-1. Abra **Code -> Codespaces -> Create codespace on main**.
-2. Espere el build inicial de los servicios.
-3. Verifique:
+Requisitos: Docker Compose v2; objetivo local 8 GB RAM para Docker. Construcciones simultáneas limitadas a dos. Los servicios Java tienen límite de memoria y heap explícitos.
 
 ```bash
-docker --version
-docker compose version
-docker compose ps
+COMPOSE_BAKE=false COMPOSE_PARALLEL_LIMIT=2 docker compose build
+docker compose up -d --wait --wait-timeout 300
+docker compose -f observability/compose.yaml up -d prometheus grafana
+bash scripts/readiness.sh
 ```
 
-4. Abra el puerto **8080** reenviado por Codespaces.
+| Acceso local | URL |
+|---|---|
+| Consola y APIs | http://localhost:18080 |
+| Grafana, panel de negocio Live | http://localhost:13000/d/bankpulse-business |
+| Prometheus | http://localhost:19090 |
+| cAdvisor opcional | http://localhost:18088 |
+| Snapshot completo | http://localhost:18080/api/business/snapshot |
 
-No se requiere IP del Codespace.
-
-## Inicio manual
-
-```bash
-cp .env.example .env
-docker compose config
-docker compose up -d --build --wait
-docker compose ps
-```
-
-Prueba integral:
-
-```bash
-bash scripts/smoke-v2.sh
-```
-
-## Observabilidad
-
-El stack se mantiene separado de la aplicacion:
-
-```bash
-docker compose -f observability/compose.yaml up -d
-docker compose -f observability/compose.yaml ps
-```
-
-Puertos de Codespaces:
-
-- 3000: Grafana
-- 9090: Prometheus
-- 8088: cAdvisor
-
-Grafana demo:
-
-- usuario: `admin`
-- password: `bankpulse_demo`
-
-Estas credenciales son exclusivamente docentes. Para produccion use un secret manager.
-
-Prometheus scrapea `/actuator/prometheus` de los seis microservicios. El dashboard `BANKdragon V2 Platform Overview` incluye disponibilidad, throughput HTTP, heap JVM, p95 y CPU de contenedores.
-
-## CI
-
-`.github/workflows/ci.yml` implementa las siguientes comprobaciones:
-
-1. **Architecture contract:** verifica la existencia de los seis servicios, ownership docs y Compose/observabilidad validos.
-2. **Integration test:** construye el stack real, ejecuta `smoke-v2.sh`, levanta Prometheus/Grafana y valida sus health endpoints.
-3. **Release gate:** exige que ambas etapas terminen correctamente; un fallo, cancelación u omisión bloquea la integración.
-
-El gate reúne las comprobaciones actuales. La prueba de negocio contra el falso verde y las verificaciones de tiempo real del Deber 01 se desarrollan en las issues del equipo; todavía no están implementadas por este cambio de configuración.
-
-Flujo esperado:
-
-```text
-feature/* -> Pull Request -> GitHub Actions -> CI verde -> review -> squash merge -> main
-```
-
-CI no significa deployment. El workflow demuestra integrabilidad y calidad automatizada; CD puede incorporarse posteriormente con GHCR + Argo CD/Kubernetes.
-
-## Distribucion por equipos
-
-- Equipo Gastronomia -> `services/experiences-api`
-- Equipo Viajes -> `services/travel-benefits-api`
-- Equipo Eventos -> `services/events-api`
-- Equipo Social Split -> `services/social-split-api`
-
-Cada equipo debe entregar DDD, C4, ADR de Data Ownership, implementacion, tests, evidencia CI y metricas operacionales.
-
-## Recursos de Codespaces
-
-La configuracion objetivo es 4 CPU / 8 GB. La persistencia comparte motores fisicos para no multiplicar consumo, manteniendo aislamiento logico. Al terminar:
+Grafana ofrece Viewer anónimo exclusivamente en el laboratorio ligado a loopback. El publicador usa las credenciales demo de Compose, nunca una credencial real. No exponer estos servicios a Internet. Los proyectos, red y volúmenes contienen `bankpulse-reference`; no comparten los recursos del original. Las bases no publican puertos al host.
 
 ```bash
 docker compose -f observability/compose.yaml down
 docker compose down
 ```
 
-Luego use **Stop Codespace**.
+La parada conserva volúmenes e historia. No usar `down -v` para aparentar recuperación. Para un laboratorio nuevo, usar otro entorno aislado; los scripts de prueba identifican sus propias fixtures.
 
-## Seguridad
+## Probar un cierre
 
-No suba `.env`, tokens, claves institucionales o credenciales reales. Los passwords incluidos son solamente para un entorno local efimero de aprendizaje.
+La consola permite total USD 100 y tres participantes: reparte 33,34 + 33,33 + 33,33. Autorizar cada cuota genera una referencia demo y permite cerrar cuando la suma coincide. También puede reproducirse todo por API:
 
-## Registros de decisiones de arquitectura (ADR)
+```bash
+bash scripts/smoke-v2.sh
+bash scripts/business-test.sh
+```
 
-ADR-Tools está incluido en el proyecto y sus registros se validan dentro de
-`architecture-contract`. Ver [instalación, comandos y alcance del control](docs/adr/README.md).
+El segundo comando crea fixtures independientes: 60+40 cierra; 60+30, 60+50, falta de consentimiento y sesión vacía se rechazan. Conserva JSON de observación en `artifacts/business/result.json` y retorna un código de fallo si el negocio incumple, aunque health esté UP.
+
+## Arquitectura y aceptación
+
+Social Split confirma su estado y outbox en PostgreSQL. Un relay publica hechos en Redpanda; `business-analytics` mantiene una proyección y checkpoints en su propio esquema. Calcula tres KPIs con temporizadores de 250 ms, guarda snapshots y publica a Grafana Live. Prometheus conserva series históricas y salud. El panel local incluye revisión, evento, cobertura y un watchdog de heartbeat; un dato congelado pasa a DESACTUALIZADO.
+
+- [Contrato de eventos](docs/events-deber-01.md)
+- [Definiciones de KPIs](docs/kpis-deber-01.md)
+- [Deber, diagnóstico y evidencia](docs/deber-01.md)
+- [Operación de Grafana Live](observability/README.md)
+- [ADR y ownership](docs/adr/README.md)
+
+## Validación reproducible
+
+```bash
+bash scripts/unit-test.sh
+bash scripts/projection-test.sh
+python3 scripts/resilience_test.py
+npm ci
+npx playwright install --with-deps chromium
+npm run browser-test
+```
+
+Resiliencia tarda aproximadamente dos minutos: corta el broker, conserva un commit en el outbox, recupera, reinicia analítica, repite un evento real y observa un vencimiento de 120 s sin nuevas acciones. Las pruebas de proyección usan exclusivamente el esquema `analytics_contract_test`.
+
+El navegador ejecuta **al menos 100 operaciones secuenciales**, comprueba ID y número visible, calidad VIGENTE, y mide con `performance.now()` de la misma página hasta dos frames posteriores al render. Registra todas las pérdidas y errores; p95 >1 s bloquea. También desconecta y reconecta la misma pestaña. `artifacts/browser/` contiene muestras y capturas. No ejecutar otra carga de negocio mientras corre esa medición.
+
+## Correspondencia con issues del equipo
+
+| Issue original | Referencia ejecutable |
+|---|---|
+| [#1 Dominio/eventos](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2/issues/1) | `services/social-split-api`, contratos en `docs/`, tests JUnit y business test |
+| [#2 Analítica](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2/issues/2) | `services/business-analytics`, tests de reloj, proyección y replay |
+| [#3 Panel Live](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2/issues/3) | dashboard, plugin local y `scripts/browser-test.mjs` |
+| [#4 Integración/gate](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2/issues/4) | Compose aislado, readiness y `.github/workflows/ci.yml` |
+| [#5 Evidencia](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2/issues/5) | business, resiliencia, navegador y `docs/deber-01.md` |
+
+Estas rutas muestran la implementación de referencia, no el aporte ni el cierre del issue de otro integrante. Los checks CI y sus artifacts constituyen evidencia de cada revisión concreta.
+
+## Git y Codespaces
+
+`origin` pertenece a **BANKPULSE-V2.1-LAB2-REFERENCE**; `upstream` es el original y su push está deshabilitado en el checkout preparado. Todo trabajo del gemelo se propone a su propio `main`; no copiar instrucciones antiguas para pushear al repositorio compartido. El check requerido se llama **Release gate**.
+
+Un Codespace limpio usa los mismos comandos y puertos reenviados 18080/13000/19090/18088. [Guía de Codespaces](docs/CODESPACES_REFERENCE.md). Una ejecución local no acredita que otro integrante haya reproducido un Codespace: esa verificación se registra aparte en la evidencia.

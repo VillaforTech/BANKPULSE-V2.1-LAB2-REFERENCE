@@ -1,0 +1,280 @@
+{
+  "uid": "bankpulse-business",
+  "title": "BankPulse \u00b7 Integridad de Social Split \u00b7 LIVE",
+  "schemaVersion": 40,
+  "version": 1,
+  "refresh": "",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Cierres \u00edntegros \u00b7 sin cierres = SIN MUESTRA",
+      "type": "bankpulse-business-panel",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 8,
+        "h": 5
+      },
+      "datasource": {
+        "type": "grafana",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "queryType": "measurements",
+          "channel": "stream/bankpulse/business"
+        }
+      ],
+      "options": {
+        "field": "integrity_percent",
+        "currency": "USD"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "noValue": "SIN MUESTRA",
+          "decimals": 2
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 2,
+      "title": "Descuadre al cerrar \u00b7 USD demo",
+      "type": "bankpulse-business-panel",
+      "gridPos": {
+        "x": 8,
+        "y": 0,
+        "w": 8,
+        "h": 5
+      },
+      "datasource": {
+        "type": "grafana",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "queryType": "measurements",
+          "channel": "stream/bankpulse/business"
+        }
+      ],
+      "options": {
+        "field": "closure_gap",
+        "currency": "USD"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "currencyUSD",
+          "noValue": "SIN MUESTRA",
+          "decimals": 2
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 3,
+      "title": "Autorizado sin resoluci\u00f3n \u00b7 USD demo",
+      "type": "bankpulse-business-panel",
+      "gridPos": {
+        "x": 16,
+        "y": 0,
+        "w": 8,
+        "h": 5
+      },
+      "datasource": {
+        "type": "grafana",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "queryType": "measurements",
+          "channel": "stream/bankpulse/business"
+        }
+      ],
+      "options": {
+        "field": "unresolved_amount",
+        "currency": "USD"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "currencyUSD",
+          "noValue": "SIN MUESTRA",
+          "decimals": 2
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 4,
+      "title": "Eventos observados",
+      "type": "bankpulse-business-panel",
+      "gridPos": {
+        "x": 0,
+        "y": 5,
+        "w": 8,
+        "h": 5
+      },
+      "datasource": {
+        "type": "grafana",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "queryType": "measurements",
+          "channel": "stream/bankpulse/business"
+        }
+      ],
+      "options": {
+        "field": "event_count",
+        "currency": "USD"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "noValue": "SIN MUESTRA",
+          "decimals": 2
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 5,
+      "title": "Cobertura completa (1) / incompleta (0)",
+      "type": "bankpulse-business-panel",
+      "gridPos": {
+        "x": 8,
+        "y": 5,
+        "w": 8,
+        "h": 5
+      },
+      "datasource": {
+        "type": "grafana",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "queryType": "measurements",
+          "channel": "stream/bankpulse/business"
+        }
+      ],
+      "options": {
+        "field": "complete",
+        "currency": "USD"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "noValue": "SIN MUESTRA",
+          "decimals": 2
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 6,
+      "title": "Fuente fresca (1) / desactualizada (0)",
+      "type": "bankpulse-business-panel",
+      "gridPos": {
+        "x": 16,
+        "y": 5,
+        "w": 8,
+        "h": 5
+      },
+      "datasource": {
+        "type": "grafana",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "queryType": "measurements",
+          "channel": "stream/bankpulse/business"
+        }
+      ],
+      "options": {
+        "field": "fresh",
+        "currency": "USD"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "noValue": "SIN MUESTRA",
+          "decimals": 2
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 10,
+      "title": "Revisiones recibidas por Grafana Live",
+      "type": "table",
+      "gridPos": {
+        "x": 0,
+        "y": 10,
+        "w": 24,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "queryType": "measurements",
+          "channel": "stream/bankpulse/business"
+        }
+      ],
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      }
+    }
+  ],
+  "tags": [
+    "deber-01",
+    "reference",
+    "live"
+  ]
+}

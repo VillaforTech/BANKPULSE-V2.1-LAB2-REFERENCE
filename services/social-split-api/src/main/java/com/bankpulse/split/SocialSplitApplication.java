@@ -1,5 +1,12 @@
 package com.bankpulse.split;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@org.springframework.scheduling.annotation.EnableScheduling
 @SpringBootApplication
-public class SocialSplitApplication { public static void main(String[] args){SpringApplication.run(SocialSplitApplication.class,args);} }
+public class SocialSplitApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(SocialSplitApplication.class, args);
+  }
+}

@@ -11,3 +11,9 @@ creation.log
 # Local ADR validator tests
 __pycache__/
 *.pyc
+
+artifacts/
+**/__pycache__/
+.pytest_cache/
+node_modules/
+observability/.env

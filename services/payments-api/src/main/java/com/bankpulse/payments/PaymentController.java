@@ -19,34 +19,54 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class PaymentController {
-    private final PaymentService service;
-    private final PaymentRepository payments;
-    private final OutboxRepository outbox;
+  private final PaymentService service;
+  private final PaymentRepository payments;
+  private final OutboxRepository outbox;
 
-    public PaymentController(PaymentService service, PaymentRepository payments, OutboxRepository outbox) {
-        this.service = service;
-        this.payments = payments;
-        this.outbox = outbox;
-    }
+  public PaymentController(
+      PaymentService service, PaymentRepository payments, OutboxRepository outbox) {
+    this.service = service;
+    this.payments = payments;
+    this.outbox = outbox;
+  }
 
-    @PostMapping("/payments")
-    public ResponseEntity<Payment> create(
-            @RequestHeader("X-Idempotency-Key") @NotBlank String idempotencyKey,
-            @Valid @RequestBody PaymentRequest request) {
-        return ResponseEntity.ok(service.create(idempotencyKey, request));
-    }
+  @PostMapping("/payments")
+  public ResponseEntity<Payment> create(
+      @RequestHeader("X-Idempotency-Key") @NotBlank String idempotencyKey,
+      @Valid @RequestBody PaymentRequest request) {
+    return ResponseEntity.ok(service.create(idempotencyKey, request));
+  }
 
-    @GetMapping("/payments")
-    public List<Payment> list() { return payments.findTop50ByOrderByCreatedAtDesc(); }
+  @GetMapping("/payments")
+  public List<Payment> list() {
+    return payments.findTop50ByOrderByCreatedAtDesc();
+  }
 
-    @GetMapping("/outbox")
-    public Map<String, Object> outbox() {
-        List<OutboxEvent> pendingEvents = outbox.findTop50ByPublishedFalseOrderByCreatedAtAsc();
-        return Map.of("pending", outbox.countByPublishedFalse(), "events", pendingEvents);
-    }
+  @GetMapping("/outbox")
+  public Map<String, Object> outbox() {
+    List<OutboxEvent> pendingEvents = outbox.findTop50ByPublishedFalseOrderByCreatedAtAsc();
+    return Map.of("pending", outbox.countByPublishedFalse(), "events", pendingEvents);
+  }
 
-    public record PaymentRequest(
-            @NotBlank String account,
-            @NotNull @DecimalMin(value = "0.01") BigDecimal amount,
-            @NotBlank @Pattern(regexp = "[A-Za-z]{3}") String currency) {}
+  @org.springframework.web.bind.annotation.ExceptionHandler(IllegalStateException.class)
+  @org.springframework.web.bind.annotation.ResponseStatus(
+      org.springframework.http.HttpStatus.CONFLICT)
+  Map<String, String> conflict(Exception e) {
+    return Map.of("error", e.getMessage());
+  }
+
+  @org.springframework.web.bind.annotation.ExceptionHandler(IllegalArgumentException.class)
+  @org.springframework.web.bind.annotation.ResponseStatus(
+      org.springframework.http.HttpStatus.BAD_REQUEST)
+  Map<String, String> invalid(Exception e) {
+    return Map.of("error", e.getMessage());
+  }
+
+  public record PaymentRequest(
+      @NotBlank String account,
+      @NotNull
+          @DecimalMin(value = "0.01")
+          @jakarta.validation.constraints.Digits(integer = 17, fraction = 2)
+          BigDecimal amount,
+      @NotBlank @Pattern(regexp = "[A-Za-z]{3}") String currency) {}
 }

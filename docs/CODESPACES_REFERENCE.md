@@ -1,6 +1,6 @@
 # Reproducir la referencia en Codespaces
 
-Crear un Codespace desde **BANKPULSE-V2.1-LAB2-REFERENCE**, seleccionando la rama o el commit que se evalúa. Recursos objetivo: 4 CPU y 8 GB. No usar el repositorio compartido ni sus puertos. `postCreateCommand` construye; `postStartCommand` arranca. Puertos reenviados: 18080, 13000, 19090 y 18088; conservar visibilidad privada.
+Crear un Codespace desde **BANKPULSE-V2.1-LAB2-REFERENCE**, seleccionando la rama o el commit que se evalúa. El devcontainer declara Java 21, Node 22, Python 3.12, Docker-in-Docker y GitHub CLI. Recursos objetivo: 4 CPU y 8 GB. No usar el repositorio compartido ni sus puertos. `postCreateCommand` construye; `postStartCommand` arranca. Puertos reenviados: 18080, 13000, 19090 y 18088; conservar visibilidad privada.
 
 ```bash
 docker compose config --quiet

@@ -241,6 +241,7 @@ jobs:
         if: always()
         run: |
           mkdir -p artifacts/ci
+          python3 scripts/capture_business_state.py
           docker compose ps --all --format json > artifacts/ci/platform-status.json || true
           docker compose logs --no-color --tail=300 > artifacts/ci/platform.log 2>&1 || true
           docker compose -f observability/compose.yaml ps --all --format json > artifacts/ci/observability-status.json || true

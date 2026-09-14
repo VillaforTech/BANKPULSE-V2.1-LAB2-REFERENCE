@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;
 class SplitTransactionTest {
   @Autowired SplitService service;
   @Autowired SplitSessionRepository sessions;
+  @Autowired ObjectMapper mapper;
   @MockitoSpyBean SplitOutboxRepository outbox;
 
   @BeforeEach
@@ -44,8 +46,11 @@ class SplitTransactionTest {
   }
 
   @Test
-  void failedOutboxInsertRollsBackParticipantAndVersion() {
-    var created = service.create("DEMO", new BigDecimal("100.00"), "USD", "rollback", "test");
+  void failedOutboxInsertRollsBackParticipantAndVersion() throws Exception {
+    var created = service.create("DEMO", new BigDecimal("100.00"), "USD", "rollback", "  ");
+    var initialEvent = mapper.readTree(outbox.findAll().getFirst().getPayload());
+    assertFalse(initialEvent.path("eventId").asText().isBlank());
+    assertEquals(initialEvent.path("eventId"), initialEvent.path("correlationId"));
     long before = created.getAggregateVersion();
     doThrow(new IllegalStateException("injected outbox failure"))
         .when(outbox)

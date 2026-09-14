@@ -52,6 +52,23 @@ def fresh():
     return s if s["quality"]["status"] == "FRESH" else None
 
 
+def fresh_at_source(source):
+    # FRESH describes the last observed source watermark. A new API commit can
+    # precede that observation, so also require this test's committed watermark.
+    snapshot = fresh()
+    owner = call("/api/splits/outbox-status")
+    if (
+        snapshot
+        and owner["pending"] == 0
+        and owner["aggregateCount"] == source["aggregateCount"]
+        and owner["versionSum"] == source["versionSum"]
+        and snapshot["coverage"]["aggregateCount"] == source["aggregateCount"]
+        and snapshot["coverage"]["eventCount"] == source["versionSum"]
+    ):
+        return snapshot
+    return None
+
+
 def check(value, label):
     checks.append({"name": label, "passed": bool(value)})
     if not value:
@@ -81,8 +98,11 @@ try:
         {"paymentReference": "DEMO-REF"},
     )
     evidence["timerSession"] = s
-    initial = eventually(fresh)
+    initial_source = call("/api/splits/outbox-status")
+    evidence["initialSource"] = initial_source
+    initial = eventually(lambda: fresh_at_source(initial_source))
     evidence["initial"] = initial
+    evidence["initialSourceConverged"] = call("/api/splits/outbox-status")
     # Broker outage must not prevent committing a domain change and its outbox.
     compose("stop", "redpanda")
     during = call(
@@ -101,13 +121,14 @@ try:
         lambda: call("/api/business/snapshot")["quality"]["status"] != "FRESH", 10
     )
     compose("up", "-d", "--wait", "--wait-timeout", "60", "redpanda")
-    recovered = eventually(fresh, 45)
+    recovered = eventually(lambda: fresh_at_source(pending), 45)
+    evidence["brokerRecovered"] = recovered
+    evidence["recoveredSource"] = call("/api/splits/outbox-status")
     check(
         recovered["coverage"]["aggregateCount"]
         == initial["coverage"]["aggregateCount"] + 1,
         "broker recovery loses no aggregate",
     )
-    evidence["brokerRecovered"] = recovered
     before = recovered["coverage"]["eventCount"]
     compose("restart", "business-analytics")
     restarted = eventually(fresh, 40)

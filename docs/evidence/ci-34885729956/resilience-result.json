@@ -1,0 +1,120 @@
+{
+  "fixtureRunId": "resilience-c4ba38ca-8e57-486b-9263-7fba507deada",
+  "checks": [
+    {
+      "name": "commit survives broker outage in outbox",
+      "passed": true
+    },
+    {
+      "name": "broker recovery loses no aggregate",
+      "passed": false
+    },
+    {
+      "name": "resilience execution",
+      "passed": false,
+      "error": "AssertionError('broker recovery loses no aggregate')"
+    }
+  ],
+  "evidence": {
+    "timerSession": {
+      "id": "18046417-e913-4550-83dd-e0fa88f88978",
+      "aggregateVersion": 3,
+      "hostMemberId": "DEMO",
+      "totalAmount": 100.0,
+      "currency": "USD",
+      "status": "OPEN",
+      "fixtureRunId": "resilience-c4ba38ca-8e57-486b-9263-7fba507deada",
+      "lastEventId": "699d14a8-8b7f-48a5-9c21-154043c3244f",
+      "createdAt": "2026-09-14T19:21:01.328Z",
+      "closedAt": null,
+      "updatedAt": "2026-09-14T19:21:01.342Z",
+      "participants": [
+        {
+          "id": "a02b114d-d064-461a-9ad7-b13121480b15",
+          "memberId": "DEMO-1",
+          "shareAmount": 60.0,
+          "authorized": true,
+          "paymentReference": "DEMO-REF"
+        }
+      ]
+    },
+    "initial": {
+      "schemaVersion": 1,
+      "snapshotId": "792",
+      "revision": 792,
+      "computedAt": "2026-09-14T19:21:01.347853+00:00",
+      "sourceEventId": "6e7bbe09-ce2e-4a19-8ea6-46bdcd3b364f",
+      "watermark": {
+        "occurredAt": "2026-09-14T19:20:57.579Z",
+        "partitionOffsets": {
+          "0": 129
+        }
+      },
+      "quality": {
+        "status": "FRESH",
+        "reason": {
+          "gaps": 0,
+          "rejected": 0,
+          "lag": 0,
+          "outboxPending": 0,
+          "brokerOk": true
+        }
+      },
+      "coverage": {
+        "complete": true,
+        "aggregateCount": 107,
+        "eventCount": 129
+      },
+      "fixtureRunId": null,
+      "kpis": {
+        "USD": {
+          "B-K1": {
+            "value": 100.0,
+            "status": "OK",
+            "numerator": 2,
+            "denominator": 2,
+            "unit": "percent"
+          },
+          "B-K2": {
+            "value": "0.00",
+            "unit": "USD",
+            "status": "OK"
+          },
+          "B-K3": {
+            "value": "200.00",
+            "unit": "USD",
+            "status": "OK",
+            "backlogSessions": 5
+          }
+        }
+      },
+      "stream": {
+        "connected": true,
+        "error": null
+      }
+    },
+    "outage": {
+      "session": {
+        "id": "1d4d1091-07d8-4ec6-b2eb-623fb10ea09c",
+        "aggregateVersion": 1,
+        "hostMemberId": "OUTAGE-DEMO",
+        "totalAmount": 10.0,
+        "currency": "USD",
+        "status": "OPEN",
+        "fixtureRunId": "resilience-c4ba38ca-8e57-486b-9263-7fba507deada-outage",
+        "lastEventId": "8437c430-0dfe-4062-b3ab-e6293da63d3e",
+        "createdAt": "2026-09-14T19:21:01.703Z",
+        "closedAt": null,
+        "updatedAt": "2026-09-14T19:21:01.703Z",
+        "participants": []
+      },
+      "outbox": {
+        "pending": 1,
+        "total": 133,
+        "versionSum": 133,
+        "aggregateCount": 109
+      }
+    }
+  },
+  "passed": false
+}

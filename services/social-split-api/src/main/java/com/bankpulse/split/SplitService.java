@@ -87,7 +87,8 @@ public class SplitService {
     event.put("aggregateId", s.getId());
     event.put("aggregateVersion", s.getAggregateVersion());
     event.put("occurredAt", s.getUpdatedAt());
-    event.put("correlationId", correlation == null ? eventId : correlation);
+    event.put(
+        "correlationId", correlation == null || correlation.isBlank() ? eventId : correlation);
     event.put("fixtureRunId", s.getFixtureRunId());
     event.put("data", data);
     try {

@@ -6,7 +6,8 @@ const grafana = process.env.GRAFANA_URL || 'http://localhost:13000';
 const out = process.env.EVIDENCE_DIR || 'artifacts/browser';
 fs.mkdirSync(out, { recursive: true });
 const browser = await chromium.launch({ headless: true, ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}) });
-const context = await browser.newContext({ viewport: { width: 1500, height: 1150 } });
+// CI may inherit en-US@posix from the OS; Intl requires a valid BCP47 tag.
+const context = await browser.newContext({ locale: 'en-US', viewport: { width: 1500, height: 1150 } });
 const page = await context.newPage();
 const errors = [];
 const browserDiagnostics = { console: [], requests: [], websockets: [] };
@@ -108,7 +109,7 @@ try {
 } finally {
   const values = samples.filter(x => Number.isFinite(x.milliseconds)).map(x => x.milliseconds).sort((a, b) => a - b);
   const percentile = q => values[Math.max(0, Math.ceil(q * values.length) - 1)] ?? null;
-  const result = { fixtureRunId: run, connectionEvidence, browserDiagnostics, baseline, sourceBaseline, browserVersion: browser.version(), playwrightModule: process.env.PLAYWRIGHT_MODULE || "package-lock.json", requested: count, sent: samples.length, observed: values.length, lost: samples.filter(x => x.lost).length, errors: samples.filter(x => x.error).length, pageErrors: errors, p50: percentile(.5), p95: percentile(.95), maximum: values.at(-1), clock: 'performance.now() in the same Grafana page, before API dispatch to two animation frames after visible correlated FRESH render', samples };
+  const result = { fixtureRunId: run, connectionEvidence, browserDiagnostics, baseline, sourceBaseline, browserVersion: browser.version(), browserLocale: "en-US", playwrightModule: process.env.PLAYWRIGHT_MODULE || "package-lock.json", requested: count, sent: samples.length, observed: values.length, lost: samples.filter(x => x.lost).length, errors: samples.filter(x => x.error).length, pageErrors: errors, p50: percentile(.5), p95: percentile(.95), maximum: values.at(-1), clock: 'performance.now() in the same Grafana page, before API dispatch to two animation frames after visible correlated FRESH render', samples };
   fs.writeFileSync(path.join(out, 'latency.json'), JSON.stringify(result, null, 2));
   console.log(JSON.stringify({ ...result, samples: undefined }, null, 2));
   await browser.close();

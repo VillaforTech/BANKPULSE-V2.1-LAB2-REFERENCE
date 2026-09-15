@@ -1,8 +1,8 @@
 {
   "capturedAt": "2026-09-14T20:10:30.584054+00:00",
   "repository": "VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE",
-  "pr": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/pull/2",
-  "run": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085",
+  "pr": "https://github.com/VillaforTech/bankpulse-reference/pull/2",
+  "run": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085",
   "prHeadSha": "90745a4a58a84078b8557c0616dd8df5764ba2a6",
   "runHeadSha": "90745a4a58a84078b8557c0616dd8df5764ba2a6",
   "sameSha": true,
@@ -16,7 +16,7 @@
     {
       "name": "Release gate",
       "conclusion": "failure",
-      "url": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085/job/104128431035"
+      "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104128431035"
     }
   ],
   "requiredGateFailureAndBlockedPrObserved": true,

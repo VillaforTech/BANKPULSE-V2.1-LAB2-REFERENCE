@@ -61,7 +61,7 @@
           "status": "completed"
         }
       ],
-      "url": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085/job/104126398381"
+      "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104126398381"
     },
     {
       "completedAt": "2026-09-14T19:52:39Z",
@@ -248,7 +248,7 @@
           "status": "completed"
         }
       ],
-      "url": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085/job/104126441276"
+      "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104126441276"
     },
     {
       "completedAt": "2026-09-14T19:48:00Z",
@@ -347,7 +347,7 @@
           "status": "completed"
         }
       ],
-      "url": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085/job/104126441281"
+      "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104126441281"
     },
     {
       "completedAt": "2026-09-14T19:52:45Z",
@@ -390,10 +390,10 @@
           "status": "completed"
         }
       ],
-      "url": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085/job/104128431035"
+      "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104128431035"
     }
   ],
   "status": "completed",
-  "url": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085",
+  "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085",
   "workflowName": "BANKdragon V2.1 CI"
 }

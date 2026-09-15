@@ -37,13 +37,13 @@ Unit tests y laboratorio son independientes: un unit rojo no impide recoger salu
 
 ## 5. PR correcto y CI verde inicial
 
-[PR #1](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/pull/1), SHA `3fcfa686dcedf5b41ec6f0cf152ddcb7f21fccb0`: [run 34886628779](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34886628779) terminó con arquitectura, unitarias, laboratorio y Release gate en success. Smoke conserva `cmp`; negocio pasa 29/29, Java 10/10 (incluye dos rollback reales del outbox), panel 7/7, analítica/proyección 9/9 y resiliencia 8/8.
+[PR #1](https://github.com/VillaforTech/bankpulse-reference/pull/1), SHA `3fcfa686dcedf5b41ec6f0cf152ddcb7f21fccb0`: [run 34886628779](https://github.com/VillaforTech/bankpulse-reference/actions/runs/34886628779) terminó con arquitectura, unitarias, laboratorio y Release gate en success. Smoke conserva `cmp`; negocio pasa 29/29, Java 10/10 (incluye dos rollback reales del outbox), panel 7/7, analítica/proyección 9/9 y resiliencia 8/8.
 
 El navegador Ubuntu observó 100/100 eventos, sin pérdida ni error de muestra/página; p95 945,4 ms, máximo 1.931,9 ms y cuatro muestras ≥1 s. El criterio exige p95 ≤1 s. Ambos campos visibles conservan evento, revisión, calidad y valor esperados; B-K1 permanece en 100 durante esta carga. El timer de 120 s se observó 0,508 s después del límite en un snapshot ya persistido. [JSON, capturas y límites de esta medición](evidence/ci-green-34886628779/README.md).
 
 ## 6. PR con tecnología verde y negocio rojo
 
-[PR #2](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/pull/2), SHA rojo `90745a4a58a84078b8557c0616dd8df5764ba2a6`: [run 34888923085](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085). Nace del SHA sano `3fcfa68`; PR #1 todavía no estaba integrado, por lo que el diff contra main incluía la implementación previa. Contra la base sana, la mutación cambia una sola línea a `if (false && sum.compareTo(totalAmount) != 0)`. No cambia pruebas ni consumidor.
+[PR #2](https://github.com/VillaforTech/bankpulse-reference/pull/2), SHA rojo `90745a4a58a84078b8557c0616dd8df5764ba2a6`: [run 34888923085](https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085). Nace del SHA sano `3fcfa68`; PR #1 todavía no estaba integrado, por lo que el diff contra main incluía la implementación previa. Contra la base sana, la mutación cambia una sola línea a `if (false && sum.compareTo(totalAmount) != 0)`. No cambia pruebas ni consumidor.
 
 El business test registró cuatro fallos y JUnit dos: el agregado under `3aecd371-d131-4853-9570-e37bc11c9781` respondió 200 y persistió COMPLETED con total 100 y cuotas 60 + 30; over `7caf8ae1-9532-4950-b76b-bbeff445b540` hizo lo mismo con 60 + 50. Cada cohorte individual mostró B-K1 = 0% y B-K2 = 10,00. La consulta posterior, en el mismo SHA, confirmó los estados y seis servicios HTTP 200 / UP a las 19:52:31–32 UTC.
 
@@ -63,7 +63,7 @@ Payments: el fallo histórico era diferencia del JSON inicial y reintento. La im
 
 ## 9. Verificación posterior de la corrección y reproducción
 
-La corrección continúa en el [mismo PR #2](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/pull/2). Su cuerpo y checks identifican el SHA y el run posterior exactos una vez terminada la ejecución; este documento no anticipa un PASS. La integración requiere todos los checks verdes y se limita al código sano. La evidencia verde inicial y roja queda versionada; el artifact de la corrección se conserva además localmente.
+La corrección continúa en el [mismo PR #2](https://github.com/VillaforTech/bankpulse-reference/pull/2). Su cuerpo y checks identifican el SHA y el run posterior exactos una vez terminada la ejecución; este documento no anticipa un PASS. La integración requiere todos los checks verdes y se limita al código sano. La evidencia verde inicial y roja queda versionada; el artifact de la corrección se conserva además localmente.
 
 [Guía reproducible de Codespaces](CODESPACES.md): scripts reales de setup/start, observabilidad, puertos 18080/13000/19090, pruebas y parada. La [ejecución en Codespaces limpio](evidence/codespaces-20260915/README.md) pasó el 15 de septiembre en `7097e44040a4`: smoke, unitarias/persistencia, 29 controles de negocio, 100/100 renders con p95 358 ms y 8 controles de recuperación. Se guardó la evidencia y se retiró el entorno temporal; no se atribuye reproducción a otro integrante. El envío del deber y su recibo quedan separados de preparar o publicar esta referencia.
 

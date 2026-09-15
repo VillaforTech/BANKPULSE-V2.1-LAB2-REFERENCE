@@ -1,8 +1,8 @@
 {
   "repository": "VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE",
   "headSha": "90745a4a58a84078b8557c0616dd8df5764ba2a6",
-  "run": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/actions/runs/34888923085",
-  "pr": "https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/pull/2",
+  "run": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085",
+  "pr": "https://github.com/VillaforTech/bankpulse-reference/pull/2",
   "technicalSmokePassed": true,
   "contemporaneousHealthUp": true,
   "businessInvariantViolated": true,

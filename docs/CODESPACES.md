@@ -63,7 +63,7 @@ El smoke mantiene la comparación del pago idempotente. Negocio comprueba cierre
 
 Revisión manual: abrir la consola, elegir total USD 100 y tres participantes, autorizar las tres cuotas y cerrar. Deben mostrarse 33,34 + 33,33 + 33,33 y estado COMPLETED. En Grafana deben avanzar revisión y timestamp aunque el auto-refresh esté apagado; si faltan cobertura o heartbeats, los valores dejan de presentarse como vigentes.
 
-Guardar `artifacts/`, SHA, comandos, recursos, identidad de quien reprodujo y resultado. La reproducción del navegador humano debe incluir los enlaces privados, el panel realmente abierto y su conexión Live; no guardar credenciales ni tokens. [Evidencia y alcance del deber](deber-01.md).
+Guardar `artifacts/`, SHA, comandos, recursos, identidad de quien reprodujo y resultado. La reproducción del navegador humano debe incluir los enlaces privados, el panel realmente abierto y su conexión Live; no guardar credenciales ni tokens. [Evidencia y alcance de la validación](deber-01.md).
 
 ## Parar y reanudar
 

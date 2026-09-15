@@ -1,9 +1,12 @@
-# Security policy - teaching repository
+# Security policy
 
-This repository contains **demo credentials only**. Never reuse them outside the ephemeral lab.
+This BankPulse reference is a development environment built with synthetic data and local demo credentials. Do not reuse those credentials or expose the default stack to the public Internet.
 
-- Do not commit `.env`, access tokens, institutional credentials, certificates or real customer data.
-- Use GitHub Actions Secrets for registry credentials.
-- Keep database ports private in Codespaces; business traffic enters through the edge on port 8080.
-- Treat HMAC credentials in `travel-benefits-api` as a teaching primitive, not a production identity solution.
-- For production, replace local passwords with a secrets manager, enforce OIDC/mTLS, image signing and vulnerability scanning.
+- Never commit `.env`, access tokens, institutional credentials, certificates or real customer data.
+- Report a suspected vulnerability privately to the repository owner instead of opening an issue with exploit details.
+- Keep databases private; product traffic enters through the isolated Nginx edge.
+- Store registry credentials in GitHub Actions Secrets.
+- Treat the HMAC flow in `travel-benefits-api` as a demo credential mechanism, not production identity.
+- Before a public deployment, add managed secrets, OIDC or mTLS where appropriate, image signing, dependency and container scanning, rate limits, audit retention and data-protection review.
+
+Security improvements should include the threat, mitigation and a reproducible verification method.

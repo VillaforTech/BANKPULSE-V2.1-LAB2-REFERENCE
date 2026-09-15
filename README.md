@@ -2,7 +2,7 @@
 
 This repository is the complete engineering reference for BankPulse's Social Split flow. It turns a shared-expense operation into durable domain facts, a recoverable business projection and live Grafana indicators, then proves that the release process catches a business failure even when every service remains healthy.
 
-It complements the team-owned [BankPulse repository](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2). The code provides an executable integration target and evidence model; teammates review and adapt it through their own pull requests rather than receiving automatic contribution credit.
+It complements the team-owned [BankPulse repository](https://github.com/VillaforTech/bankpulse). The code provides an executable integration target and evidence model; teammates review and adapt it through their own pull requests rather than receiving automatic contribution credit.
 
 > Accounts, amounts, references and authorizations are synthetic. `ACCEPTED` represents a simulated payment workflow, not a real charge or financial settlement.
 

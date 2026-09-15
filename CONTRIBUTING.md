@@ -2,7 +2,7 @@
 
 This repository maintains an executable integration baseline for the team-owned BankPulse product. Contributions should preserve the complete Social Split story: confirmed business state, durable facts, recoverable analytics, live Grafana rendering and a release gate based on business correctness.
 
-The shared product work belongs in [BANKPULSE-V2.1-LAB2](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2). Use this repository to improve the reference, reproducibility or engineering documentation. Do not use a reference commit to claim another contributor completed a shared issue.
+The shared product work belongs in [BANKPULSE-V2.1-LAB2](https://github.com/VillaforTech/bankpulse). Use this repository to improve the reference, reproducibility or engineering documentation. Do not use a reference commit to claim another contributor completed a shared issue.
 
 ## Workflow
 

@@ -2,7 +2,7 @@
 
 Esta guía corresponde a [BANKPULSE-V2.1-LAB2-REFERENCE](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE). No hay que subir otra copia ni trabajar sobre el repositorio compartido. Los datos, cuentas y autorizaciones son demo; cada Codespace conserva sus propias bases y red.
 
-La reproducción en GitHub Codespaces está **pendiente de login y ejecución cloud**. Un CI verde o una prueba local del devcontainer no acredita que un integrante haya reproducido un Codespace.
+La reproducción completa en un Codespace limpio pasó el 15 de septiembre de 2026: [evidencia cloud](evidence/codespaces-20260915/README.md). Se verificaron 100/100 renders, p95 358 ms, negocio y recuperación. Esto acredita la ejecución asistida de Roberto; no la reproducción de otro integrante.
 
 ## Crear y arrancar
 

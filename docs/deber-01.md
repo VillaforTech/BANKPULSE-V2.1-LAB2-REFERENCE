@@ -65,7 +65,7 @@ Payments: el fallo histórico era diferencia del JSON inicial y reintento. La im
 
 La corrección continúa en el [mismo PR #2](https://github.com/VillaforTech/BANKPULSE-V2.1-LAB2-REFERENCE/pull/2). Su cuerpo y checks identifican el SHA y el run posterior exactos una vez terminada la ejecución; este documento no anticipa un PASS. La integración requiere todos los checks verdes y se limita al código sano. La evidencia verde inicial y roja queda versionada; el artifact de la corrección se conserva además localmente.
 
-[Guía reproducible de Codespaces](CODESPACES.md): scripts reales de setup/start, observabilidad, puertos 18080/13000/19090, pruebas y parada. La ejecución cloud y el acceso por los enlaces privados siguen pendientes de login y verificación; una prueba local del devcontainer no sustituye ese recorrido. El envío del deber y su recibo quedan separados de preparar o publicar esta referencia.
+[Guía reproducible de Codespaces](CODESPACES.md): scripts reales de setup/start, observabilidad, puertos 18080/13000/19090, pruebas y parada. La [ejecución en Codespaces limpio](evidence/codespaces-20260915/README.md) pasó el 15 de septiembre en `7097e44040a4`: smoke, unitarias/persistencia, 29 controles de negocio, 100/100 renders con p95 358 ms y 8 controles de recuperación. Se guardó la evidencia y se retiró el entorno temporal; no se atribuye reproducción a otro integrante. El envío del deber y su recibo quedan separados de preparar o publicar esta referencia.
 
 ## Extras y evidencia
 

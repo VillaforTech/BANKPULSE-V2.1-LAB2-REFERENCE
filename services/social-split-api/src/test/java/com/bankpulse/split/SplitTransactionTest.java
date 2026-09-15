@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;
 
 @SpringBootTest(
@@ -25,6 +26,8 @@ class SplitTransactionTest {
   @Autowired SplitSessionRepository sessions;
   @Autowired ObjectMapper mapper;
   @MockitoSpyBean SplitOutboxRepository outbox;
+  // Transaction rollback is isolated from the scheduled publisher; end-to-end tests cover delivery.
+  @MockitoBean SplitPublisher publisher;
 
   @BeforeEach
   void clear() {

@@ -251,6 +251,8 @@ def consume():
             "enable.auto.commit": False,
             "auto.offset.reset": "earliest",
             "enable.partition.eof": True,
+            # Single-event laboratory traffic: avoid long idle fetch batching.
+            "fetch.wait.max.ms": 50,
         }
     )
 
@@ -264,6 +266,39 @@ def consume():
         for p in partitions:
             p.offset = checkpoints.get(p.partition, 0)
         c.assign(partitions)
+
+    def refresh_coverage():
+        assignments = consumer.assignment()
+        lag = 0
+        with connection() as db:
+            durable_offsets = dict(
+                db.execute(
+                    "SELECT partition_id,offset_value FROM checkpoints"
+                ).fetchall()
+            )
+        for position in consumer.position(assignments):
+            low, high = consumer.get_watermark_offsets(position, timeout=2)
+            current = effective_offset(
+                position.offset,
+                durable_offsets.get(position.partition, 0),
+                low,
+                high,
+            )
+            lag += high - current
+        source = http.get(
+            os.getenv("SOURCE_URL", "http://social-split-api:8086")
+            + "/api/splits/outbox-status",
+            timeout=2,
+        ).json()
+        with lock:
+            state.update(
+                brokerOk=bool(assignments),
+                lag=lag if assignments else None,
+                lastPoll=time.time(),
+                sourcePending=source["pending"],
+                sourceCount=source["aggregateCount"],
+                sourceVersions=source["versionSum"],
+            )
 
     consumer.subscribe([TOPIC], on_assign=assigned)
     next_health = 0
@@ -281,42 +316,16 @@ def consume():
                         continue
                     consumer.commit(message=msg, asynchronous=False)
                     if inserted:
+                        # Confirm durable offsets and the independent source before publishing.
+                        # Never advertise completeness from the previous event's counts.
+                        refresh_coverage()
+                        next_health = time.time() + 0.2
                         with publish_lock:
                             publish_live(snapshot(persist=True))
                 if time.time() > next_health:
-                    next_health = time.time() + 0.5
-                    assignments = consumer.assignment()
-                    lag = 0
-                    with connection() as db:
-                        durable_offsets = dict(
-                            db.execute(
-                                "SELECT partition_id,offset_value FROM checkpoints"
-                            ).fetchall()
-                        )
-                    for position in consumer.position(assignments):
-                        low, high = consumer.get_watermark_offsets(position, timeout=2)
-                        current = effective_offset(
-                            position.offset,
-                            durable_offsets.get(position.partition, 0),
-                            low,
-                            high,
-                        )
-                        lag += high - current
-                    source = http.get(
-                        os.getenv("SOURCE_URL", "http://social-split-api:8086")
-                        + "/api/splits/outbox-status",
-                        timeout=2,
-                    ).json()
-                    with lock:
-                        state.update(
-                            brokerOk=bool(assignments),
-                            lag=lag if assignments else None,
-                            lastPoll=time.time(),
-                            sourcePending=source["pending"],
-                            sourceCount=source["aggregateCount"],
-                            sourceVersions=source["versionSum"],
-                        )
-                    next_health = time.time() + 0.5
+                    next_health = time.time() + 0.2
+                    refresh_coverage()
+                    next_health = time.time() + 0.2
             except Exception as e:
                 with lock:
                     state.update(brokerOk=False)

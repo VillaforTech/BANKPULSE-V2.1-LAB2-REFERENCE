@@ -1,4 +1,4 @@
-name: bankpulse-v2
+name: bankpulse-reference
 
 services:
   mariadb:
@@ -9,7 +9,7 @@ services:
       MARIADB_PASSWORD: ${MARIADB_PASSWORD:-bankpulse_local}
       MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-root_local_only}
     volumes: [mariadb-data:/var/lib/mysql]
-    ports: ["127.0.0.1:3306:3306"]
+
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       interval: 5s
@@ -23,7 +23,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME:-root}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-mongo_local}
     volumes: [mongo-data:/data/db]
-    ports: ["127.0.0.1:27017:27017"]
+
     healthcheck:
       test: ["CMD-SHELL", "mongosh --quiet --eval 'db.adminCommand({ ping: 1 }).ok' -u $$MONGO_INITDB_ROOT_USERNAME -p $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin | grep 1"]
       interval: 5s
@@ -40,7 +40,7 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
       - ./infra/postgres-init:/docker-entrypoint-initdb.d:ro
-    ports: ["127.0.0.1:5432:5432"]
+
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
       interval: 5s
@@ -60,8 +60,10 @@ services:
     networks: [bankpulse]
 
   audit-api:
+    mem_limit: 384m
     build: ./services/audit-api
     environment:
+      JAVA_TOOL_OPTIONS: -Xms64m -Xmx220m
       SPRING_DATA_MONGODB_URI: mongodb://${MONGO_ROOT_USERNAME:-root}:${MONGO_ROOT_PASSWORD:-mongo_local}@mongo:27017/audit?authSource=admin
     depends_on:
       mongo: {condition: service_healthy}
@@ -73,8 +75,10 @@ services:
     networks: [bankpulse]
 
   payments-api:
+    mem_limit: 384m
     build: ./services/payments-api
     environment:
+      JAVA_TOOL_OPTIONS: -Xms64m -Xmx220m
       SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/${MARIADB_DATABASE:-bankpulse}
       SPRING_DATASOURCE_USERNAME: ${MARIADB_USER:-bankpulse}
       SPRING_DATASOURCE_PASSWORD: ${MARIADB_PASSWORD:-bankpulse_local}
@@ -90,8 +94,10 @@ services:
     networks: [bankpulse]
 
   experiences-api:
+    mem_limit: 384m
     build: ./services/experiences-api
     environment:
+      JAVA_TOOL_OPTIONS: -Xms64m -Xmx220m
       SPRING_DATA_MONGODB_URI: mongodb://${MONGO_ROOT_USERNAME:-root}:${MONGO_ROOT_PASSWORD:-mongo_local}@mongo:27017/experiences?authSource=admin
     depends_on:
       mongo: {condition: service_healthy}
@@ -103,8 +109,10 @@ services:
     networks: [bankpulse]
 
   travel-benefits-api:
+    mem_limit: 384m
     build: ./services/travel-benefits-api
     environment:
+      JAVA_TOOL_OPTIONS: -Xms64m -Xmx220m
       SPRING_DATA_MONGODB_URI: mongodb://${MONGO_ROOT_USERNAME:-root}:${MONGO_ROOT_PASSWORD:-mongo_local}@mongo:27017/travel?authSource=admin
       TRAVEL_CREDENTIAL_SECRET: ${TRAVEL_CREDENTIAL_SECRET:-bankpulse-local-demo-secret}
     depends_on:
@@ -117,8 +125,10 @@ services:
     networks: [bankpulse]
 
   events-api:
+    mem_limit: 384m
     build: ./services/events-api
     environment:
+      JAVA_TOOL_OPTIONS: -Xms64m -Xmx220m
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-bankpulse_domains}?currentSchema=events
       SPRING_DATASOURCE_USERNAME: events_owner
       SPRING_DATASOURCE_PASSWORD: ${EVENTS_DB_PASSWORD:-events_local}
@@ -135,9 +145,12 @@ services:
     networks: [bankpulse]
 
   social-split-api:
+    mem_limit: 384m
     build: ./services/social-split-api
     environment:
+      JAVA_TOOL_OPTIONS: -Xms64m -Xmx220m
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-bankpulse_domains}?currentSchema=social_split
+      KAFKA_BOOTSTRAP_SERVERS: redpanda:9092
       SPRING_DATASOURCE_USERNAME: split_owner
       SPRING_DATASOURCE_PASSWORD: ${SPLIT_DB_PASSWORD:-split_local}
     depends_on:
@@ -149,9 +162,38 @@ services:
       retries: 20
     networks: [bankpulse]
 
+  redpanda:
+    image: docker.redpanda.com/redpandadata/redpanda:v24.3.7
+    command: [redpanda, start, --mode, dev-container, --smp, "1", --memory, 512M, --reserve-memory, 0M, --node-id, "0", --check=false, --kafka-addr, 0.0.0.0:9092, --advertise-kafka-addr, redpanda:9092]
+    mem_limit: 768m
+    volumes: [redpanda-data:/var/lib/redpanda/data]
+    healthcheck:
+      test: [CMD, rpk, cluster, health, --exit-when-healthy]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    networks: [bankpulse]
+  business-analytics:
+    build: ./services/business-analytics
+    mem_limit: 256m
+    environment:
+      ANALYTICS_DSN: postgresql://analytics_owner:analytics_reference_local@postgres:5432/bankpulse_domains?options=-csearch_path%3Dbusiness_analytics
+      KAFKA_BOOTSTRAP_SERVERS: redpanda:9092
+      GRAFANA_URL: http://grafana:3000
+      GRAFANA_PASSWORD: bankpulse_demo
+    depends_on:
+      postgres: {condition: service_healthy}
+      redpanda: {condition: service_healthy}
+      social-split-api: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8087/health')"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    networks: [bankpulse]
   console:
     build: ./frontend
-    ports: ["8080:8080"]
+    ports: ["127.0.0.1:${BANKPULSE_PORT:-18080}:8080"]
     depends_on:
       payments-api: {condition: service_healthy}
       audit-api: {condition: service_healthy}
@@ -163,7 +205,7 @@ services:
 
 networks:
   bankpulse:
-    name: bankpulse-network
+    name: bankpulse-reference-network
     driver: bridge
 
 volumes:
@@ -171,3 +213,4 @@ volumes:
   mongo-data:
   postgres-data:
   redis-data:
+  redpanda-data:

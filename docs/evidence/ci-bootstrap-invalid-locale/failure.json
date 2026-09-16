@@ -1,0 +1,16 @@
+{
+  "phase": "grafana-bootstrap",
+  "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('[data-bankpulse-panel=\"event_count\"]') to be visible\n",
+  "stack": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('[data-bankpulse-panel=\"event_count\"]') to be visible\n\n    at /home/runner/work/BANKPULSE-V2.1-LAB2-REFERENCE/BANKPULSE-V2.1-LAB2-REFERENCE/scripts/browser-test.mjs:47:60",
+  "url": "http://localhost:13000/d/bankpulse-business",
+  "observedAt": "2026-09-14T19:12:50.526Z",
+  "pageErrors": [
+    "Invalid language tag: en-US@posix"
+  ],
+  "browserDiagnostics": {
+    "console": [],
+    "requests": [],
+    "websockets": []
+  },
+  "body": "If you're seeing this Grafana has failed to load its application files\nThis could be caused by your reverse proxy settings.\nIf you host grafana under a subpath make sure your grafana.ini root_url setting includes subpath. If not using a reverse proxy make sure to set serve_from_sub_path to true.\nIf you have a local dev build make sure you build frontend using: yarn start, or yarn build.\nSometimes restarting grafana-server can help.\nCheck if you are using a non-supported browser. For more information, refer to the list of supported browsers ."
+}

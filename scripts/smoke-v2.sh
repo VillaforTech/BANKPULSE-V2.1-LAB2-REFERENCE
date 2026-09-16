@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-base_url="${BANKPULSE_URL:-http://localhost:8080}"
+base_url="${BANKPULSE_URL:-http://localhost:18080}"
 
 echo "[V2 1/6] Health checks de seis microservicios"
 for service in payments audit experiences travel events social-split; do
@@ -22,6 +22,8 @@ echo "$hold" | grep -q '"seatId":"A-12"'
 curl -fsS "$base_url/api/events/$event_id/holds" | grep -q '"seatId":"A-12"'
 http_code="$(curl -sS -o /tmp/second-hold.out -w '%{http_code}' -X POST "$base_url/api/events/$event_id/holds" -H 'Content-Type: application/json' -d '{"seatId":"A-12","memberId":"MEMBER-002"}')"
 test "$http_code" = "409"
+hold_id="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["holdId"])' <<<"$hold")"
+curl -fsS -X DELETE "$base_url/api/events/$event_id/holds/$hold_id?seatId=A-12" >/dev/null
 
 echo "[V2 5/6] Social Split lifecycle"
 split="$(curl -fsS -X POST "$base_url/api/splits" -H 'Content-Type: application/json' -d '{"hostMemberId":"MEMBER-001","totalAmount":100.00,"currency":"USD"}')"

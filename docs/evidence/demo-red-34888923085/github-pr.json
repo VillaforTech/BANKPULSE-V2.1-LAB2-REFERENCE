@@ -1,0 +1,55 @@
+{
+  "baseRefName": "main",
+  "headRefName": "codex/demo-falso-verde",
+  "headRefOid": "90745a4a58a84078b8557c0616dd8df5764ba2a6",
+  "isDraft": false,
+  "mergeStateStatus": "BLOCKED",
+  "mergeable": "MERGEABLE",
+  "number": 2,
+  "reviewDecision": "",
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-09-14T19:46:37Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104126398381",
+      "name": "Architecture contract",
+      "startedAt": "2026-09-14T19:46:32Z",
+      "status": "COMPLETED",
+      "workflowName": "BANKdragon V2.1 CI"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-09-14T19:48:00Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104126441281",
+      "name": "Unit tests",
+      "startedAt": "2026-09-14T19:46:39Z",
+      "status": "COMPLETED",
+      "workflowName": "BANKdragon V2.1 CI"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-09-14T19:52:39Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104126441276",
+      "name": "Build, integration and observability",
+      "startedAt": "2026-09-14T19:46:39Z",
+      "status": "COMPLETED",
+      "workflowName": "BANKdragon V2.1 CI"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-09-14T19:52:45Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104128431035",
+      "name": "Release gate",
+      "startedAt": "2026-09-14T19:52:41Z",
+      "status": "COMPLETED",
+      "workflowName": "BANKdragon V2.1 CI"
+    }
+  ],
+  "title": "Demostrar y corregir cierre inválido con Release gate bloqueado",
+  "url": "https://github.com/VillaforTech/bankpulse-reference/pull/2"
+}

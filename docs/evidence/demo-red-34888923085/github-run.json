@@ -1,0 +1,399 @@
+{
+  "conclusion": "failure",
+  "databaseId": 34888923085,
+  "event": "pull_request",
+  "headSha": "90745a4a58a84078b8557c0616dd8df5764ba2a6",
+  "jobs": [
+    {
+      "completedAt": "2026-09-14T19:46:37Z",
+      "conclusion": "success",
+      "databaseId": 104126398381,
+      "name": "Architecture contract",
+      "startedAt": "2026-09-14T19:46:32Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-09-14T19:46:33Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-09-14T19:46:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:34Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-09-14T19:46:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:34Z",
+          "conclusion": "success",
+          "name": "Validate architecture decisions and tooling",
+          "number": 3,
+          "startedAt": "2026-09-14T19:46:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:35Z",
+          "conclusion": "success",
+          "name": "Validate existing platform assets and reference deliverables",
+          "number": 4,
+          "startedAt": "2026-09-14T19:46:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:35Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 8,
+          "startedAt": "2026-09-14T19:46:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:35Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 9,
+          "startedAt": "2026-09-14T19:46:35Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104126398381"
+    },
+    {
+      "completedAt": "2026-09-14T19:52:39Z",
+      "conclusion": "failure",
+      "databaseId": 104126441276,
+      "name": "Build, integration and observability",
+      "startedAt": "2026-09-14T19:46:39Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-09-14T19:46:43Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-09-14T19:46:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:44Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-09-14T19:46:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:48Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 3,
+          "startedAt": "2026-09-14T19:46:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:48Z",
+          "conclusion": "success",
+          "name": "Record clean-run provenance",
+          "number": 4,
+          "startedAt": "2026-09-14T19:46:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:49:12Z",
+          "conclusion": "success",
+          "name": "Build platform containers",
+          "number": 5,
+          "startedAt": "2026-09-14T19:46:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:50:08Z",
+          "conclusion": "success",
+          "name": "Deploy and require every service readiness check",
+          "number": 6,
+          "startedAt": "2026-09-14T19:49:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:50:21Z",
+          "conclusion": "success",
+          "name": "Start and verify Prometheus and Grafana",
+          "number": 7,
+          "startedAt": "2026-09-14T19:50:08Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:50:21Z",
+          "conclusion": "success",
+          "name": "Validate interactive edge UI",
+          "number": 8,
+          "startedAt": "2026-09-14T19:50:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:50:24Z",
+          "conclusion": "success",
+          "name": "Preserve existing platform and payment regression smoke",
+          "number": 9,
+          "startedAt": "2026-09-14T19:50:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:50:27Z",
+          "conclusion": "success",
+          "name": "Verify projection transactions in an isolated PostgreSQL schema",
+          "number": 10,
+          "startedAt": "2026-09-14T19:50:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:50:30Z",
+          "conclusion": "failure",
+          "name": "Test business promises with independent persisted observations",
+          "number": 11,
+          "startedAt": "2026-09-14T19:50:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:50:56Z",
+          "conclusion": "success",
+          "name": "Install browser test runtime",
+          "number": 12,
+          "startedAt": "2026-09-14T19:50:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:31Z",
+          "conclusion": "success",
+          "name": "Verify actual Grafana Live render, loss and reconnection",
+          "number": 13,
+          "startedAt": "2026-09-14T19:50:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:31Z",
+          "conclusion": "skipped",
+          "name": "Verify replay, outages, restart and timers without traffic",
+          "number": 14,
+          "startedAt": "2026-09-14T19:52:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:31Z",
+          "conclusion": "failure",
+          "name": "Reject failed, skipped or incomplete acceptance evidence",
+          "number": 15,
+          "startedAt": "2026-09-14T19:52:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:32Z",
+          "conclusion": "success",
+          "name": "Capture diagnostics before teardown on success or failure",
+          "number": 16,
+          "startedAt": "2026-09-14T19:52:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:34Z",
+          "conclusion": "success",
+          "name": "Preserve business, recovery and browser evidence",
+          "number": 17,
+          "startedAt": "2026-09-14T19:52:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:35Z",
+          "conclusion": "success",
+          "name": "Stop observability after evidence capture",
+          "number": 18,
+          "startedAt": "2026-09-14T19:52:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:36Z",
+          "conclusion": "success",
+          "name": "Stop isolated reference platform",
+          "number": 19,
+          "startedAt": "2026-09-14T19:52:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:36Z",
+          "conclusion": "skipped",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 37,
+          "startedAt": "2026-09-14T19:52:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:36Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 38,
+          "startedAt": "2026-09-14T19:52:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:36Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 39,
+          "startedAt": "2026-09-14T19:52:36Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104126441276"
+    },
+    {
+      "completedAt": "2026-09-14T19:48:00Z",
+      "conclusion": "failure",
+      "databaseId": 104126441281,
+      "name": "Unit tests",
+      "startedAt": "2026-09-14T19:46:39Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-09-14T19:46:41Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-09-14T19:46:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:42Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-09-14T19:46:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:42Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 3,
+          "startedAt": "2026-09-14T19:46:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:46:42Z",
+          "conclusion": "success",
+          "name": "Record tested commit",
+          "number": 4,
+          "startedAt": "2026-09-14T19:46:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:47:01Z",
+          "conclusion": "success",
+          "name": "Build analytics test runtime",
+          "number": 5,
+          "startedAt": "2026-09-14T19:46:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:47:57Z",
+          "conclusion": "failure",
+          "name": "Execute domain and analytics unit tests",
+          "number": 6,
+          "startedAt": "2026-09-14T19:47:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:47:57Z",
+          "conclusion": "skipped",
+          "name": "Require actual Java test execution",
+          "number": 7,
+          "startedAt": "2026-09-14T19:47:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:47:58Z",
+          "conclusion": "success",
+          "name": "Preserve unit test evidence",
+          "number": 8,
+          "startedAt": "2026-09-14T19:47:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:47:58Z",
+          "conclusion": "skipped",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 15,
+          "startedAt": "2026-09-14T19:47:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:47:58Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "startedAt": "2026-09-14T19:47:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:47:58Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-09-14T19:47:58Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104126441281"
+    },
+    {
+      "completedAt": "2026-09-14T19:52:45Z",
+      "conclusion": "failure",
+      "databaseId": 104128431035,
+      "name": "Release gate",
+      "startedAt": "2026-09-14T19:52:41Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-09-14T19:52:43Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-09-14T19:52:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:43Z",
+          "conclusion": "failure",
+          "name": "Require every independent stage to succeed",
+          "number": 2,
+          "startedAt": "2026-09-14T19:52:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:44Z",
+          "conclusion": "success",
+          "name": "Preserve gate decision",
+          "number": 3,
+          "startedAt": "2026-09-14T19:52:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-14T19:52:44Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 4,
+          "startedAt": "2026-09-14T19:52:44Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085/job/104128431035"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085",
+  "workflowName": "BANKdragon V2.1 CI"
+}

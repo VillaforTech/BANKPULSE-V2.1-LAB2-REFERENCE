@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-base_url="${BANKPULSE_URL:-http://localhost:8080}"
-payment_key="smoke-$(date +%s)"
+base_url="${BANKPULSE_URL:-http://localhost:18080}"
+payment_key="smoke-$(python3 -c 'import uuid; print(uuid.uuid4())')"
 
 echo "[1/4] Verificando APIs"
 curl -fsS "$base_url/health/payments" >/dev/null
@@ -19,6 +19,8 @@ curl -fsS -X POST "$base_url/api/payments" \
   -H 'Content-Type: application/json' \
   -H "X-Idempotency-Key: $payment_key" \
   -d '{"account":"EC-4242","amount":27.50,"currency":"USD"}' >/tmp/bankpulse-payment-retry.json
+mkdir -p "${EVIDENCE_DIR:-artifacts/smoke}"
+cp /tmp/bankpulse-payment{,-retry}.json "${EVIDENCE_DIR:-artifacts/smoke}/"
 cmp /tmp/bankpulse-payment.json /tmp/bankpulse-payment-retry.json
 
 echo "[4/4] Esperando publicación del outbox"

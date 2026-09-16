@@ -1,0 +1,12 @@
+[V2 1/6] Health checks de seis microservicios
+[V2 2/6] Experiences API
+[V2 3/6] Travel eligibility + signed credential
+[V2 4/6] Events API + Redis seat hold
+[V2 5/6] Social Split lifecycle
+[V2 6/6] Core payment/outbox regression
+[1/4] Verificando APIs
+[2/4] Creando pago idempotente
+[3/4] Reintentando la misma solicitud
+[4/4] Esperando publicación del outbox
+Smoke test OK
+BANKdragon V2.1 interactive smoke test OK

@@ -1,14 +1,61 @@
 package com.bankpulse.split;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-@Entity @Table(name="split_participants")
+import java.util.UUID;
+
+@Entity
+@Table(
+    name = "split_participants",
+    uniqueConstraints = @UniqueConstraint(columnNames = {"session_id", "memberId"}))
 public class SplitParticipant {
-  @Id @GeneratedValue(strategy=GenerationType.UUID) private String id;
-  @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="session_id") @JsonIgnore private SplitSession session;
-  private String memberId; private BigDecimal shareAmount; private boolean authorized; private String paymentReference;
-  protected SplitParticipant(){}
-  SplitParticipant(SplitSession session,String memberId,BigDecimal shareAmount){this.session=session;this.memberId=memberId;this.shareAmount=shareAmount;}
-  public String getId(){return id;} public String getMemberId(){return memberId;} public BigDecimal getShareAmount(){return shareAmount;} public boolean isAuthorized(){return authorized;} public String getPaymentReference(){return paymentReference;}
-  public void authorize(String paymentReference){this.authorized=true;this.paymentReference=paymentReference;}
+  @Id private String id;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "session_id")
+  @JsonIgnore
+  private SplitSession session;
+
+  private String memberId;
+
+  @Column(precision = 19, scale = 2, nullable = false)
+  private BigDecimal shareAmount;
+
+  private boolean authorized;
+  private String paymentReference;
+
+  protected SplitParticipant() {}
+
+  SplitParticipant(SplitSession session, String member, BigDecimal amount) {
+    this.id = UUID.randomUUID().toString();
+    this.session = session;
+    this.memberId = member;
+    this.shareAmount = amount;
+  }
+
+  void authorize(String reference) {
+    this.authorized = true;
+    this.paymentReference = reference;
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public String getMemberId() {
+    return memberId;
+  }
+
+  public BigDecimal getShareAmount() {
+    return shareAmount;
+  }
+
+  public boolean isAuthorized() {
+    return authorized;
+  }
+
+  public String getPaymentReference() {
+    return paymentReference;
+  }
 }

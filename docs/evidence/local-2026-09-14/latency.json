@@ -1,0 +1,2678 @@
+{
+  "fixtureRunId": "browser-3a63732e-7684-48f6-b34b-ce8f24071040",
+  "baseline": {
+    "schemaVersion": 1,
+    "snapshotId": "5831",
+    "revision": 5831,
+    "computedAt": "2026-09-14T18:54:32.196642+00:00",
+    "sourceEventId": "aebeceaf-9baa-469d-a9d7-d84ac516a6d4",
+    "watermark": {
+      "occurredAt": "2026-09-14T18:54:29.455Z",
+      "partitionOffsets": {
+        "0": 195
+      }
+    },
+    "quality": {
+      "status": "FRESH",
+      "reason": {
+        "gaps": 0,
+        "rejected": 0,
+        "lag": 0,
+        "outboxPending": 0,
+        "brokerOk": true
+      }
+    },
+    "coverage": {
+      "complete": true,
+      "aggregateCount": 127,
+      "eventCount": 194
+    },
+    "fixtureRunId": null,
+    "kpis": {
+      "USD": {
+        "B-K1": {
+          "value": 100,
+          "status": "OK",
+          "numerator": 3,
+          "denominator": 3,
+          "unit": "percent"
+        },
+        "B-K2": {
+          "value": "0.00",
+          "unit": "USD",
+          "status": "OK"
+        },
+        "B-K3": {
+          "value": "520.00",
+          "unit": "USD",
+          "status": "OK",
+          "backlogSessions": 116
+        }
+      }
+    },
+    "stream": {
+      "connected": true,
+      "error": null
+    }
+  },
+  "sourceBaseline": {
+    "total": 194,
+    "versionSum": 194,
+    "aggregateCount": 127,
+    "pending": 0
+  },
+  "browserVersion": "152.0.7977.84",
+  "playwrightModule": "/Users/villafuertech/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs",
+  "requested": 100,
+  "sent": 100,
+  "observed": 100,
+  "lost": 0,
+  "errors": 0,
+  "pageErrors": [],
+  "p50": 848.1999999880791,
+  "p95": 915.5,
+  "maximum": 1116.300000011921,
+  "clock": "performance.now() in the same Grafana page, before API dispatch to two animation frames after visible correlated FRESH render",
+  "samples": [
+    {
+      "i": 0,
+      "aggregateId": "eea4545b-715f-43b9-b294-22476f6b2098",
+      "eventId": "a371bbdf-e968-48ec-a96a-0320fd472012",
+      "expectedCount": 195,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "195\nVIGENTE\nRevisión 5836 · eventos 195\nEvento a371bbdf-e968-48ec-a96a-0320fd472012\n2026-09-14T18:54:33.002239+00:00",
+          "value": "195",
+          "revision": "5836",
+          "quality": "VIGENTE",
+          "eventId": "a371bbdf-e968-48ec-a96a-0320fd472012"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5836 · eventos 195\nEvento a371bbdf-e968-48ec-a96a-0320fd472012\n2026-09-14T18:54:33.002239+00:00",
+          "value": "100",
+          "revision": "5836",
+          "quality": "VIGENTE",
+          "eventId": "a371bbdf-e968-48ec-a96a-0320fd472012"
+        }
+      },
+      "start": 2225.5,
+      "end": 2985.400000035763,
+      "milliseconds": 759.9000000357628
+    },
+    {
+      "i": 1,
+      "aggregateId": "6356587d-f24a-4527-a24b-6f8b40b6a28e",
+      "eventId": "867392bf-3932-4057-9c69-1b26506e623c",
+      "expectedCount": 196,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "196\nVIGENTE\nRevisión 5841 · eventos 196\nEvento 867392bf-3932-4057-9c69-1b26506e623c\n2026-09-14T18:54:33.856381+00:00",
+          "value": "196",
+          "revision": "5841",
+          "quality": "VIGENTE",
+          "eventId": "867392bf-3932-4057-9c69-1b26506e623c"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5841 · eventos 196\nEvento 867392bf-3932-4057-9c69-1b26506e623c\n2026-09-14T18:54:33.856381+00:00",
+          "value": "100",
+          "revision": "5841",
+          "quality": "VIGENTE",
+          "eventId": "867392bf-3932-4057-9c69-1b26506e623c"
+        }
+      },
+      "start": 2987,
+      "end": 3851.900000035763,
+      "milliseconds": 864.9000000357628
+    },
+    {
+      "i": 2,
+      "aggregateId": "0db4b737-070c-4466-985d-09bef27a6345",
+      "eventId": "04dcd05f-1a07-4ef8-a181-e988cc8b58a5",
+      "expectedCount": 197,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "197\nVIGENTE\nRevisión 5846 · eventos 197\nEvento 04dcd05f-1a07-4ef8-a181-e988cc8b58a5\n2026-09-14T18:54:34.712637+00:00",
+          "value": "197",
+          "revision": "5846",
+          "quality": "VIGENTE",
+          "eventId": "04dcd05f-1a07-4ef8-a181-e988cc8b58a5"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5846 · eventos 197\nEvento 04dcd05f-1a07-4ef8-a181-e988cc8b58a5\n2026-09-14T18:54:34.712637+00:00",
+          "value": "100",
+          "revision": "5846",
+          "quality": "VIGENTE",
+          "eventId": "04dcd05f-1a07-4ef8-a181-e988cc8b58a5"
+        }
+      },
+      "start": 3858.400000035763,
+      "end": 4684.800000011921,
+      "milliseconds": 826.3999999761581
+    },
+    {
+      "i": 3,
+      "aggregateId": "6fc73863-b2d7-4e68-9261-78e218c7f420",
+      "eventId": "7eb322ee-6ed4-4b38-926c-8b3ccf499614",
+      "expectedCount": 198,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "198\nVIGENTE\nRevisión 5851 · eventos 198\nEvento 7eb322ee-6ed4-4b38-926c-8b3ccf499614\n2026-09-14T18:54:35.542439+00:00",
+          "value": "198",
+          "revision": "5851",
+          "quality": "VIGENTE",
+          "eventId": "7eb322ee-6ed4-4b38-926c-8b3ccf499614"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5851 · eventos 198\nEvento 7eb322ee-6ed4-4b38-926c-8b3ccf499614\n2026-09-14T18:54:35.542439+00:00",
+          "value": "100",
+          "revision": "5851",
+          "quality": "VIGENTE",
+          "eventId": "7eb322ee-6ed4-4b38-926c-8b3ccf499614"
+        }
+      },
+      "start": 4686.400000035763,
+      "end": 5534.300000011921,
+      "milliseconds": 847.8999999761581
+    },
+    {
+      "i": 4,
+      "aggregateId": "22b2ba5d-3f54-4f86-96fe-bb506f031ae8",
+      "eventId": "d25667a2-b35a-4a5b-aa77-5f40c8d4fffd",
+      "expectedCount": 199,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "199\nVIGENTE\nRevisión 5856 · eventos 199\nEvento d25667a2-b35a-4a5b-aa77-5f40c8d4fffd\n2026-09-14T18:54:36.362300+00:00",
+          "value": "199",
+          "revision": "5856",
+          "quality": "VIGENTE",
+          "eventId": "d25667a2-b35a-4a5b-aa77-5f40c8d4fffd"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5856 · eventos 199\nEvento d25667a2-b35a-4a5b-aa77-5f40c8d4fffd\n2026-09-14T18:54:36.362300+00:00",
+          "value": "100",
+          "revision": "5856",
+          "quality": "VIGENTE",
+          "eventId": "d25667a2-b35a-4a5b-aa77-5f40c8d4fffd"
+        }
+      },
+      "start": 5536.5,
+      "end": 6351.199999988079,
+      "milliseconds": 814.6999999880791
+    },
+    {
+      "i": 5,
+      "aggregateId": "9c26bd65-38e7-4211-941d-0133a85cef3a",
+      "eventId": "bcb1febc-7de0-4b48-9e38-a25fff2adc66",
+      "expectedCount": 200,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "200\nVIGENTE\nRevisión 5860 · eventos 200\nEvento bcb1febc-7de0-4b48-9e38-a25fff2adc66\n2026-09-14T18:54:37.206151+00:00",
+          "value": "200",
+          "revision": "5860",
+          "quality": "VIGENTE",
+          "eventId": "bcb1febc-7de0-4b48-9e38-a25fff2adc66"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5860 · eventos 200\nEvento bcb1febc-7de0-4b48-9e38-a25fff2adc66\n2026-09-14T18:54:37.206151+00:00",
+          "value": "100",
+          "revision": "5860",
+          "quality": "VIGENTE",
+          "eventId": "bcb1febc-7de0-4b48-9e38-a25fff2adc66"
+        }
+      },
+      "start": 6354,
+      "end": 7201.699999988079,
+      "milliseconds": 847.6999999880791
+    },
+    {
+      "i": 6,
+      "aggregateId": "687fab4d-53f9-49fc-bfcf-ee992dac7a72",
+      "eventId": "0f38366a-d19a-4cb7-a116-a3fce316ac23",
+      "expectedCount": 201,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "201\nVIGENTE\nRevisión 5865 · eventos 201\nEvento 0f38366a-d19a-4cb7-a116-a3fce316ac23\n2026-09-14T18:54:38.044729+00:00",
+          "value": "201",
+          "revision": "5865",
+          "quality": "VIGENTE",
+          "eventId": "0f38366a-d19a-4cb7-a116-a3fce316ac23"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5865 · eventos 201\nEvento 0f38366a-d19a-4cb7-a116-a3fce316ac23\n2026-09-14T18:54:38.044729+00:00",
+          "value": "100",
+          "revision": "5865",
+          "quality": "VIGENTE",
+          "eventId": "0f38366a-d19a-4cb7-a116-a3fce316ac23"
+        }
+      },
+      "start": 7204.199999988079,
+      "end": 8034.300000011921,
+      "milliseconds": 830.1000000238419
+    },
+    {
+      "i": 7,
+      "aggregateId": "b0ca01fd-db48-4521-bd94-ab4f4aa1404c",
+      "eventId": "d4445c24-97ce-4113-903d-5fa2620f0d09",
+      "expectedCount": 202,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "202\nVIGENTE\nRevisión 5870 · eventos 202\nEvento d4445c24-97ce-4113-903d-5fa2620f0d09\n2026-09-14T18:54:38.869364+00:00",
+          "value": "202",
+          "revision": "5870",
+          "quality": "VIGENTE",
+          "eventId": "d4445c24-97ce-4113-903d-5fa2620f0d09"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5870 · eventos 202\nEvento d4445c24-97ce-4113-903d-5fa2620f0d09\n2026-09-14T18:54:38.869364+00:00",
+          "value": "100",
+          "revision": "5870",
+          "quality": "VIGENTE",
+          "eventId": "d4445c24-97ce-4113-903d-5fa2620f0d09"
+        }
+      },
+      "start": 8036.400000035763,
+      "end": 8851.699999988079,
+      "milliseconds": 815.2999999523163
+    },
+    {
+      "i": 8,
+      "aggregateId": "d7267af6-007d-4b78-8b77-9771a9af86ea",
+      "eventId": "de8c826c-f82e-4edf-a516-ca13a6973dd4",
+      "expectedCount": 203,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "203\nVIGENTE\nRevisión 5875 · eventos 203\nEvento de8c826c-f82e-4edf-a516-ca13a6973dd4\n2026-09-14T18:54:39.696231+00:00",
+          "value": "203",
+          "revision": "5875",
+          "quality": "VIGENTE",
+          "eventId": "de8c826c-f82e-4edf-a516-ca13a6973dd4"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5875 · eventos 203\nEvento de8c826c-f82e-4edf-a516-ca13a6973dd4\n2026-09-14T18:54:39.696231+00:00",
+          "value": "100",
+          "revision": "5875",
+          "quality": "VIGENTE",
+          "eventId": "de8c826c-f82e-4edf-a516-ca13a6973dd4"
+        }
+      },
+      "start": 8855.699999988079,
+      "end": 9684.199999988079,
+      "milliseconds": 828.5
+    },
+    {
+      "i": 9,
+      "aggregateId": "34b3a413-187e-47c6-a95d-8cc2c7c2ead3",
+      "eventId": "9229a7a4-14d2-4294-96d3-ed1bea3ea3c4",
+      "expectedCount": 204,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "204\nVIGENTE\nRevisión 5880 · eventos 204\nEvento 9229a7a4-14d2-4294-96d3-ed1bea3ea3c4\n2026-09-14T18:54:40.557655+00:00",
+          "value": "204",
+          "revision": "5880",
+          "quality": "VIGENTE",
+          "eventId": "9229a7a4-14d2-4294-96d3-ed1bea3ea3c4"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5880 · eventos 204\nEvento 9229a7a4-14d2-4294-96d3-ed1bea3ea3c4\n2026-09-14T18:54:40.557655+00:00",
+          "value": "100",
+          "revision": "5880",
+          "quality": "VIGENTE",
+          "eventId": "9229a7a4-14d2-4294-96d3-ed1bea3ea3c4"
+        }
+      },
+      "start": 9685.199999988079,
+      "end": 10551.300000011921,
+      "milliseconds": 866.1000000238419
+    },
+    {
+      "i": 10,
+      "aggregateId": "d38530f0-ddb1-4b22-b812-af8dad39dbca",
+      "eventId": "8e45777e-4655-441b-aae7-69a95c18d5f1",
+      "expectedCount": 205,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "205\nVIGENTE\nRevisión 5885 · eventos 205\nEvento 8e45777e-4655-441b-aae7-69a95c18d5f1\n2026-09-14T18:54:41.391291+00:00",
+          "value": "205",
+          "revision": "5885",
+          "quality": "VIGENTE",
+          "eventId": "8e45777e-4655-441b-aae7-69a95c18d5f1"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5885 · eventos 205\nEvento 8e45777e-4655-441b-aae7-69a95c18d5f1\n2026-09-14T18:54:41.391291+00:00",
+          "value": "100",
+          "revision": "5885",
+          "quality": "VIGENTE",
+          "eventId": "8e45777e-4655-441b-aae7-69a95c18d5f1"
+        }
+      },
+      "start": 10553.100000023842,
+      "end": 11384,
+      "milliseconds": 830.8999999761581
+    },
+    {
+      "i": 11,
+      "aggregateId": "c7e95785-3c4a-4d5a-914d-d33b5e0d4964",
+      "eventId": "4a917427-f05c-414f-93c4-004c736e44f8",
+      "expectedCount": 206,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "206\nVIGENTE\nRevisión 5889 · eventos 206\nEvento 4a917427-f05c-414f-93c4-004c736e44f8\n2026-09-14T18:54:42.216912+00:00",
+          "value": "206",
+          "revision": "5889",
+          "quality": "VIGENTE",
+          "eventId": "4a917427-f05c-414f-93c4-004c736e44f8"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5889 · eventos 206\nEvento 4a917427-f05c-414f-93c4-004c736e44f8\n2026-09-14T18:54:42.216912+00:00",
+          "value": "100",
+          "revision": "5889",
+          "quality": "VIGENTE",
+          "eventId": "4a917427-f05c-414f-93c4-004c736e44f8"
+        }
+      },
+      "start": 11385.199999988079,
+      "end": 12200.900000035763,
+      "milliseconds": 815.7000000476837
+    },
+    {
+      "i": 12,
+      "aggregateId": "2d5afd47-9097-422f-a719-dbd9fcc3b930",
+      "eventId": "a02e9b33-ebf9-45db-885c-42b94fd4e992",
+      "expectedCount": 207,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "207\nVIGENTE\nRevisión 5894 · eventos 207\nEvento a02e9b33-ebf9-45db-885c-42b94fd4e992\n2026-09-14T18:54:43.043640+00:00",
+          "value": "207",
+          "revision": "5894",
+          "quality": "VIGENTE",
+          "eventId": "a02e9b33-ebf9-45db-885c-42b94fd4e992"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5894 · eventos 207\nEvento a02e9b33-ebf9-45db-885c-42b94fd4e992\n2026-09-14T18:54:43.043640+00:00",
+          "value": "100",
+          "revision": "5894",
+          "quality": "VIGENTE",
+          "eventId": "a02e9b33-ebf9-45db-885c-42b94fd4e992"
+        }
+      },
+      "start": 12201.699999988079,
+      "end": 13034.199999988079,
+      "milliseconds": 832.5
+    },
+    {
+      "i": 13,
+      "aggregateId": "6ea6362e-d89c-4db3-b6e3-28b43fa329ba",
+      "eventId": "6ea14f66-097a-438f-b332-ffc92d4da579",
+      "expectedCount": 208,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "208\nVIGENTE\nRevisión 5899 · eventos 208\nEvento 6ea14f66-097a-438f-b332-ffc92d4da579\n2026-09-14T18:54:43.964935+00:00",
+          "value": "208",
+          "revision": "5899",
+          "quality": "VIGENTE",
+          "eventId": "6ea14f66-097a-438f-b332-ffc92d4da579"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5899 · eventos 208\nEvento 6ea14f66-097a-438f-b332-ffc92d4da579\n2026-09-14T18:54:43.964935+00:00",
+          "value": "100",
+          "revision": "5899",
+          "quality": "VIGENTE",
+          "eventId": "6ea14f66-097a-438f-b332-ffc92d4da579"
+        }
+      },
+      "start": 13035.199999988079,
+      "end": 13951.699999988079,
+      "milliseconds": 916.5
+    },
+    {
+      "i": 14,
+      "aggregateId": "d00a9346-42e0-4c56-957d-f60a505486fb",
+      "eventId": "17abb256-b30a-4fc8-928a-15e589de217d",
+      "expectedCount": 209,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "209\nVIGENTE\nRevisión 5904 · eventos 209\nEvento 17abb256-b30a-4fc8-928a-15e589de217d\n2026-09-14T18:54:44.810215+00:00",
+          "value": "209",
+          "revision": "5904",
+          "quality": "VIGENTE",
+          "eventId": "17abb256-b30a-4fc8-928a-15e589de217d"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5904 · eventos 209\nEvento 17abb256-b30a-4fc8-928a-15e589de217d\n2026-09-14T18:54:44.810215+00:00",
+          "value": "100",
+          "revision": "5904",
+          "quality": "VIGENTE",
+          "eventId": "17abb256-b30a-4fc8-928a-15e589de217d"
+        }
+      },
+      "start": 13967.699999988079,
+      "end": 14801.400000035763,
+      "milliseconds": 833.7000000476837
+    },
+    {
+      "i": 15,
+      "aggregateId": "ae967676-1cc3-4342-97f4-1172140394be",
+      "eventId": "fbc2cd11-810f-4358-8086-e0893e0d05af",
+      "expectedCount": 210,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "210\nVIGENTE\nRevisión 5909 · eventos 210\nEvento fbc2cd11-810f-4358-8086-e0893e0d05af\n2026-09-14T18:54:45.647822+00:00",
+          "value": "210",
+          "revision": "5909",
+          "quality": "VIGENTE",
+          "eventId": "fbc2cd11-810f-4358-8086-e0893e0d05af"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5909 · eventos 210\nEvento fbc2cd11-810f-4358-8086-e0893e0d05af\n2026-09-14T18:54:45.647822+00:00",
+          "value": "100",
+          "revision": "5909",
+          "quality": "VIGENTE",
+          "eventId": "fbc2cd11-810f-4358-8086-e0893e0d05af"
+        }
+      },
+      "start": 14803.199999988079,
+      "end": 15634.699999988079,
+      "milliseconds": 831.5
+    },
+    {
+      "i": 16,
+      "aggregateId": "11ec7d68-32c2-4c48-ac78-0320f3cfefd1",
+      "eventId": "8486c3fb-9d1a-4fc7-b20a-851618530230",
+      "expectedCount": 211,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "211\nVIGENTE\nRevisión 5914 · eventos 211\nEvento 8486c3fb-9d1a-4fc7-b20a-851618530230\n2026-09-14T18:54:46.496091+00:00",
+          "value": "211",
+          "revision": "5914",
+          "quality": "VIGENTE",
+          "eventId": "8486c3fb-9d1a-4fc7-b20a-851618530230"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5914 · eventos 211\nEvento 8486c3fb-9d1a-4fc7-b20a-851618530230\n2026-09-14T18:54:46.496091+00:00",
+          "value": "100",
+          "revision": "5914",
+          "quality": "VIGENTE",
+          "eventId": "8486c3fb-9d1a-4fc7-b20a-851618530230"
+        }
+      },
+      "start": 15636,
+      "end": 16501.19999998808,
+      "milliseconds": 865.1999999880791
+    },
+    {
+      "i": 17,
+      "aggregateId": "e311f3a7-02f1-4c8a-bedb-87bdd1f85ad6",
+      "eventId": "b933fb44-69e2-4b10-9dc7-64ef56d90c32",
+      "expectedCount": 212,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "212\nVIGENTE\nRevisión 5919 · eventos 212\nEvento b933fb44-69e2-4b10-9dc7-64ef56d90c32\n2026-09-14T18:54:47.342416+00:00",
+          "value": "212",
+          "revision": "5919",
+          "quality": "VIGENTE",
+          "eventId": "b933fb44-69e2-4b10-9dc7-64ef56d90c32"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5919 · eventos 212\nEvento b933fb44-69e2-4b10-9dc7-64ef56d90c32\n2026-09-14T18:54:47.342416+00:00",
+          "value": "100",
+          "revision": "5919",
+          "quality": "VIGENTE",
+          "eventId": "b933fb44-69e2-4b10-9dc7-64ef56d90c32"
+        }
+      },
+      "start": 16502.400000035763,
+      "end": 17334.400000035763,
+      "milliseconds": 832
+    },
+    {
+      "i": 18,
+      "aggregateId": "e340216d-6cba-4633-9df0-a35ca0640b3a",
+      "eventId": "5dd89db1-d81a-4c5d-9f68-fcf31c80ecc8",
+      "expectedCount": 213,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "213\nVIGENTE\nRevisión 5923 · eventos 213\nEvento 5dd89db1-d81a-4c5d-9f68-fcf31c80ecc8\n2026-09-14T18:54:48.166361+00:00",
+          "value": "213",
+          "revision": "5923",
+          "quality": "VIGENTE",
+          "eventId": "5dd89db1-d81a-4c5d-9f68-fcf31c80ecc8"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5923 · eventos 213\nEvento 5dd89db1-d81a-4c5d-9f68-fcf31c80ecc8\n2026-09-14T18:54:48.166361+00:00",
+          "value": "100",
+          "revision": "5923",
+          "quality": "VIGENTE",
+          "eventId": "5dd89db1-d81a-4c5d-9f68-fcf31c80ecc8"
+        }
+      },
+      "start": 17335.5,
+      "end": 18168.100000023842,
+      "milliseconds": 832.6000000238419
+    },
+    {
+      "i": 19,
+      "aggregateId": "7d79100a-a6b5-4806-9d59-51fc32f2ff6c",
+      "eventId": "ee560dfa-8a31-4848-a39f-0f49fb0e3593",
+      "expectedCount": 214,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "214\nVIGENTE\nRevisión 5928 · eventos 214\nEvento ee560dfa-8a31-4848-a39f-0f49fb0e3593\n2026-09-14T18:54:49.024170+00:00",
+          "value": "214",
+          "revision": "5928",
+          "quality": "VIGENTE",
+          "eventId": "ee560dfa-8a31-4848-a39f-0f49fb0e3593"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5928 · eventos 214\nEvento ee560dfa-8a31-4848-a39f-0f49fb0e3593\n2026-09-14T18:54:49.024170+00:00",
+          "value": "100",
+          "revision": "5928",
+          "quality": "VIGENTE",
+          "eventId": "ee560dfa-8a31-4848-a39f-0f49fb0e3593"
+        }
+      },
+      "start": 18169,
+      "end": 19017.30000001192,
+      "milliseconds": 848.3000000119209
+    },
+    {
+      "i": 20,
+      "aggregateId": "f8d32d0a-2617-4fc1-a826-3ac153699a36",
+      "eventId": "ae1975d2-c631-4b81-90bf-b094341bed9a",
+      "expectedCount": 215,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "215\nVIGENTE\nRevisión 5933 · eventos 215\nEvento ae1975d2-c631-4b81-90bf-b094341bed9a\n2026-09-14T18:54:50.078287+00:00",
+          "value": "215",
+          "revision": "5933",
+          "quality": "VIGENTE",
+          "eventId": "ae1975d2-c631-4b81-90bf-b094341bed9a"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5933 · eventos 215\nEvento ae1975d2-c631-4b81-90bf-b094341bed9a\n2026-09-14T18:54:50.078287+00:00",
+          "value": "100",
+          "revision": "5933",
+          "quality": "VIGENTE",
+          "eventId": "ae1975d2-c631-4b81-90bf-b094341bed9a"
+        }
+      },
+      "start": 19018.30000001192,
+      "end": 20134.600000023842,
+      "milliseconds": 1116.300000011921
+    },
+    {
+      "i": 21,
+      "aggregateId": "568cbea8-b64e-4cab-affb-977db6eafa85",
+      "eventId": "3fb78319-37c3-4d4e-9dea-d74cb59806a4",
+      "expectedCount": 216,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "216\nVIGENTE\nRevisión 5938 · eventos 216\nEvento 3fb78319-37c3-4d4e-9dea-d74cb59806a4\n2026-09-14T18:54:50.967593+00:00",
+          "value": "216",
+          "revision": "5938",
+          "quality": "VIGENTE",
+          "eventId": "3fb78319-37c3-4d4e-9dea-d74cb59806a4"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5938 · eventos 216\nEvento 3fb78319-37c3-4d4e-9dea-d74cb59806a4\n2026-09-14T18:54:50.967593+00:00",
+          "value": "100",
+          "revision": "5938",
+          "quality": "VIGENTE",
+          "eventId": "3fb78319-37c3-4d4e-9dea-d74cb59806a4"
+        }
+      },
+      "start": 20135.69999998808,
+      "end": 20951.100000023842,
+      "milliseconds": 815.4000000357628
+    },
+    {
+      "i": 22,
+      "aggregateId": "88cf077f-d2a1-40ed-977c-eeb3ffaea296",
+      "eventId": "5dd5b21f-c53f-455b-b772-f633ccf90e20",
+      "expectedCount": 217,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "217\nVIGENTE\nRevisión 5943 · eventos 217\nEvento 5dd5b21f-c53f-455b-b772-f633ccf90e20\n2026-09-14T18:54:51.797441+00:00",
+          "value": "217",
+          "revision": "5943",
+          "quality": "VIGENTE",
+          "eventId": "5dd5b21f-c53f-455b-b772-f633ccf90e20"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5943 · eventos 217\nEvento 5dd5b21f-c53f-455b-b772-f633ccf90e20\n2026-09-14T18:54:51.797441+00:00",
+          "value": "100",
+          "revision": "5943",
+          "quality": "VIGENTE",
+          "eventId": "5dd5b21f-c53f-455b-b772-f633ccf90e20"
+        }
+      },
+      "start": 20952.30000001192,
+      "end": 21801.19999998808,
+      "milliseconds": 848.8999999761581
+    },
+    {
+      "i": 23,
+      "aggregateId": "39a7a205-ed70-42f2-a99f-4edea2606226",
+      "eventId": "9cd57431-80dd-4e84-a9d6-c5639a17519a",
+      "expectedCount": 218,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "218\nVIGENTE\nRevisión 5948 · eventos 218\nEvento 9cd57431-80dd-4e84-a9d6-c5639a17519a\n2026-09-14T18:54:52.661865+00:00",
+          "value": "218",
+          "revision": "5948",
+          "quality": "VIGENTE",
+          "eventId": "9cd57431-80dd-4e84-a9d6-c5639a17519a"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5948 · eventos 218\nEvento 9cd57431-80dd-4e84-a9d6-c5639a17519a\n2026-09-14T18:54:52.661865+00:00",
+          "value": "100",
+          "revision": "5948",
+          "quality": "VIGENTE",
+          "eventId": "9cd57431-80dd-4e84-a9d6-c5639a17519a"
+        }
+      },
+      "start": 21803.80000001192,
+      "end": 22667.5,
+      "milliseconds": 863.6999999880791
+    },
+    {
+      "i": 24,
+      "aggregateId": "06ed14f1-abf8-4bab-8737-099dc30cdf13",
+      "eventId": "584bf8f4-4314-4582-bf8b-72e629b1dbf4",
+      "expectedCount": 219,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "219\nVIGENTE\nRevisión 5953 · eventos 219\nEvento 584bf8f4-4314-4582-bf8b-72e629b1dbf4\n2026-09-14T18:54:53.492758+00:00",
+          "value": "219",
+          "revision": "5953",
+          "quality": "VIGENTE",
+          "eventId": "584bf8f4-4314-4582-bf8b-72e629b1dbf4"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5953 · eventos 219\nEvento 584bf8f4-4314-4582-bf8b-72e629b1dbf4\n2026-09-14T18:54:53.492758+00:00",
+          "value": "100",
+          "revision": "5953",
+          "quality": "VIGENTE",
+          "eventId": "584bf8f4-4314-4582-bf8b-72e629b1dbf4"
+        }
+      },
+      "start": 22668.80000001192,
+      "end": 23550.80000001192,
+      "milliseconds": 882
+    },
+    {
+      "i": 25,
+      "aggregateId": "b03baf86-801b-446a-8fc6-51414705adf4",
+      "eventId": "aff4a546-2171-4d36-90a5-cbc9b223e2fb",
+      "expectedCount": 220,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "220\nVIGENTE\nRevisión 5958 · eventos 220\nEvento aff4a546-2171-4d36-90a5-cbc9b223e2fb\n2026-09-14T18:54:54.391895+00:00",
+          "value": "220",
+          "revision": "5958",
+          "quality": "VIGENTE",
+          "eventId": "aff4a546-2171-4d36-90a5-cbc9b223e2fb"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5958 · eventos 220\nEvento aff4a546-2171-4d36-90a5-cbc9b223e2fb\n2026-09-14T18:54:54.391895+00:00",
+          "value": "100",
+          "revision": "5958",
+          "quality": "VIGENTE",
+          "eventId": "aff4a546-2171-4d36-90a5-cbc9b223e2fb"
+        }
+      },
+      "start": 23551.69999998808,
+      "end": 24384.19999998808,
+      "milliseconds": 832.5
+    },
+    {
+      "i": 26,
+      "aggregateId": "3c1841a6-5796-422f-9ce9-4cfa1ebd283a",
+      "eventId": "92edeb8c-0722-4105-a556-ca2773d20d76",
+      "expectedCount": 221,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "221\nVIGENTE\nRevisión 5962 · eventos 221\nEvento 92edeb8c-0722-4105-a556-ca2773d20d76\n2026-09-14T18:54:55.227414+00:00",
+          "value": "221",
+          "revision": "5962",
+          "quality": "VIGENTE",
+          "eventId": "92edeb8c-0722-4105-a556-ca2773d20d76"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5962 · eventos 221\nEvento 92edeb8c-0722-4105-a556-ca2773d20d76\n2026-09-14T18:54:55.227414+00:00",
+          "value": "100",
+          "revision": "5962",
+          "quality": "VIGENTE",
+          "eventId": "92edeb8c-0722-4105-a556-ca2773d20d76"
+        }
+      },
+      "start": 24385.400000035763,
+      "end": 25250.5,
+      "milliseconds": 865.0999999642372
+    },
+    {
+      "i": 27,
+      "aggregateId": "9fd513c8-26c5-48d6-80b8-cd2dc538abf2",
+      "eventId": "83966ff4-809f-4820-a447-ab377e572ba1",
+      "expectedCount": 222,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "222\nVIGENTE\nRevisión 5967 · eventos 222\nEvento 83966ff4-809f-4820-a447-ab377e572ba1\n2026-09-14T18:54:56.090143+00:00",
+          "value": "222",
+          "revision": "5967",
+          "quality": "VIGENTE",
+          "eventId": "83966ff4-809f-4820-a447-ab377e572ba1"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5967 · eventos 222\nEvento 83966ff4-809f-4820-a447-ab377e572ba1\n2026-09-14T18:54:56.090143+00:00",
+          "value": "100",
+          "revision": "5967",
+          "quality": "VIGENTE",
+          "eventId": "83966ff4-809f-4820-a447-ab377e572ba1"
+        }
+      },
+      "start": 25251.600000023842,
+      "end": 26084.19999998808,
+      "milliseconds": 832.5999999642372
+    },
+    {
+      "i": 28,
+      "aggregateId": "c58dab32-dbf6-461d-9a8d-20e42e10b5b4",
+      "eventId": "98850756-d844-4226-a705-e4f8981837ef",
+      "expectedCount": 223,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "223\nVIGENTE\nRevisión 5972 · eventos 223\nEvento 98850756-d844-4226-a705-e4f8981837ef\n2026-09-14T18:54:56.930911+00:00",
+          "value": "223",
+          "revision": "5972",
+          "quality": "VIGENTE",
+          "eventId": "98850756-d844-4226-a705-e4f8981837ef"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5972 · eventos 223\nEvento 98850756-d844-4226-a705-e4f8981837ef\n2026-09-14T18:54:56.930911+00:00",
+          "value": "100",
+          "revision": "5972",
+          "quality": "VIGENTE",
+          "eventId": "98850756-d844-4226-a705-e4f8981837ef"
+        }
+      },
+      "start": 26085.5,
+      "end": 26917.600000023842,
+      "milliseconds": 832.1000000238419
+    },
+    {
+      "i": 29,
+      "aggregateId": "9886ea4d-1af9-4145-96c8-a12a787340f5",
+      "eventId": "0be529e1-bfbc-4d3d-9203-e70ece6a213a",
+      "expectedCount": 224,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "224\nVIGENTE\nRevisión 5977 · eventos 224\nEvento 0be529e1-bfbc-4d3d-9203-e70ece6a213a\n2026-09-14T18:54:57.758780+00:00",
+          "value": "224",
+          "revision": "5977",
+          "quality": "VIGENTE",
+          "eventId": "0be529e1-bfbc-4d3d-9203-e70ece6a213a"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5977 · eventos 224\nEvento 0be529e1-bfbc-4d3d-9203-e70ece6a213a\n2026-09-14T18:54:57.758780+00:00",
+          "value": "100",
+          "revision": "5977",
+          "quality": "VIGENTE",
+          "eventId": "0be529e1-bfbc-4d3d-9203-e70ece6a213a"
+        }
+      },
+      "start": 26918.80000001192,
+      "end": 27750.19999998808,
+      "milliseconds": 831.3999999761581
+    },
+    {
+      "i": 30,
+      "aggregateId": "f7231f93-f32e-48b0-bb1e-1681c3d53618",
+      "eventId": "9fd9f8b4-6996-404b-b460-62fd9a8fa74f",
+      "expectedCount": 225,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "225\nVIGENTE\nRevisión 5982 · eventos 225\nEvento 9fd9f8b4-6996-404b-b460-62fd9a8fa74f\n2026-09-14T18:54:58.580842+00:00",
+          "value": "225",
+          "revision": "5982",
+          "quality": "VIGENTE",
+          "eventId": "9fd9f8b4-6996-404b-b460-62fd9a8fa74f"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5982 · eventos 225\nEvento 9fd9f8b4-6996-404b-b460-62fd9a8fa74f\n2026-09-14T18:54:58.580842+00:00",
+          "value": "100",
+          "revision": "5982",
+          "quality": "VIGENTE",
+          "eventId": "9fd9f8b4-6996-404b-b460-62fd9a8fa74f"
+        }
+      },
+      "start": 27751.30000001192,
+      "end": 28584,
+      "milliseconds": 832.6999999880791
+    },
+    {
+      "i": 31,
+      "aggregateId": "9f34be06-68fb-4cab-bccc-db38a6f16085",
+      "eventId": "9846ccb2-09e7-42f2-b4d9-c4761f9c1563",
+      "expectedCount": 226,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "226\nVIGENTE\nRevisión 5987 · eventos 226\nEvento 9846ccb2-09e7-42f2-b4d9-c4761f9c1563\n2026-09-14T18:54:59.422215+00:00",
+          "value": "226",
+          "revision": "5987",
+          "quality": "VIGENTE",
+          "eventId": "9846ccb2-09e7-42f2-b4d9-c4761f9c1563"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5987 · eventos 226\nEvento 9846ccb2-09e7-42f2-b4d9-c4761f9c1563\n2026-09-14T18:54:59.422215+00:00",
+          "value": "100",
+          "revision": "5987",
+          "quality": "VIGENTE",
+          "eventId": "9846ccb2-09e7-42f2-b4d9-c4761f9c1563"
+        }
+      },
+      "start": 28584.900000035763,
+      "end": 29400.80000001192,
+      "milliseconds": 815.8999999761581
+    },
+    {
+      "i": 32,
+      "aggregateId": "00aff0bf-d968-4c86-b321-ae1770cf0319",
+      "eventId": "8208b0fd-3bad-4235-a7d4-919a0875c173",
+      "expectedCount": 227,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "227\nVIGENTE\nRevisión 5991 · eventos 227\nEvento 8208b0fd-3bad-4235-a7d4-919a0875c173\n2026-09-14T18:55:00.273970+00:00",
+          "value": "227",
+          "revision": "5991",
+          "quality": "VIGENTE",
+          "eventId": "8208b0fd-3bad-4235-a7d4-919a0875c173"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5991 · eventos 227\nEvento 8208b0fd-3bad-4235-a7d4-919a0875c173\n2026-09-14T18:55:00.273970+00:00",
+          "value": "100",
+          "revision": "5991",
+          "quality": "VIGENTE",
+          "eventId": "8208b0fd-3bad-4235-a7d4-919a0875c173"
+        }
+      },
+      "start": 29402.400000035763,
+      "end": 30284.19999998808,
+      "milliseconds": 881.7999999523163
+    },
+    {
+      "i": 33,
+      "aggregateId": "58d2f2c3-7bf6-47a0-ae73-93d357f47a9c",
+      "eventId": "83ac779b-5b95-420a-992f-26771f7b2c4d",
+      "expectedCount": 228,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "228\nVIGENTE\nRevisión 5996 · eventos 228\nEvento 83ac779b-5b95-420a-992f-26771f7b2c4d\n2026-09-14T18:55:01.132702+00:00",
+          "value": "228",
+          "revision": "5996",
+          "quality": "VIGENTE",
+          "eventId": "83ac779b-5b95-420a-992f-26771f7b2c4d"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 5996 · eventos 228\nEvento 83ac779b-5b95-420a-992f-26771f7b2c4d\n2026-09-14T18:55:01.132702+00:00",
+          "value": "100",
+          "revision": "5996",
+          "quality": "VIGENTE",
+          "eventId": "83ac779b-5b95-420a-992f-26771f7b2c4d"
+        }
+      },
+      "start": 30285.400000035763,
+      "end": 31134.100000023842,
+      "milliseconds": 848.6999999880791
+    },
+    {
+      "i": 34,
+      "aggregateId": "6d8eec5a-0a20-4277-9f55-364d107379cc",
+      "eventId": "b87060cc-d735-45c6-b872-1468f12af88a",
+      "expectedCount": 229,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "229\nVIGENTE\nRevisión 6001 · eventos 229\nEvento b87060cc-d735-45c6-b872-1468f12af88a\n2026-09-14T18:55:01.997213+00:00",
+          "value": "229",
+          "revision": "6001",
+          "quality": "VIGENTE",
+          "eventId": "b87060cc-d735-45c6-b872-1468f12af88a"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6001 · eventos 229\nEvento b87060cc-d735-45c6-b872-1468f12af88a\n2026-09-14T18:55:01.997213+00:00",
+          "value": "100",
+          "revision": "6001",
+          "quality": "VIGENTE",
+          "eventId": "b87060cc-d735-45c6-b872-1468f12af88a"
+        }
+      },
+      "start": 31135.69999998808,
+      "end": 31983.69999998808,
+      "milliseconds": 848
+    },
+    {
+      "i": 35,
+      "aggregateId": "eb75927c-1e97-4bc9-a72d-3ab5b2008b4f",
+      "eventId": "62ef8f54-d5e4-4fbb-a5dd-e212bdd40d6d",
+      "expectedCount": 230,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "230\nVIGENTE\nRevisión 6006 · eventos 230\nEvento 62ef8f54-d5e4-4fbb-a5dd-e212bdd40d6d\n2026-09-14T18:55:02.838332+00:00",
+          "value": "230",
+          "revision": "6006",
+          "quality": "VIGENTE",
+          "eventId": "62ef8f54-d5e4-4fbb-a5dd-e212bdd40d6d"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6006 · eventos 230\nEvento 62ef8f54-d5e4-4fbb-a5dd-e212bdd40d6d\n2026-09-14T18:55:02.838332+00:00",
+          "value": "100",
+          "revision": "6006",
+          "quality": "VIGENTE",
+          "eventId": "62ef8f54-d5e4-4fbb-a5dd-e212bdd40d6d"
+        }
+      },
+      "start": 31984.69999998808,
+      "end": 32816.5,
+      "milliseconds": 831.8000000119209
+    },
+    {
+      "i": 36,
+      "aggregateId": "51f86b4e-9fe9-4a55-a8cf-92b31d1f5901",
+      "eventId": "db01ac4c-9c2b-4c06-855d-1a8f3f9a8e45",
+      "expectedCount": 231,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "231\nVIGENTE\nRevisión 6011 · eventos 231\nEvento db01ac4c-9c2b-4c06-855d-1a8f3f9a8e45\n2026-09-14T18:55:03.671893+00:00",
+          "value": "231",
+          "revision": "6011",
+          "quality": "VIGENTE",
+          "eventId": "db01ac4c-9c2b-4c06-855d-1a8f3f9a8e45"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6011 · eventos 231\nEvento db01ac4c-9c2b-4c06-855d-1a8f3f9a8e45\n2026-09-14T18:55:03.671893+00:00",
+          "value": "100",
+          "revision": "6011",
+          "quality": "VIGENTE",
+          "eventId": "db01ac4c-9c2b-4c06-855d-1a8f3f9a8e45"
+        }
+      },
+      "start": 32817.69999998808,
+      "end": 33667.10000002384,
+      "milliseconds": 849.4000000357628
+    },
+    {
+      "i": 37,
+      "aggregateId": "6cad1d73-1f49-4992-9f88-d493381a829a",
+      "eventId": "7e5ba4d7-6110-40ae-81e7-2eaa7a0d669a",
+      "expectedCount": 232,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "232\nVIGENTE\nRevisión 6016 · eventos 232\nEvento 7e5ba4d7-6110-40ae-81e7-2eaa7a0d669a\n2026-09-14T18:55:04.522460+00:00",
+          "value": "232",
+          "revision": "6016",
+          "quality": "VIGENTE",
+          "eventId": "7e5ba4d7-6110-40ae-81e7-2eaa7a0d669a"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6016 · eventos 232\nEvento 7e5ba4d7-6110-40ae-81e7-2eaa7a0d669a\n2026-09-14T18:55:04.522460+00:00",
+          "value": "100",
+          "revision": "6016",
+          "quality": "VIGENTE",
+          "eventId": "7e5ba4d7-6110-40ae-81e7-2eaa7a0d669a"
+        }
+      },
+      "start": 33668.10000002384,
+      "end": 34500.60000002384,
+      "milliseconds": 832.5
+    },
+    {
+      "i": 38,
+      "aggregateId": "9c2c67bf-055d-43ba-bdae-ded4bfe2b682",
+      "eventId": "d0561f23-ae14-4b5c-88cf-2e00db2bea18",
+      "expectedCount": 233,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "233\nVIGENTE\nRevisión 6021 · eventos 233\nEvento d0561f23-ae14-4b5c-88cf-2e00db2bea18\n2026-09-14T18:55:05.376869+00:00",
+          "value": "233",
+          "revision": "6021",
+          "quality": "VIGENTE",
+          "eventId": "d0561f23-ae14-4b5c-88cf-2e00db2bea18"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6021 · eventos 233\nEvento d0561f23-ae14-4b5c-88cf-2e00db2bea18\n2026-09-14T18:55:05.376869+00:00",
+          "value": "100",
+          "revision": "6021",
+          "quality": "VIGENTE",
+          "eventId": "d0561f23-ae14-4b5c-88cf-2e00db2bea18"
+        }
+      },
+      "start": 34502,
+      "end": 35384,
+      "milliseconds": 882
+    },
+    {
+      "i": 39,
+      "aggregateId": "c04e9c01-1561-4f29-9da7-c0291d02dc96",
+      "eventId": "c31da263-699b-4f29-a0f1-a82918ed0396",
+      "expectedCount": 234,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "234\nVIGENTE\nRevisión 6025 · eventos 234\nEvento c31da263-699b-4f29-a0f1-a82918ed0396\n2026-09-14T18:55:06.214366+00:00",
+          "value": "234",
+          "revision": "6025",
+          "quality": "VIGENTE",
+          "eventId": "c31da263-699b-4f29-a0f1-a82918ed0396"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6025 · eventos 234\nEvento c31da263-699b-4f29-a0f1-a82918ed0396\n2026-09-14T18:55:06.214366+00:00",
+          "value": "100",
+          "revision": "6025",
+          "quality": "VIGENTE",
+          "eventId": "c31da263-699b-4f29-a0f1-a82918ed0396"
+        }
+      },
+      "start": 35388,
+      "end": 36216.80000001192,
+      "milliseconds": 828.8000000119209
+    },
+    {
+      "i": 40,
+      "aggregateId": "690d27a8-facb-4739-9907-43f34cf3bfd7",
+      "eventId": "aae4a9f2-c435-4edb-8394-1ac1e0b103ba",
+      "expectedCount": 235,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "235\nVIGENTE\nRevisión 6030 · eventos 235\nEvento aae4a9f2-c435-4edb-8394-1ac1e0b103ba\n2026-09-14T18:55:07.058916+00:00",
+          "value": "235",
+          "revision": "6030",
+          "quality": "VIGENTE",
+          "eventId": "aae4a9f2-c435-4edb-8394-1ac1e0b103ba"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6030 · eventos 235\nEvento aae4a9f2-c435-4edb-8394-1ac1e0b103ba\n2026-09-14T18:55:07.058916+00:00",
+          "value": "100",
+          "revision": "6030",
+          "quality": "VIGENTE",
+          "eventId": "aae4a9f2-c435-4edb-8394-1ac1e0b103ba"
+        }
+      },
+      "start": 36217.90000003576,
+      "end": 37050.5,
+      "milliseconds": 832.5999999642372
+    },
+    {
+      "i": 41,
+      "aggregateId": "cd8aea16-f863-4b13-bba4-7503db713c57",
+      "eventId": "59e6a4c5-3afb-48b5-876b-cbb540be0cee",
+      "expectedCount": 236,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "236\nVIGENTE\nRevisión 6035 · eventos 236\nEvento 59e6a4c5-3afb-48b5-876b-cbb540be0cee\n2026-09-14T18:55:07.927912+00:00",
+          "value": "236",
+          "revision": "6035",
+          "quality": "VIGENTE",
+          "eventId": "59e6a4c5-3afb-48b5-876b-cbb540be0cee"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6035 · eventos 236\nEvento 59e6a4c5-3afb-48b5-876b-cbb540be0cee\n2026-09-14T18:55:07.927912+00:00",
+          "value": "100",
+          "revision": "6035",
+          "quality": "VIGENTE",
+          "eventId": "59e6a4c5-3afb-48b5-876b-cbb540be0cee"
+        }
+      },
+      "start": 37051.5,
+      "end": 37916.80000001192,
+      "milliseconds": 865.3000000119209
+    },
+    {
+      "i": 42,
+      "aggregateId": "437edc2b-09e8-4d99-b88c-367680eef278",
+      "eventId": "83c38714-4610-4953-9a9f-5a731d8699f0",
+      "expectedCount": 237,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "237\nVIGENTE\nRevisión 6040 · eventos 237\nEvento 83c38714-4610-4953-9a9f-5a731d8699f0\n2026-09-14T18:55:08.869914+00:00",
+          "value": "237",
+          "revision": "6040",
+          "quality": "VIGENTE",
+          "eventId": "83c38714-4610-4953-9a9f-5a731d8699f0"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6040 · eventos 237\nEvento 83c38714-4610-4953-9a9f-5a731d8699f0\n2026-09-14T18:55:08.869914+00:00",
+          "value": "100",
+          "revision": "6040",
+          "quality": "VIGENTE",
+          "eventId": "83c38714-4610-4953-9a9f-5a731d8699f0"
+        }
+      },
+      "start": 37917.80000001192,
+      "end": 38867.19999998808,
+      "milliseconds": 949.3999999761581
+    },
+    {
+      "i": 43,
+      "aggregateId": "e1705a99-83ff-4369-9e2d-a06c25b2fd32",
+      "eventId": "ec6a4d40-0738-4abb-8cfb-fbe7de218b9a",
+      "expectedCount": 238,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "238\nVIGENTE\nRevisión 6045 · eventos 238\nEvento ec6a4d40-0738-4abb-8cfb-fbe7de218b9a\n2026-09-14T18:55:09.711562+00:00",
+          "value": "238",
+          "revision": "6045",
+          "quality": "VIGENTE",
+          "eventId": "ec6a4d40-0738-4abb-8cfb-fbe7de218b9a"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6045 · eventos 238\nEvento ec6a4d40-0738-4abb-8cfb-fbe7de218b9a\n2026-09-14T18:55:09.711562+00:00",
+          "value": "100",
+          "revision": "6045",
+          "quality": "VIGENTE",
+          "eventId": "ec6a4d40-0738-4abb-8cfb-fbe7de218b9a"
+        }
+      },
+      "start": 38868.19999998808,
+      "end": 39700.40000003576,
+      "milliseconds": 832.2000000476837
+    },
+    {
+      "i": 44,
+      "aggregateId": "525c1b4a-7305-4480-bc19-ba0f85624a68",
+      "eventId": "038cbb3e-5237-427d-ad38-a0601c37550d",
+      "expectedCount": 239,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "239\nVIGENTE\nRevisión 6050 · eventos 239\nEvento 038cbb3e-5237-427d-ad38-a0601c37550d\n2026-09-14T18:55:10.550375+00:00",
+          "value": "239",
+          "revision": "6050",
+          "quality": "VIGENTE",
+          "eventId": "038cbb3e-5237-427d-ad38-a0601c37550d"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6050 · eventos 239\nEvento 038cbb3e-5237-427d-ad38-a0601c37550d\n2026-09-14T18:55:10.550375+00:00",
+          "value": "100",
+          "revision": "6050",
+          "quality": "VIGENTE",
+          "eventId": "038cbb3e-5237-427d-ad38-a0601c37550d"
+        }
+      },
+      "start": 39702.10000002384,
+      "end": 40549.80000001192,
+      "milliseconds": 847.6999999880791
+    },
+    {
+      "i": 45,
+      "aggregateId": "dfadbec5-ff11-4ca1-b6a6-ec9f4e261857",
+      "eventId": "4c5f3b07-de11-4db0-aab2-c976e87de702",
+      "expectedCount": 240,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "240\nVIGENTE\nRevisión 6055 · eventos 240\nEvento 4c5f3b07-de11-4db0-aab2-c976e87de702\n2026-09-14T18:55:11.391968+00:00",
+          "value": "240",
+          "revision": "6055",
+          "quality": "VIGENTE",
+          "eventId": "4c5f3b07-de11-4db0-aab2-c976e87de702"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6055 · eventos 240\nEvento 4c5f3b07-de11-4db0-aab2-c976e87de702\n2026-09-14T18:55:11.391968+00:00",
+          "value": "100",
+          "revision": "6055",
+          "quality": "VIGENTE",
+          "eventId": "4c5f3b07-de11-4db0-aab2-c976e87de702"
+        }
+      },
+      "start": 40550.90000003576,
+      "end": 41383.69999998808,
+      "milliseconds": 832.7999999523163
+    },
+    {
+      "i": 46,
+      "aggregateId": "66e11f27-4b96-4645-bbaa-e9cc6054deba",
+      "eventId": "ca3df9f3-e1e2-4543-9e5d-ebbe48d3b2b1",
+      "expectedCount": 241,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "241\nVIGENTE\nRevisión 6059 · eventos 241\nEvento ca3df9f3-e1e2-4543-9e5d-ebbe48d3b2b1\n2026-09-14T18:55:12.238555+00:00",
+          "value": "241",
+          "revision": "6059",
+          "quality": "VIGENTE",
+          "eventId": "ca3df9f3-e1e2-4543-9e5d-ebbe48d3b2b1"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6059 · eventos 241\nEvento ca3df9f3-e1e2-4543-9e5d-ebbe48d3b2b1\n2026-09-14T18:55:12.238555+00:00",
+          "value": "100",
+          "revision": "6059",
+          "quality": "VIGENTE",
+          "eventId": "ca3df9f3-e1e2-4543-9e5d-ebbe48d3b2b1"
+        }
+      },
+      "start": 41384.5,
+      "end": 42233,
+      "milliseconds": 848.5
+    },
+    {
+      "i": 47,
+      "aggregateId": "89ed440c-1c7e-424f-b993-bf056c1b80c6",
+      "eventId": "94390c5e-8111-4917-bfed-2ecd55f6f4ee",
+      "expectedCount": 242,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "242\nVIGENTE\nRevisión 6064 · eventos 242\nEvento 94390c5e-8111-4917-bfed-2ecd55f6f4ee\n2026-09-14T18:55:13.075890+00:00",
+          "value": "242",
+          "revision": "6064",
+          "quality": "VIGENTE",
+          "eventId": "94390c5e-8111-4917-bfed-2ecd55f6f4ee"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6064 · eventos 242\nEvento 94390c5e-8111-4917-bfed-2ecd55f6f4ee\n2026-09-14T18:55:13.075890+00:00",
+          "value": "100",
+          "revision": "6064",
+          "quality": "VIGENTE",
+          "eventId": "94390c5e-8111-4917-bfed-2ecd55f6f4ee"
+        }
+      },
+      "start": 42234.40000003576,
+      "end": 43066.90000003576,
+      "milliseconds": 832.5
+    },
+    {
+      "i": 48,
+      "aggregateId": "4a9c4ce0-9f8a-475b-801d-e0a4559a51f8",
+      "eventId": "4b24f4a3-5666-4fbc-ac30-b41517def0b1",
+      "expectedCount": 243,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "243\nVIGENTE\nRevisión 6069 · eventos 243\nEvento 4b24f4a3-5666-4fbc-ac30-b41517def0b1\n2026-09-14T18:55:13.947512+00:00",
+          "value": "243",
+          "revision": "6069",
+          "quality": "VIGENTE",
+          "eventId": "4b24f4a3-5666-4fbc-ac30-b41517def0b1"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6069 · eventos 243\nEvento 4b24f4a3-5666-4fbc-ac30-b41517def0b1\n2026-09-14T18:55:13.947512+00:00",
+          "value": "100",
+          "revision": "6069",
+          "quality": "VIGENTE",
+          "eventId": "4b24f4a3-5666-4fbc-ac30-b41517def0b1"
+        }
+      },
+      "start": 43068.30000001192,
+      "end": 43949.69999998808,
+      "milliseconds": 881.3999999761581
+    },
+    {
+      "i": 49,
+      "aggregateId": "7140cbe5-9c91-4d23-9b50-ae810b48467d",
+      "eventId": "f1405edc-9f47-4a6c-918b-01090830e9e4",
+      "expectedCount": 244,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "244\nVIGENTE\nRevisión 6074 · eventos 244\nEvento f1405edc-9f47-4a6c-918b-01090830e9e4\n2026-09-14T18:55:14.805226+00:00",
+          "value": "244",
+          "revision": "6074",
+          "quality": "VIGENTE",
+          "eventId": "f1405edc-9f47-4a6c-918b-01090830e9e4"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6074 · eventos 244\nEvento f1405edc-9f47-4a6c-918b-01090830e9e4\n2026-09-14T18:55:14.805226+00:00",
+          "value": "100",
+          "revision": "6074",
+          "quality": "VIGENTE",
+          "eventId": "f1405edc-9f47-4a6c-918b-01090830e9e4"
+        }
+      },
+      "start": 43951.30000001192,
+      "end": 44800.19999998808,
+      "milliseconds": 848.8999999761581
+    },
+    {
+      "i": 50,
+      "aggregateId": "ea469674-812b-400a-8ea2-72d3eee7cbfc",
+      "eventId": "664ce503-8839-4d75-b249-08537d26b309",
+      "expectedCount": 245,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "245\nVIGENTE\nRevisión 6079 · eventos 245\nEvento 664ce503-8839-4d75-b249-08537d26b309\n2026-09-14T18:55:15.657318+00:00",
+          "value": "245",
+          "revision": "6079",
+          "quality": "VIGENTE",
+          "eventId": "664ce503-8839-4d75-b249-08537d26b309"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6079 · eventos 245\nEvento 664ce503-8839-4d75-b249-08537d26b309\n2026-09-14T18:55:15.657318+00:00",
+          "value": "100",
+          "revision": "6079",
+          "quality": "VIGENTE",
+          "eventId": "664ce503-8839-4d75-b249-08537d26b309"
+        }
+      },
+      "start": 44801,
+      "end": 45649.80000001192,
+      "milliseconds": 848.8000000119209
+    },
+    {
+      "i": 51,
+      "aggregateId": "5c08ba76-d5c3-4a0e-8eb0-7675f0cc4ed4",
+      "eventId": "31c4ca22-074e-4ad8-8708-4a6dea8a0278",
+      "expectedCount": 246,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "246\nVIGENTE\nRevisión 6084 · eventos 246\nEvento 31c4ca22-074e-4ad8-8708-4a6dea8a0278\n2026-09-14T18:55:16.566544+00:00",
+          "value": "246",
+          "revision": "6084",
+          "quality": "VIGENTE",
+          "eventId": "31c4ca22-074e-4ad8-8708-4a6dea8a0278"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6084 · eventos 246\nEvento 31c4ca22-074e-4ad8-8708-4a6dea8a0278\n2026-09-14T18:55:16.566544+00:00",
+          "value": "100",
+          "revision": "6084",
+          "quality": "VIGENTE",
+          "eventId": "31c4ca22-074e-4ad8-8708-4a6dea8a0278"
+        }
+      },
+      "start": 45650.69999998808,
+      "end": 46566.90000003576,
+      "milliseconds": 916.2000000476837
+    },
+    {
+      "i": 52,
+      "aggregateId": "93eca02e-53a7-4ab2-b96f-4b9f92145cd9",
+      "eventId": "b43fb010-2273-4012-8f4e-0ef30127191a",
+      "expectedCount": 247,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "247\nVIGENTE\nRevisión 6089 · eventos 247\nEvento b43fb010-2273-4012-8f4e-0ef30127191a\n2026-09-14T18:55:17.416077+00:00",
+          "value": "247",
+          "revision": "6089",
+          "quality": "VIGENTE",
+          "eventId": "b43fb010-2273-4012-8f4e-0ef30127191a"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6089 · eventos 247\nEvento b43fb010-2273-4012-8f4e-0ef30127191a\n2026-09-14T18:55:17.416077+00:00",
+          "value": "100",
+          "revision": "6089",
+          "quality": "VIGENTE",
+          "eventId": "b43fb010-2273-4012-8f4e-0ef30127191a"
+        }
+      },
+      "start": 46568,
+      "end": 47416.19999998808,
+      "milliseconds": 848.1999999880791
+    },
+    {
+      "i": 53,
+      "aggregateId": "e8eea2fe-c6fb-4506-b666-993c96ad6951",
+      "eventId": "5549f74b-a880-4183-9cc8-6e0a4748fe1a",
+      "expectedCount": 248,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "248\nVIGENTE\nRevisión 6093 · eventos 248\nEvento 5549f74b-a880-4183-9cc8-6e0a4748fe1a\n2026-09-14T18:55:18.270900+00:00",
+          "value": "248",
+          "revision": "6093",
+          "quality": "VIGENTE",
+          "eventId": "5549f74b-a880-4183-9cc8-6e0a4748fe1a"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6093 · eventos 248\nEvento 5549f74b-a880-4183-9cc8-6e0a4748fe1a\n2026-09-14T18:55:18.270900+00:00",
+          "value": "100",
+          "revision": "6093",
+          "quality": "VIGENTE",
+          "eventId": "5549f74b-a880-4183-9cc8-6e0a4748fe1a"
+        }
+      },
+      "start": 47417.40000003576,
+      "end": 48266.10000002384,
+      "milliseconds": 848.6999999880791
+    },
+    {
+      "i": 54,
+      "aggregateId": "26162dd3-3316-421a-8828-6bb306952cd2",
+      "eventId": "d6761098-18cb-4c96-b243-bab20f30b3e9",
+      "expectedCount": 249,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "249\nVIGENTE\nRevisión 6098 · eventos 249\nEvento d6761098-18cb-4c96-b243-bab20f30b3e9\n2026-09-14T18:55:19.107060+00:00",
+          "value": "249",
+          "revision": "6098",
+          "quality": "VIGENTE",
+          "eventId": "d6761098-18cb-4c96-b243-bab20f30b3e9"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6098 · eventos 249\nEvento d6761098-18cb-4c96-b243-bab20f30b3e9\n2026-09-14T18:55:19.107060+00:00",
+          "value": "100",
+          "revision": "6098",
+          "quality": "VIGENTE",
+          "eventId": "d6761098-18cb-4c96-b243-bab20f30b3e9"
+        }
+      },
+      "start": 48267.10000002384,
+      "end": 49116.69999998808,
+      "milliseconds": 849.5999999642372
+    },
+    {
+      "i": 55,
+      "aggregateId": "1da1653e-b013-414f-88db-c46366e6fb47",
+      "eventId": "5accf486-c0a7-4c36-943b-fd54398c1b6d",
+      "expectedCount": 250,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "250\nVIGENTE\nRevisión 6103 · eventos 250\nEvento 5accf486-c0a7-4c36-943b-fd54398c1b6d\n2026-09-14T18:55:19.970033+00:00",
+          "value": "250",
+          "revision": "6103",
+          "quality": "VIGENTE",
+          "eventId": "5accf486-c0a7-4c36-943b-fd54398c1b6d"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6103 · eventos 250\nEvento 5accf486-c0a7-4c36-943b-fd54398c1b6d\n2026-09-14T18:55:19.970033+00:00",
+          "value": "100",
+          "revision": "6103",
+          "quality": "VIGENTE",
+          "eventId": "5accf486-c0a7-4c36-943b-fd54398c1b6d"
+        }
+      },
+      "start": 49118.10000002384,
+      "end": 49983.40000003576,
+      "milliseconds": 865.3000000119209
+    },
+    {
+      "i": 56,
+      "aggregateId": "19146b19-540b-45b4-8b54-9bebe2036a8a",
+      "eventId": "3c1c5d9a-1d71-4fa5-95a1-8a7511a3a2dd",
+      "expectedCount": 251,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "251\nVIGENTE\nRevisión 6108 · eventos 251\nEvento 3c1c5d9a-1d71-4fa5-95a1-8a7511a3a2dd\n2026-09-14T18:55:20.809199+00:00",
+          "value": "251",
+          "revision": "6108",
+          "quality": "VIGENTE",
+          "eventId": "3c1c5d9a-1d71-4fa5-95a1-8a7511a3a2dd"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6108 · eventos 251\nEvento 3c1c5d9a-1d71-4fa5-95a1-8a7511a3a2dd\n2026-09-14T18:55:20.809199+00:00",
+          "value": "100",
+          "revision": "6108",
+          "quality": "VIGENTE",
+          "eventId": "3c1c5d9a-1d71-4fa5-95a1-8a7511a3a2dd"
+        }
+      },
+      "start": 49984.40000003576,
+      "end": 50800,
+      "milliseconds": 815.5999999642372
+    },
+    {
+      "i": 57,
+      "aggregateId": "c5864a04-c74d-4964-a56e-d07dad544a69",
+      "eventId": "12141227-fb95-47d3-a397-ba6e14dd796e",
+      "expectedCount": 252,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "252\nVIGENTE\nRevisión 6113 · eventos 252\nEvento 12141227-fb95-47d3-a397-ba6e14dd796e\n2026-09-14T18:55:21.646517+00:00",
+          "value": "252",
+          "revision": "6113",
+          "quality": "VIGENTE",
+          "eventId": "12141227-fb95-47d3-a397-ba6e14dd796e"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6113 · eventos 252\nEvento 12141227-fb95-47d3-a397-ba6e14dd796e\n2026-09-14T18:55:21.646517+00:00",
+          "value": "100",
+          "revision": "6113",
+          "quality": "VIGENTE",
+          "eventId": "12141227-fb95-47d3-a397-ba6e14dd796e"
+        }
+      },
+      "start": 50800.90000003576,
+      "end": 51649.90000003576,
+      "milliseconds": 849
+    },
+    {
+      "i": 58,
+      "aggregateId": "a8993f2c-923f-4d37-b048-c50147cc813c",
+      "eventId": "6d745d5e-5d9a-4d5a-9492-1281e7a09c7d",
+      "expectedCount": 253,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "253\nVIGENTE\nRevisión 6118 · eventos 253\nEvento 6d745d5e-5d9a-4d5a-9492-1281e7a09c7d\n2026-09-14T18:55:22.503088+00:00",
+          "value": "253",
+          "revision": "6118",
+          "quality": "VIGENTE",
+          "eventId": "6d745d5e-5d9a-4d5a-9492-1281e7a09c7d"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6118 · eventos 253\nEvento 6d745d5e-5d9a-4d5a-9492-1281e7a09c7d\n2026-09-14T18:55:22.503088+00:00",
+          "value": "100",
+          "revision": "6118",
+          "quality": "VIGENTE",
+          "eventId": "6d745d5e-5d9a-4d5a-9492-1281e7a09c7d"
+        }
+      },
+      "start": 51650.90000003576,
+      "end": 52483.30000001192,
+      "milliseconds": 832.3999999761581
+    },
+    {
+      "i": 59,
+      "aggregateId": "38f6bdd3-fc9a-4a7f-ba59-ce44d3497588",
+      "eventId": "224988a6-d4a3-4727-99c4-6e2cc0314f60",
+      "expectedCount": 254,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "254\nVIGENTE\nRevisión 6123 · eventos 254\nEvento 224988a6-d4a3-4727-99c4-6e2cc0314f60\n2026-09-14T18:55:23.327913+00:00",
+          "value": "254",
+          "revision": "6123",
+          "quality": "VIGENTE",
+          "eventId": "224988a6-d4a3-4727-99c4-6e2cc0314f60"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6123 · eventos 254\nEvento 224988a6-d4a3-4727-99c4-6e2cc0314f60\n2026-09-14T18:55:23.327913+00:00",
+          "value": "100",
+          "revision": "6123",
+          "quality": "VIGENTE",
+          "eventId": "224988a6-d4a3-4727-99c4-6e2cc0314f60"
+        }
+      },
+      "start": 52484.40000003576,
+      "end": 53416.30000001192,
+      "milliseconds": 931.8999999761581
+    },
+    {
+      "i": 60,
+      "aggregateId": "953734eb-6658-4084-b32b-96dff1518b4a",
+      "eventId": "c8b87bf0-4cce-4fe9-b926-7f7fa5eab832",
+      "expectedCount": 255,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "255\nVIGENTE\nRevisión 6127 · eventos 255\nEvento c8b87bf0-4cce-4fe9-b926-7f7fa5eab832\n2026-09-14T18:55:24.260234+00:00",
+          "value": "255",
+          "revision": "6127",
+          "quality": "VIGENTE",
+          "eventId": "c8b87bf0-4cce-4fe9-b926-7f7fa5eab832"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6127 · eventos 255\nEvento c8b87bf0-4cce-4fe9-b926-7f7fa5eab832\n2026-09-14T18:55:24.260234+00:00",
+          "value": "100",
+          "revision": "6127",
+          "quality": "VIGENTE",
+          "eventId": "c8b87bf0-4cce-4fe9-b926-7f7fa5eab832"
+        }
+      },
+      "start": 53418,
+      "end": 54265.60000002384,
+      "milliseconds": 847.6000000238419
+    },
+    {
+      "i": 61,
+      "aggregateId": "845780fb-482e-4483-81cf-599c538e3985",
+      "eventId": "8077adc5-4c87-4b27-83f8-a01d511d6bb7",
+      "expectedCount": 256,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "256\nVIGENTE\nRevisión 6132 · eventos 256\nEvento 8077adc5-4c87-4b27-83f8-a01d511d6bb7\n2026-09-14T18:55:25.121001+00:00",
+          "value": "256",
+          "revision": "6132",
+          "quality": "VIGENTE",
+          "eventId": "8077adc5-4c87-4b27-83f8-a01d511d6bb7"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6132 · eventos 256\nEvento 8077adc5-4c87-4b27-83f8-a01d511d6bb7\n2026-09-14T18:55:25.121001+00:00",
+          "value": "100",
+          "revision": "6132",
+          "quality": "VIGENTE",
+          "eventId": "8077adc5-4c87-4b27-83f8-a01d511d6bb7"
+        }
+      },
+      "start": 54266.60000002384,
+      "end": 55133.19999998808,
+      "milliseconds": 866.5999999642372
+    },
+    {
+      "i": 62,
+      "aggregateId": "8ce2e4d9-c9c2-4ed3-b77a-a4dcb83800c1",
+      "eventId": "a7ab08ab-5c01-400c-8a74-b577bb924082",
+      "expectedCount": 257,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "257\nVIGENTE\nRevisión 6137 · eventos 257\nEvento a7ab08ab-5c01-400c-8a74-b577bb924082\n2026-09-14T18:55:25.951728+00:00",
+          "value": "257",
+          "revision": "6137",
+          "quality": "VIGENTE",
+          "eventId": "a7ab08ab-5c01-400c-8a74-b577bb924082"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6137 · eventos 257\nEvento a7ab08ab-5c01-400c-8a74-b577bb924082\n2026-09-14T18:55:25.951728+00:00",
+          "value": "100",
+          "revision": "6137",
+          "quality": "VIGENTE",
+          "eventId": "a7ab08ab-5c01-400c-8a74-b577bb924082"
+        }
+      },
+      "start": 55134.30000001192,
+      "end": 55949.40000003576,
+      "milliseconds": 815.1000000238419
+    },
+    {
+      "i": 63,
+      "aggregateId": "43582be7-dd7f-473e-8ef0-62a18a7c9b68",
+      "eventId": "fd698622-4aa4-493c-8be4-a019c4554be6",
+      "expectedCount": 258,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "258\nVIGENTE\nRevisión 6142 · eventos 258\nEvento fd698622-4aa4-493c-8be4-a019c4554be6\n2026-09-14T18:55:26.787478+00:00",
+          "value": "258",
+          "revision": "6142",
+          "quality": "VIGENTE",
+          "eventId": "fd698622-4aa4-493c-8be4-a019c4554be6"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6142 · eventos 258\nEvento fd698622-4aa4-493c-8be4-a019c4554be6\n2026-09-14T18:55:26.787478+00:00",
+          "value": "100",
+          "revision": "6142",
+          "quality": "VIGENTE",
+          "eventId": "fd698622-4aa4-493c-8be4-a019c4554be6"
+        }
+      },
+      "start": 55950.40000003576,
+      "end": 56798.80000001192,
+      "milliseconds": 848.3999999761581
+    },
+    {
+      "i": 64,
+      "aggregateId": "7c70f944-2f26-4c70-8052-b146661c0308",
+      "eventId": "a25ca230-19b3-44b2-9299-d2f07565e34f",
+      "expectedCount": 259,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "259\nVIGENTE\nRevisión 6147 · eventos 259\nEvento a25ca230-19b3-44b2-9299-d2f07565e34f\n2026-09-14T18:55:27.644552+00:00",
+          "value": "259",
+          "revision": "6147",
+          "quality": "VIGENTE",
+          "eventId": "a25ca230-19b3-44b2-9299-d2f07565e34f"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6147 · eventos 259\nEvento a25ca230-19b3-44b2-9299-d2f07565e34f\n2026-09-14T18:55:27.644552+00:00",
+          "value": "100",
+          "revision": "6147",
+          "quality": "VIGENTE",
+          "eventId": "a25ca230-19b3-44b2-9299-d2f07565e34f"
+        }
+      },
+      "start": 56799.69999998808,
+      "end": 57632.80000001192,
+      "milliseconds": 833.1000000238419
+    },
+    {
+      "i": 65,
+      "aggregateId": "1c3f1622-cffd-4e3f-9a03-9ad255b8c056",
+      "eventId": "5e608cce-d144-4423-8c6e-4f3184f73df1",
+      "expectedCount": 260,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "260\nVIGENTE\nRevisión 6152 · eventos 260\nEvento 5e608cce-d144-4423-8c6e-4f3184f73df1\n2026-09-14T18:55:28.488934+00:00",
+          "value": "260",
+          "revision": "6152",
+          "quality": "VIGENTE",
+          "eventId": "5e608cce-d144-4423-8c6e-4f3184f73df1"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6152 · eventos 260\nEvento 5e608cce-d144-4423-8c6e-4f3184f73df1\n2026-09-14T18:55:28.488934+00:00",
+          "value": "100",
+          "revision": "6152",
+          "quality": "VIGENTE",
+          "eventId": "5e608cce-d144-4423-8c6e-4f3184f73df1"
+        }
+      },
+      "start": 57633.90000003576,
+      "end": 58499.5,
+      "milliseconds": 865.5999999642372
+    },
+    {
+      "i": 66,
+      "aggregateId": "91bad7a8-9c7f-47d9-9af2-d3e01d9ed861",
+      "eventId": "166100e5-ccaa-4a81-bb39-dbd4f45aea02",
+      "expectedCount": 261,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "261\nVIGENTE\nRevisión 6157 · eventos 261\nEvento 166100e5-ccaa-4a81-bb39-dbd4f45aea02\n2026-09-14T18:55:29.326192+00:00",
+          "value": "261",
+          "revision": "6157",
+          "quality": "VIGENTE",
+          "eventId": "166100e5-ccaa-4a81-bb39-dbd4f45aea02"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6157 · eventos 261\nEvento 166100e5-ccaa-4a81-bb39-dbd4f45aea02\n2026-09-14T18:55:29.326192+00:00",
+          "value": "100",
+          "revision": "6157",
+          "quality": "VIGENTE",
+          "eventId": "166100e5-ccaa-4a81-bb39-dbd4f45aea02"
+        }
+      },
+      "start": 58500.40000003576,
+      "end": 59316.30000001192,
+      "milliseconds": 815.8999999761581
+    },
+    {
+      "i": 67,
+      "aggregateId": "77b08665-b327-4d41-816c-eb20a8d0890b",
+      "eventId": "3e411fc6-bd4c-4a4d-a367-677846585dfb",
+      "expectedCount": 262,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "262\nVIGENTE\nRevisión 6161 · eventos 262\nEvento 3e411fc6-bd4c-4a4d-a367-677846585dfb\n2026-09-14T18:55:30.157040+00:00",
+          "value": "262",
+          "revision": "6161",
+          "quality": "VIGENTE",
+          "eventId": "3e411fc6-bd4c-4a4d-a367-677846585dfb"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6161 · eventos 262\nEvento 3e411fc6-bd4c-4a4d-a367-677846585dfb\n2026-09-14T18:55:30.157040+00:00",
+          "value": "100",
+          "revision": "6161",
+          "quality": "VIGENTE",
+          "eventId": "3e411fc6-bd4c-4a4d-a367-677846585dfb"
+        }
+      },
+      "start": 59317.30000001192,
+      "end": 60148.60000002384,
+      "milliseconds": 831.3000000119209
+    },
+    {
+      "i": 68,
+      "aggregateId": "545e0e77-682b-4888-bd92-077e1234d33c",
+      "eventId": "939ca673-ed08-44c1-bdf8-405713a902c2",
+      "expectedCount": 263,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "263\nVIGENTE\nRevisión 6166 · eventos 263\nEvento 939ca673-ed08-44c1-bdf8-405713a902c2\n2026-09-14T18:55:30.996504+00:00",
+          "value": "263",
+          "revision": "6166",
+          "quality": "VIGENTE",
+          "eventId": "939ca673-ed08-44c1-bdf8-405713a902c2"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6166 · eventos 263\nEvento 939ca673-ed08-44c1-bdf8-405713a902c2\n2026-09-14T18:55:30.996504+00:00",
+          "value": "100",
+          "revision": "6166",
+          "quality": "VIGENTE",
+          "eventId": "939ca673-ed08-44c1-bdf8-405713a902c2"
+        }
+      },
+      "start": 60149.40000003576,
+      "end": 60998.90000003576,
+      "milliseconds": 849.5
+    },
+    {
+      "i": 69,
+      "aggregateId": "fe0402af-0146-46bc-8eaa-8f78fcaf28f4",
+      "eventId": "75d8bc4e-57d4-46ec-aaf2-7ec14422e3a3",
+      "expectedCount": 264,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "264\nVIGENTE\nRevisión 6171 · eventos 264\nEvento 75d8bc4e-57d4-46ec-aaf2-7ec14422e3a3\n2026-09-14T18:55:31.889248+00:00",
+          "value": "264",
+          "revision": "6171",
+          "quality": "VIGENTE",
+          "eventId": "75d8bc4e-57d4-46ec-aaf2-7ec14422e3a3"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6171 · eventos 264\nEvento 75d8bc4e-57d4-46ec-aaf2-7ec14422e3a3\n2026-09-14T18:55:31.889248+00:00",
+          "value": "100",
+          "revision": "6171",
+          "quality": "VIGENTE",
+          "eventId": "75d8bc4e-57d4-46ec-aaf2-7ec14422e3a3"
+        }
+      },
+      "start": 60999.80000001192,
+      "end": 61882.90000003576,
+      "milliseconds": 883.1000000238419
+    },
+    {
+      "i": 70,
+      "aggregateId": "5e66f9fd-69ef-47ae-808e-d906a16efd87",
+      "eventId": "e7f87222-df51-4d4a-a576-9dc26cdfa40e",
+      "expectedCount": 265,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "265\nVIGENTE\nRevisión 6176 · eventos 265\nEvento e7f87222-df51-4d4a-a576-9dc26cdfa40e\n2026-09-14T18:55:32.722050+00:00",
+          "value": "265",
+          "revision": "6176",
+          "quality": "VIGENTE",
+          "eventId": "e7f87222-df51-4d4a-a576-9dc26cdfa40e"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6176 · eventos 265\nEvento e7f87222-df51-4d4a-a576-9dc26cdfa40e\n2026-09-14T18:55:32.722050+00:00",
+          "value": "100",
+          "revision": "6176",
+          "quality": "VIGENTE",
+          "eventId": "e7f87222-df51-4d4a-a576-9dc26cdfa40e"
+        }
+      },
+      "start": 61884.60000002384,
+      "end": 62716.19999998808,
+      "milliseconds": 831.5999999642372
+    },
+    {
+      "i": 71,
+      "aggregateId": "e3538f86-6162-44bc-9e32-aab38f4443f7",
+      "eventId": "8c4cfdcf-2970-4e32-a6b4-43de7db15f82",
+      "expectedCount": 266,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "266\nVIGENTE\nRevisión 6181 · eventos 266\nEvento 8c4cfdcf-2970-4e32-a6b4-43de7db15f82\n2026-09-14T18:55:33.565079+00:00",
+          "value": "266",
+          "revision": "6181",
+          "quality": "VIGENTE",
+          "eventId": "8c4cfdcf-2970-4e32-a6b4-43de7db15f82"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6181 · eventos 266\nEvento 8c4cfdcf-2970-4e32-a6b4-43de7db15f82\n2026-09-14T18:55:33.565079+00:00",
+          "value": "100",
+          "revision": "6181",
+          "quality": "VIGENTE",
+          "eventId": "8c4cfdcf-2970-4e32-a6b4-43de7db15f82"
+        }
+      },
+      "start": 62717.10000002384,
+      "end": 63582.80000001192,
+      "milliseconds": 865.6999999880791
+    },
+    {
+      "i": 72,
+      "aggregateId": "9ee29072-9d1c-4080-982a-e81f29786bf4",
+      "eventId": "32104e01-bebc-4bfd-a73a-0fac661b8f66",
+      "expectedCount": 267,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "267\nVIGENTE\nRevisión 6186 · eventos 267\nEvento 32104e01-bebc-4bfd-a73a-0fac661b8f66\n2026-09-14T18:55:34.429733+00:00",
+          "value": "267",
+          "revision": "6186",
+          "quality": "VIGENTE",
+          "eventId": "32104e01-bebc-4bfd-a73a-0fac661b8f66"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6186 · eventos 267\nEvento 32104e01-bebc-4bfd-a73a-0fac661b8f66\n2026-09-14T18:55:34.429733+00:00",
+          "value": "100",
+          "revision": "6186",
+          "quality": "VIGENTE",
+          "eventId": "32104e01-bebc-4bfd-a73a-0fac661b8f66"
+        }
+      },
+      "start": 63584,
+      "end": 64432.69999998808,
+      "milliseconds": 848.6999999880791
+    },
+    {
+      "i": 73,
+      "aggregateId": "0f92d96b-0713-4598-a726-2565864f219a",
+      "eventId": "3dd63fd0-e35f-4b35-a279-c98c5a61e077",
+      "expectedCount": 268,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "268\nVIGENTE\nRevisión 6190 · eventos 268\nEvento 3dd63fd0-e35f-4b35-a279-c98c5a61e077\n2026-09-14T18:55:35.256628+00:00",
+          "value": "268",
+          "revision": "6190",
+          "quality": "VIGENTE",
+          "eventId": "3dd63fd0-e35f-4b35-a279-c98c5a61e077"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6190 · eventos 268\nEvento 3dd63fd0-e35f-4b35-a279-c98c5a61e077\n2026-09-14T18:55:35.256628+00:00",
+          "value": "100",
+          "revision": "6190",
+          "quality": "VIGENTE",
+          "eventId": "3dd63fd0-e35f-4b35-a279-c98c5a61e077"
+        }
+      },
+      "start": 64433.90000003576,
+      "end": 65248.60000002384,
+      "milliseconds": 814.6999999880791
+    },
+    {
+      "i": 74,
+      "aggregateId": "059f46a6-70a8-4734-8f32-a0761e57cc3f",
+      "eventId": "0f87e36d-77ec-4b81-b05a-7d448b798188",
+      "expectedCount": 269,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "269\nVIGENTE\nRevisión 6195 · eventos 269\nEvento 0f87e36d-77ec-4b81-b05a-7d448b798188\n2026-09-14T18:55:36.093979+00:00",
+          "value": "269",
+          "revision": "6195",
+          "quality": "VIGENTE",
+          "eventId": "0f87e36d-77ec-4b81-b05a-7d448b798188"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6195 · eventos 269\nEvento 0f87e36d-77ec-4b81-b05a-7d448b798188\n2026-09-14T18:55:36.093979+00:00",
+          "value": "100",
+          "revision": "6195",
+          "quality": "VIGENTE",
+          "eventId": "0f87e36d-77ec-4b81-b05a-7d448b798188"
+        }
+      },
+      "start": 65249.5,
+      "end": 66099.40000003576,
+      "milliseconds": 849.9000000357628
+    },
+    {
+      "i": 75,
+      "aggregateId": "79398631-8b92-4baa-bb1a-1a9d5416073e",
+      "eventId": "93e7c3a2-ec30-40ad-acbf-fe5fdde679c2",
+      "expectedCount": 270,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "270\nVIGENTE\nRevisión 6200 · eventos 270\nEvento 93e7c3a2-ec30-40ad-acbf-fe5fdde679c2\n2026-09-14T18:55:36.974691+00:00",
+          "value": "270",
+          "revision": "6200",
+          "quality": "VIGENTE",
+          "eventId": "93e7c3a2-ec30-40ad-acbf-fe5fdde679c2"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6200 · eventos 270\nEvento 93e7c3a2-ec30-40ad-acbf-fe5fdde679c2\n2026-09-14T18:55:36.974691+00:00",
+          "value": "100",
+          "revision": "6200",
+          "quality": "VIGENTE",
+          "eventId": "93e7c3a2-ec30-40ad-acbf-fe5fdde679c2"
+        }
+      },
+      "start": 66100.80000001192,
+      "end": 66966.10000002384,
+      "milliseconds": 865.3000000119209
+    },
+    {
+      "i": 76,
+      "aggregateId": "58d9c64a-1083-498d-b9ab-7eb74467efef",
+      "eventId": "012e201a-aef9-4461-b39e-8afab0f1eb43",
+      "expectedCount": 271,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "271\nVIGENTE\nRevisión 6205 · eventos 271\nEvento 012e201a-aef9-4461-b39e-8afab0f1eb43\n2026-09-14T18:55:37.829500+00:00",
+          "value": "271",
+          "revision": "6205",
+          "quality": "VIGENTE",
+          "eventId": "012e201a-aef9-4461-b39e-8afab0f1eb43"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6205 · eventos 271\nEvento 012e201a-aef9-4461-b39e-8afab0f1eb43\n2026-09-14T18:55:37.829500+00:00",
+          "value": "100",
+          "revision": "6205",
+          "quality": "VIGENTE",
+          "eventId": "012e201a-aef9-4461-b39e-8afab0f1eb43"
+        }
+      },
+      "start": 66967,
+      "end": 67831.60000002384,
+      "milliseconds": 864.6000000238419
+    },
+    {
+      "i": 77,
+      "aggregateId": "070558bd-93a1-42b9-b086-29286e89778f",
+      "eventId": "13382a25-57bb-4bfe-949e-03b9bb52059d",
+      "expectedCount": 272,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "272\nVIGENTE\nRevisión 6210 · eventos 272\nEvento 13382a25-57bb-4bfe-949e-03b9bb52059d\n2026-09-14T18:55:38.674792+00:00",
+          "value": "272",
+          "revision": "6210",
+          "quality": "VIGENTE",
+          "eventId": "13382a25-57bb-4bfe-949e-03b9bb52059d"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6210 · eventos 272\nEvento 13382a25-57bb-4bfe-949e-03b9bb52059d\n2026-09-14T18:55:38.674792+00:00",
+          "value": "100",
+          "revision": "6210",
+          "quality": "VIGENTE",
+          "eventId": "13382a25-57bb-4bfe-949e-03b9bb52059d"
+        }
+      },
+      "start": 67832.5,
+      "end": 68665.19999998808,
+      "milliseconds": 832.6999999880791
+    },
+    {
+      "i": 78,
+      "aggregateId": "7396f363-0aae-4c43-a099-5441acdae116",
+      "eventId": "c1d13d59-e9f5-41e5-b5e9-263ae5a4f655",
+      "expectedCount": 273,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "273\nVIGENTE\nRevisión 6215 · eventos 273\nEvento c1d13d59-e9f5-41e5-b5e9-263ae5a4f655\n2026-09-14T18:55:39.507495+00:00",
+          "value": "273",
+          "revision": "6215",
+          "quality": "VIGENTE",
+          "eventId": "c1d13d59-e9f5-41e5-b5e9-263ae5a4f655"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6215 · eventos 273\nEvento c1d13d59-e9f5-41e5-b5e9-263ae5a4f655\n2026-09-14T18:55:39.507495+00:00",
+          "value": "100",
+          "revision": "6215",
+          "quality": "VIGENTE",
+          "eventId": "c1d13d59-e9f5-41e5-b5e9-263ae5a4f655"
+        }
+      },
+      "start": 68666.10000002384,
+      "end": 69499.30000001192,
+      "milliseconds": 833.1999999880791
+    },
+    {
+      "i": 79,
+      "aggregateId": "9c85a9a7-9fc3-42b7-b4d1-04df7742949e",
+      "eventId": "4a3672f0-bd63-4c01-a764-00b769370152",
+      "expectedCount": 274,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "274\nVIGENTE\nRevisión 6220 · eventos 274\nEvento 4a3672f0-bd63-4c01-a764-00b769370152\n2026-09-14T18:55:40.356150+00:00",
+          "value": "274",
+          "revision": "6220",
+          "quality": "VIGENTE",
+          "eventId": "4a3672f0-bd63-4c01-a764-00b769370152"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6220 · eventos 274\nEvento 4a3672f0-bd63-4c01-a764-00b769370152\n2026-09-14T18:55:40.356150+00:00",
+          "value": "100",
+          "revision": "6220",
+          "quality": "VIGENTE",
+          "eventId": "4a3672f0-bd63-4c01-a764-00b769370152"
+        }
+      },
+      "start": 69500.10000002384,
+      "end": 70365,
+      "milliseconds": 864.8999999761581
+    },
+    {
+      "i": 80,
+      "aggregateId": "38fc5b4c-deac-4f75-8546-8e93c9729f18",
+      "eventId": "8663b703-c69a-4354-b3da-7acdc4540008",
+      "expectedCount": 275,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "275\nVIGENTE\nRevisión 6224 · eventos 275\nEvento 8663b703-c69a-4354-b3da-7acdc4540008\n2026-09-14T18:55:41.194568+00:00",
+          "value": "275",
+          "revision": "6224",
+          "quality": "VIGENTE",
+          "eventId": "8663b703-c69a-4354-b3da-7acdc4540008"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6224 · eventos 275\nEvento 8663b703-c69a-4354-b3da-7acdc4540008\n2026-09-14T18:55:41.194568+00:00",
+          "value": "100",
+          "revision": "6224",
+          "quality": "VIGENTE",
+          "eventId": "8663b703-c69a-4354-b3da-7acdc4540008"
+        }
+      },
+      "start": 70366,
+      "end": 71181.69999998808,
+      "milliseconds": 815.6999999880791
+    },
+    {
+      "i": 81,
+      "aggregateId": "c4bfd571-e379-444d-b0cf-af3722a002f7",
+      "eventId": "6b744d8d-a119-4621-81e3-6f4ecd89821a",
+      "expectedCount": 276,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "276\nVIGENTE\nRevisión 6229 · eventos 276\nEvento 6b744d8d-a119-4621-81e3-6f4ecd89821a\n2026-09-14T18:55:42.026098+00:00",
+          "value": "276",
+          "revision": "6229",
+          "quality": "VIGENTE",
+          "eventId": "6b744d8d-a119-4621-81e3-6f4ecd89821a"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6229 · eventos 276\nEvento 6b744d8d-a119-4621-81e3-6f4ecd89821a\n2026-09-14T18:55:42.026098+00:00",
+          "value": "100",
+          "revision": "6229",
+          "quality": "VIGENTE",
+          "eventId": "6b744d8d-a119-4621-81e3-6f4ecd89821a"
+        }
+      },
+      "start": 71183.19999998808,
+      "end": 72032.60000002384,
+      "milliseconds": 849.4000000357628
+    },
+    {
+      "i": 82,
+      "aggregateId": "22aab10f-0fcd-4684-9261-0183b837ee2e",
+      "eventId": "9e051dfc-9131-4c68-b665-e37bcc8b0f9f",
+      "expectedCount": 277,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "277\nVIGENTE\nRevisión 6234 · eventos 277\nEvento 9e051dfc-9131-4c68-b665-e37bcc8b0f9f\n2026-09-14T18:55:42.872709+00:00",
+          "value": "277",
+          "revision": "6234",
+          "quality": "VIGENTE",
+          "eventId": "9e051dfc-9131-4c68-b665-e37bcc8b0f9f"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6234 · eventos 277\nEvento 9e051dfc-9131-4c68-b665-e37bcc8b0f9f\n2026-09-14T18:55:42.872709+00:00",
+          "value": "100",
+          "revision": "6234",
+          "quality": "VIGENTE",
+          "eventId": "9e051dfc-9131-4c68-b665-e37bcc8b0f9f"
+        }
+      },
+      "start": 72033.40000003576,
+      "end": 72865,
+      "milliseconds": 831.5999999642372
+    },
+    {
+      "i": 83,
+      "aggregateId": "8fc6c1c8-e7aa-414a-a79b-43fb4db045ff",
+      "eventId": "c5fa55e8-8fb5-4745-b842-59f5eae2926d",
+      "expectedCount": 278,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "278\nVIGENTE\nRevisión 6239 · eventos 278\nEvento c5fa55e8-8fb5-4745-b842-59f5eae2926d\n2026-09-14T18:55:43.793091+00:00",
+          "value": "278",
+          "revision": "6239",
+          "quality": "VIGENTE",
+          "eventId": "c5fa55e8-8fb5-4745-b842-59f5eae2926d"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6239 · eventos 278\nEvento c5fa55e8-8fb5-4745-b842-59f5eae2926d\n2026-09-14T18:55:43.793091+00:00",
+          "value": "100",
+          "revision": "6239",
+          "quality": "VIGENTE",
+          "eventId": "c5fa55e8-8fb5-4745-b842-59f5eae2926d"
+        }
+      },
+      "start": 72866.10000002384,
+      "end": 73781.60000002384,
+      "milliseconds": 915.5
+    },
+    {
+      "i": 84,
+      "aggregateId": "c788e908-c83f-4e11-b553-8c8512532950",
+      "eventId": "56d51ad0-ecde-4788-9ddf-13ffc74ef9a7",
+      "expectedCount": 279,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "279\nVIGENTE\nRevisión 6244 · eventos 279\nEvento 56d51ad0-ecde-4788-9ddf-13ffc74ef9a7\n2026-09-14T18:55:44.655150+00:00",
+          "value": "279",
+          "revision": "6244",
+          "quality": "VIGENTE",
+          "eventId": "56d51ad0-ecde-4788-9ddf-13ffc74ef9a7"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6244 · eventos 279\nEvento 56d51ad0-ecde-4788-9ddf-13ffc74ef9a7\n2026-09-14T18:55:44.655150+00:00",
+          "value": "100",
+          "revision": "6244",
+          "quality": "VIGENTE",
+          "eventId": "56d51ad0-ecde-4788-9ddf-13ffc74ef9a7"
+        }
+      },
+      "start": 73782.69999998808,
+      "end": 74632.19999998808,
+      "milliseconds": 849.5
+    },
+    {
+      "i": 85,
+      "aggregateId": "0d72ef75-97ee-4ec1-b3c8-0459eba02d04",
+      "eventId": "08e73e88-c0da-439a-802d-91a01ff90866",
+      "expectedCount": 280,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "280\nVIGENTE\nRevisión 6249 · eventos 280\nEvento 08e73e88-c0da-439a-802d-91a01ff90866\n2026-09-14T18:55:45.491851+00:00",
+          "value": "280",
+          "revision": "6249",
+          "quality": "VIGENTE",
+          "eventId": "08e73e88-c0da-439a-802d-91a01ff90866"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6249 · eventos 280\nEvento 08e73e88-c0da-439a-802d-91a01ff90866\n2026-09-14T18:55:45.491851+00:00",
+          "value": "100",
+          "revision": "6249",
+          "quality": "VIGENTE",
+          "eventId": "08e73e88-c0da-439a-802d-91a01ff90866"
+        }
+      },
+      "start": 74633.5,
+      "end": 75482.19999998808,
+      "milliseconds": 848.6999999880791
+    },
+    {
+      "i": 86,
+      "aggregateId": "a7d4afb0-67c4-46e0-ae23-d48519bc2b2d",
+      "eventId": "e119a5f9-fae2-490e-a791-93e8f2a81558",
+      "expectedCount": 281,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "281\nVIGENTE\nRevisión 6254 · eventos 281\nEvento e119a5f9-fae2-490e-a791-93e8f2a81558\n2026-09-14T18:55:46.342745+00:00",
+          "value": "281",
+          "revision": "6254",
+          "quality": "VIGENTE",
+          "eventId": "e119a5f9-fae2-490e-a791-93e8f2a81558"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6254 · eventos 281\nEvento e119a5f9-fae2-490e-a791-93e8f2a81558\n2026-09-14T18:55:46.342745+00:00",
+          "value": "100",
+          "revision": "6254",
+          "quality": "VIGENTE",
+          "eventId": "e119a5f9-fae2-490e-a791-93e8f2a81558"
+        }
+      },
+      "start": 75483.5,
+      "end": 76331.69999998808,
+      "milliseconds": 848.1999999880791
+    },
+    {
+      "i": 87,
+      "aggregateId": "0086c2be-2b32-4263-ad46-bdef43524a68",
+      "eventId": "74949a91-e865-456f-9b5a-7f67f615d281",
+      "expectedCount": 282,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "282\nVIGENTE\nRevisión 6258 · eventos 282\nEvento 74949a91-e865-456f-9b5a-7f67f615d281\n2026-09-14T18:55:47.218852+00:00",
+          "value": "282",
+          "revision": "6258",
+          "quality": "VIGENTE",
+          "eventId": "74949a91-e865-456f-9b5a-7f67f615d281"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6258 · eventos 282\nEvento 74949a91-e865-456f-9b5a-7f67f615d281\n2026-09-14T18:55:47.218852+00:00",
+          "value": "100",
+          "revision": "6258",
+          "quality": "VIGENTE",
+          "eventId": "74949a91-e865-456f-9b5a-7f67f615d281"
+        }
+      },
+      "start": 76332.80000001192,
+      "end": 77232.30000001192,
+      "milliseconds": 899.5
+    },
+    {
+      "i": 88,
+      "aggregateId": "531b617e-ccb7-4ae6-905f-8fd1dd285b53",
+      "eventId": "186123bf-6270-4867-ac07-993feee2e08d",
+      "expectedCount": 283,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "283\nVIGENTE\nRevisión 6263 · eventos 283\nEvento 186123bf-6270-4867-ac07-993feee2e08d\n2026-09-14T18:55:48.098967+00:00",
+          "value": "283",
+          "revision": "6263",
+          "quality": "VIGENTE",
+          "eventId": "186123bf-6270-4867-ac07-993feee2e08d"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6263 · eventos 283\nEvento 186123bf-6270-4867-ac07-993feee2e08d\n2026-09-14T18:55:48.098967+00:00",
+          "value": "100",
+          "revision": "6263",
+          "quality": "VIGENTE",
+          "eventId": "186123bf-6270-4867-ac07-993feee2e08d"
+        }
+      },
+      "start": 77233.30000001192,
+      "end": 78098.40000003576,
+      "milliseconds": 865.1000000238419
+    },
+    {
+      "i": 89,
+      "aggregateId": "6ba5bf1a-701e-40f5-aa47-fd64f1e58bba",
+      "eventId": "a6d22eea-1d3f-462b-9dd6-658493c63e55",
+      "expectedCount": 284,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "284\nVIGENTE\nRevisión 6268 · eventos 284\nEvento a6d22eea-1d3f-462b-9dd6-658493c63e55\n2026-09-14T18:55:48.942942+00:00",
+          "value": "284",
+          "revision": "6268",
+          "quality": "VIGENTE",
+          "eventId": "a6d22eea-1d3f-462b-9dd6-658493c63e55"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6268 · eventos 284\nEvento a6d22eea-1d3f-462b-9dd6-658493c63e55\n2026-09-14T18:55:48.942942+00:00",
+          "value": "100",
+          "revision": "6268",
+          "quality": "VIGENTE",
+          "eventId": "a6d22eea-1d3f-462b-9dd6-658493c63e55"
+        }
+      },
+      "start": 78099.5,
+      "end": 78932.19999998808,
+      "milliseconds": 832.6999999880791
+    },
+    {
+      "i": 90,
+      "aggregateId": "82154074-cbba-4d86-92ca-11be7225807d",
+      "eventId": "f99a9b36-dfed-4139-b9af-e6bd6b9c3ac6",
+      "expectedCount": 285,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "285\nVIGENTE\nRevisión 6273 · eventos 285\nEvento f99a9b36-dfed-4139-b9af-e6bd6b9c3ac6\n2026-09-14T18:55:49.788895+00:00",
+          "value": "285",
+          "revision": "6273",
+          "quality": "VIGENTE",
+          "eventId": "f99a9b36-dfed-4139-b9af-e6bd6b9c3ac6"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6273 · eventos 285\nEvento f99a9b36-dfed-4139-b9af-e6bd6b9c3ac6\n2026-09-14T18:55:49.788895+00:00",
+          "value": "100",
+          "revision": "6273",
+          "quality": "VIGENTE",
+          "eventId": "f99a9b36-dfed-4139-b9af-e6bd6b9c3ac6"
+        }
+      },
+      "start": 78933,
+      "end": 79781.19999998808,
+      "milliseconds": 848.1999999880791
+    },
+    {
+      "i": 91,
+      "aggregateId": "4917e5d8-a278-41d4-a72d-c35a0ab87048",
+      "eventId": "4b384264-dd03-4974-b6b1-673d4d727925",
+      "expectedCount": 286,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "286\nVIGENTE\nRevisión 6278 · eventos 286\nEvento 4b384264-dd03-4974-b6b1-673d4d727925\n2026-09-14T18:55:50.629886+00:00",
+          "value": "286",
+          "revision": "6278",
+          "quality": "VIGENTE",
+          "eventId": "4b384264-dd03-4974-b6b1-673d4d727925"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6278 · eventos 286\nEvento 4b384264-dd03-4974-b6b1-673d4d727925\n2026-09-14T18:55:50.629886+00:00",
+          "value": "100",
+          "revision": "6278",
+          "quality": "VIGENTE",
+          "eventId": "4b384264-dd03-4974-b6b1-673d4d727925"
+        }
+      },
+      "start": 79782.30000001192,
+      "end": 80631.69999998808,
+      "milliseconds": 849.3999999761581
+    },
+    {
+      "i": 92,
+      "aggregateId": "8693940a-9e9a-4131-9831-44303a2d0075",
+      "eventId": "7aa731de-5483-48bf-8a04-7c6030306ca3",
+      "expectedCount": 287,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "287\nVIGENTE\nRevisión 6283 · eventos 287\nEvento 7aa731de-5483-48bf-8a04-7c6030306ca3\n2026-09-14T18:55:51.485342+00:00",
+          "value": "287",
+          "revision": "6283",
+          "quality": "VIGENTE",
+          "eventId": "7aa731de-5483-48bf-8a04-7c6030306ca3"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6283 · eventos 287\nEvento 7aa731de-5483-48bf-8a04-7c6030306ca3\n2026-09-14T18:55:51.485342+00:00",
+          "value": "100",
+          "revision": "6283",
+          "quality": "VIGENTE",
+          "eventId": "7aa731de-5483-48bf-8a04-7c6030306ca3"
+        }
+      },
+      "start": 80632.90000003576,
+      "end": 81498.40000003576,
+      "milliseconds": 865.5
+    },
+    {
+      "i": 93,
+      "aggregateId": "56d3a2ff-1518-4247-90db-3bde809dbd7b",
+      "eventId": "2d1b3c85-fbe9-478a-9ec5-0f763ea2c37b",
+      "expectedCount": 288,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "288\nVIGENTE\nRevisión 6288 · eventos 288\nEvento 2d1b3c85-fbe9-478a-9ec5-0f763ea2c37b\n2026-09-14T18:55:52.371921+00:00",
+          "value": "288",
+          "revision": "6288",
+          "quality": "VIGENTE",
+          "eventId": "2d1b3c85-fbe9-478a-9ec5-0f763ea2c37b"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6288 · eventos 288\nEvento 2d1b3c85-fbe9-478a-9ec5-0f763ea2c37b\n2026-09-14T18:55:52.371921+00:00",
+          "value": "100",
+          "revision": "6288",
+          "quality": "VIGENTE",
+          "eventId": "2d1b3c85-fbe9-478a-9ec5-0f763ea2c37b"
+        }
+      },
+      "start": 81499.30000001192,
+      "end": 82365.10000002384,
+      "milliseconds": 865.8000000119209
+    },
+    {
+      "i": 94,
+      "aggregateId": "55fa1f1d-d00a-4674-9693-0bf6add7021b",
+      "eventId": "527b7959-7e35-4df4-86c3-6bef86dcfbf6",
+      "expectedCount": 289,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "289\nVIGENTE\nRevisión 6292 · eventos 289\nEvento 527b7959-7e35-4df4-86c3-6bef86dcfbf6\n2026-09-14T18:55:53.224893+00:00",
+          "value": "289",
+          "revision": "6292",
+          "quality": "VIGENTE",
+          "eventId": "527b7959-7e35-4df4-86c3-6bef86dcfbf6"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6292 · eventos 289\nEvento 527b7959-7e35-4df4-86c3-6bef86dcfbf6\n2026-09-14T18:55:53.224893+00:00",
+          "value": "100",
+          "revision": "6292",
+          "quality": "VIGENTE",
+          "eventId": "527b7959-7e35-4df4-86c3-6bef86dcfbf6"
+        }
+      },
+      "start": 82366.90000003576,
+      "end": 83231.30000001192,
+      "milliseconds": 864.3999999761581
+    },
+    {
+      "i": 95,
+      "aggregateId": "299830d7-6154-4020-a787-a2c5a7190073",
+      "eventId": "6fc9e8f8-2665-48b1-8401-0006a2f33afe",
+      "expectedCount": 290,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "290\nVIGENTE\nRevisión 6297 · eventos 290\nEvento 6fc9e8f8-2665-48b1-8401-0006a2f33afe\n2026-09-14T18:55:54.095925+00:00",
+          "value": "290",
+          "revision": "6297",
+          "quality": "VIGENTE",
+          "eventId": "6fc9e8f8-2665-48b1-8401-0006a2f33afe"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6297 · eventos 290\nEvento 6fc9e8f8-2665-48b1-8401-0006a2f33afe\n2026-09-14T18:55:54.095925+00:00",
+          "value": "100",
+          "revision": "6297",
+          "quality": "VIGENTE",
+          "eventId": "6fc9e8f8-2665-48b1-8401-0006a2f33afe"
+        }
+      },
+      "start": 83236,
+      "end": 84081.69999998808,
+      "milliseconds": 845.6999999880791
+    },
+    {
+      "i": 96,
+      "aggregateId": "84c0988f-1ab7-4e04-b53a-79c6b220a37e",
+      "eventId": "cb82caca-740d-488e-9797-b7c8001bf1bd",
+      "expectedCount": 291,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "291\nVIGENTE\nRevisión 6302 · eventos 291\nEvento cb82caca-740d-488e-9797-b7c8001bf1bd\n2026-09-14T18:55:54.915404+00:00",
+          "value": "291",
+          "revision": "6302",
+          "quality": "VIGENTE",
+          "eventId": "cb82caca-740d-488e-9797-b7c8001bf1bd"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6302 · eventos 291\nEvento cb82caca-740d-488e-9797-b7c8001bf1bd\n2026-09-14T18:55:54.915404+00:00",
+          "value": "100",
+          "revision": "6302",
+          "quality": "VIGENTE",
+          "eventId": "cb82caca-740d-488e-9797-b7c8001bf1bd"
+        }
+      },
+      "start": 84083.60000002384,
+      "end": 84915.10000002384,
+      "milliseconds": 831.5
+    },
+    {
+      "i": 97,
+      "aggregateId": "d6e5cc22-26e2-4b49-a48e-7a8dec50e6f2",
+      "eventId": "e96bdcb9-dfeb-4572-90db-459723365ae9",
+      "expectedCount": 292,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "292\nVIGENTE\nRevisión 6307 · eventos 292\nEvento e96bdcb9-dfeb-4572-90db-459723365ae9\n2026-09-14T18:55:55.776082+00:00",
+          "value": "292",
+          "revision": "6307",
+          "quality": "VIGENTE",
+          "eventId": "e96bdcb9-dfeb-4572-90db-459723365ae9"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6307 · eventos 292\nEvento e96bdcb9-dfeb-4572-90db-459723365ae9\n2026-09-14T18:55:55.776082+00:00",
+          "value": "100",
+          "revision": "6307",
+          "quality": "VIGENTE",
+          "eventId": "e96bdcb9-dfeb-4572-90db-459723365ae9"
+        }
+      },
+      "start": 84916,
+      "end": 85781.80000001192,
+      "milliseconds": 865.8000000119209
+    },
+    {
+      "i": 98,
+      "aggregateId": "bd71532e-f1b7-4064-a977-0aadfbae7b78",
+      "eventId": "d0824215-572d-4f72-b323-71914967a957",
+      "expectedCount": 293,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "293\nVIGENTE\nRevisión 6312 · eventos 293\nEvento d0824215-572d-4f72-b323-71914967a957\n2026-09-14T18:55:56.625111+00:00",
+          "value": "293",
+          "revision": "6312",
+          "quality": "VIGENTE",
+          "eventId": "d0824215-572d-4f72-b323-71914967a957"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6312 · eventos 293\nEvento d0824215-572d-4f72-b323-71914967a957\n2026-09-14T18:55:56.625111+00:00",
+          "value": "100",
+          "revision": "6312",
+          "quality": "VIGENTE",
+          "eventId": "d0824215-572d-4f72-b323-71914967a957"
+        }
+      },
+      "start": 85784.10000002384,
+      "end": 86614.60000002384,
+      "milliseconds": 830.5
+    },
+    {
+      "i": 99,
+      "aggregateId": "ada3f661-c72b-48ef-8e12-595538adcf33",
+      "eventId": "238dbe84-b166-4be4-b7fb-9349a4ba18ea",
+      "expectedCount": 294,
+      "expectedBusinessValue": "100",
+      "rendered": {
+        "counter": {
+          "text": "294\nVIGENTE\nRevisión 6317 · eventos 294\nEvento 238dbe84-b166-4be4-b7fb-9349a4ba18ea\n2026-09-14T18:55:57.479182+00:00",
+          "value": "294",
+          "revision": "6317",
+          "quality": "VIGENTE",
+          "eventId": "238dbe84-b166-4be4-b7fb-9349a4ba18ea"
+        },
+        "kpi": {
+          "text": "100\nVIGENTE\nRevisión 6317 · eventos 294\nEvento 238dbe84-b166-4be4-b7fb-9349a4ba18ea\n2026-09-14T18:55:57.479182+00:00",
+          "value": "100",
+          "revision": "6317",
+          "quality": "VIGENTE",
+          "eventId": "238dbe84-b166-4be4-b7fb-9349a4ba18ea"
+        }
+      },
+      "start": 86615.60000002384,
+      "end": 87464.60000002384,
+      "milliseconds": 849
+    }
+  ]
+}

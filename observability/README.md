@@ -1,60 +1,19 @@
-# BankPulse Observability Demo
+# Observabilidad del gemelo
 
-Este stack es independiente del `compose.yaml` de la aplicacion y se conecta a la red externa `bankpulse-network`.
+Arrancar primero la aplicación y luego `docker compose -f observability/compose.yaml up -d prometheus grafana`. Panel: http://localhost:13000/d/bankpulse-business. Auto-refresh queda apagado. Prometheus 19090 conserva salud/historial; sus scrapes no actualizan el panel Live.
 
-## 1. Levantar BankPulse
+## Recorrido real
 
-Desde la raiz del laboratorio:
+API → outbox PostgreSQL → Redpanda → consumidor/estado PostgreSQL → snapshot → HTTP `POST /api/live/push/bankpulse` → canal `stream/bankpulse/business` → panel.
 
-```bash
-docker compose up -d --build
-```
+El push usa **Influx line protocol**, timestamp Unix nanosegundos y credenciales demo internas; no JSON. La consulta del datasource Grafana usa `queryType: measurements`. Versión de Grafana fijada en 11.6.0. [Protocolo oficial](https://grafana.com/docs/grafana/latest/setup-grafana/set-up-grafana-live/).
 
-## 2. Levantar observabilidad
+El plugin local `bankpulse-business-panel` tiene su fuente legible versionada. Se permite únicamente este plugin sin firma en el laboratorio. No instala código externo en tiempo de ejecución. Lee campos del frame, moneda y revisión; rechaza revisiones antiguas, comprueba muestra/calidad y vence con un reloj local si no llegan revisiones durante 2,5 s. Viewer anónimo está limitado por el bind 127.0.0.1; no usar esta configuración como servicio público.
 
-```bash
-cd observability
-docker compose up -d
-```
+El heartbeat entrega un snapshot completo vigente a clientes nuevos/reconectados; Live no promete replay durable. El historial REST y Prometheus tienen funciones distintas. Un panel sin muestra no conserva el 100% anterior. No se presenta una actualización recibida en el backend como medición visual.
 
-## 3. Abrir herramientas
+## Evidencia
 
-- Grafana: http://localhost:3000
-  - usuario: `admin`
-  - clave demo: `bankpulse_demo`
-- Prometheus: http://localhost:9090
-- cAdvisor: http://localhost:8088
+`npm run browser-test` verifica al menos 100 operaciones, valor visible, revisión, evento y calidad. Guarda muestras con reloj de la misma página, p50/p95/máximo, pérdidas y errores. La prueba falla con cualquier actualización perdida, error de página o p95 > 1 s. Desconecta y reconecta la misma pestaña, sin usar reload como recuperación. Capturas: vivo, desconectado y recuperado.
 
-En Codespaces, use la pestana **Ports** para abrir los puertos 3000, 9090 y 8088.
-
-## 4. Verificar targets
-
-En Prometheus abra **Status > Targets**. Deben aparecer `payments-api`, `audit-api`, `cadvisor` y `prometheus` en estado UP.
-
-## 5. Dashboard
-
-Grafana aprovisiona automaticamente:
-
-`Dashboards > BankPulse Lab > BankPulse Platform Overview`
-
-Incluye disponibilidad de APIs, solicitudes HTTP, memoria JVM y CPU de contenedores.
-
-## Incidente de demostracion
-
-Desde la raiz:
-
-```bash
-docker compose stop mongo audit-api
-```
-
-Observe en Grafana que `Audit API UP` cambia a 0. Cree un pago para demostrar que payments-api continua trabajando y que el outbox retiene el evento.
-
-Recupere:
-
-```bash
-docker compose up -d mongo audit-api
-```
-
-El target de audit-api vuelve a 1 y el mecanismo de outbox puede completar la entrega pendiente.
-
-> cAdvisor depende del acceso al Docker daemon del host. En algunos entornos Codespaces/Docker remotos sus metricas pueden estar limitadas; las metricas Spring Boot/Prometheus siguen funcionando.
+Para una comparación válida, ejecutar sin otra carga de negocio concurrente. Recursos y resultados concretos están en `docs/deber-01.md`. La primera prueba exploratoria puede distinguirse del benchmark de aceptación; no reemplazar artifacts que exhiben limitaciones.

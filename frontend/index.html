@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div role="note" class="reference-note">REFERENCIA ACADÉMICA · Datos y pagos demo. No procesa ni liquida dinero real. <a href="http://localhost:13000/d/bankpulse-business" data-port="13000" data-path="/d/bankpulse-business">Panel de negocio en vivo</a></div>
   <div class="app-shell">
     <aside class="sidebar">
       <div class="brand">
@@ -46,12 +47,12 @@
 
       <section class="view active" id="view-home">
         <div class="welcome-row">
-          <div><span class="kicker">BANCA DIGITAL + EXPERIENCIAS</span><h1>Buenas noches, Roberto</h1><p>Opera servicios reales de BANKdragon y observa cómo responde la arquitectura.</p></div>
+          <div><span class="kicker">BANCA DIGITAL + EXPERIENCIAS</span><h1>Buenas noches, Roberto</h1><p>Opera APIs del laboratorio de BANKdragon y observa cómo responde la arquitectura.</p></div>
           <div class="system-pill"><span class="pulse-dot"></span><div><small>PLATFORM STATUS</small><strong id="platformStatus">CHECKING</strong></div></div>
         </div>
 
         <div class="summary-grid">
-          <article class="balance-card primary-card"><small>Saldo disponible</small><strong>$12,450.00</strong><span>Cuenta BANKdragon Premium · **** 4242</span><div class="balance-actions"><button data-goto="experiences">Explorar beneficios</button><button class="secondary" data-goto="split">Dividir gasto</button></div></article>
+          <article class="balance-card primary-card"><small>Saldo disponible</small><strong>$12,450.00 (demo)</strong><span>Cuenta BANKdragon Premium · **** 4242</span><div class="balance-actions"><button data-goto="experiences">Explorar beneficios</button><button class="secondary" data-goto="split">Dividir gasto</button></div></article>
           <article class="metric-card"><span class="metric-icon">↗</span><small>Pagos registrados</small><strong id="paymentCount">0</strong><p>Fuente: payments-api</p></article>
           <article class="metric-card"><span class="metric-icon">⌁</span><small>Eventos de auditoría</small><strong id="auditCount">0</strong><p>Fuente: audit-api</p></article>
           <article class="metric-card"><span class="metric-icon">⚡</span><small>Outbox pendiente</small><strong id="pendingCount">—</strong><p>Consistencia eventual</p></article>
@@ -122,11 +123,11 @@
       </section>
 
       <section class="view" id="view-split">
-        <div class="page-head"><div><span class="kicker">ÉPICA 4 · SOCIAL SPLIT</span><h1>Consumo colaborativo</h1><p>Crea una sesión real, agrega participantes, genera pagos y autoriza cada parte antes del cierre.</p></div><div class="architecture-chip">PostgreSQL · social_split</div></div>
+        <div class="page-head"><div><span class="kicker">ÉPICA 4 · SOCIAL SPLIT</span><h1>Consumo colaborativo</h1><p>Crea una sesión demo, agrega participantes, genera pagos y autoriza cada parte antes del cierre.</p></div><div class="architecture-chip">PostgreSQL · social_split</div></div>
         <div class="content-grid split-layout">
           <article class="card">
             <div class="card-head"><div><span class="kicker">NUEVA SESIÓN</span><h2>Dividir cuenta</h2></div><span class="split-icon">◎</span></div>
-            <div class="form-grid"><label class="field">Total<input id="splitTotal" type="number" value="180" min="1" step="0.01"></label><label class="field">Participantes<select id="splitPeople"><option>2</option><option selected>4</option><option>5</option></select></label></div>
+            <div class="form-grid"><label class="field">Total<input id="splitTotal" type="number" value="180" min="1" step="0.01"></label><label class="field">Participantes<select id="splitPeople"><option>2</option><option>3</option><option selected>4</option><option>5</option></select></label></div>
             <button class="primary-button" id="createSplit">Crear sesión demo</button>
             <div id="splitMessage" class="result-box">La sesión aparecerá aquí con estados reales del backend.</div>
           </article>
@@ -141,7 +142,7 @@
       </section>
 
       <section class="view" id="view-platform">
-        <div class="page-head"><div><span class="kicker">PLATFORM ENGINEERING MODE</span><h1>Arquitectura observable</h1><p>Relaciona la experiencia del usuario con servicios, datos, CI y telemetría.</p></div><div class="platform-links"><button data-port="3000">Grafana ↗</button><button data-port="9090">Prometheus ↗</button><button data-port="8088">cAdvisor ↗</button></div></div>
+        <div class="page-head"><div><span class="kicker">PLATFORM ENGINEERING MODE</span><h1>Arquitectura observable</h1><p>Relaciona la experiencia del usuario con servicios, datos, CI y telemetría.</p></div><div class="platform-links"><button data-port="13000">Grafana ↗</button><button data-port="19090">Prometheus ↗</button><button data-port="18088">cAdvisor ↗</button></div></div>
         <div id="platformHealthGrid" class="platform-health-grid"></div>
         <div class="content-grid half">
           <article class="card architecture-map-card"><div class="card-head"><div><span class="kicker">C4 · CONTAINER VIEW</span><h2>Flujo de plataforma</h2></div><span class="tiny-badge">LIVE HEALTH</span></div>

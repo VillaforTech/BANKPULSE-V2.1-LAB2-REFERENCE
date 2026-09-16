@@ -1,155 +1,116 @@
-# BANKdragon / BankPulse V2.1 — Interactive Banking Experience
+# BankPulse Reference — Reliable Social Split observability
 
-> **V2.1:** además de la plataforma de microservicios, el puerto `8080` ofrece una experiencia bancaria interactiva con modos Cliente/Arquitecto, gastronomía, viajes offline, seat holds, Social Split y visualización de arquitectura. Todo consume APIs reales del laboratorio.
+This repository is the complete engineering reference for BankPulse's Social Split flow. It turns a shared-expense operation into durable domain facts, a recoverable business projection and live Grafana indicators, then proves that the release process catches a business failure even when every service remains healthy.
 
-Plataforma docente de microservicios desplegables para Arquitectura de Software, DDD, DevOps, CI y Observabilidad. Esta version conserva el core financiero de BankPulse y transforma las cuatro epicas de negocio en servicios independientes con contratos, ownership de datos, health checks y metricas.
+It complements the team-owned [BankPulse repository](https://github.com/VillaforTech/bankpulse). The code provides an executable integration target and evidence model; teammates review and adapt it through their own pull requests rather than receiving automatic contribution credit.
 
-**Equipo:** consulta [CONTRIBUTING.md](CONTRIBUTING.md) para el reparto del Deber 01, el flujo de ramas y los requisitos de revisión de Roberto antes de integrar a `main`.
+> Accounts, amounts, references and authorizations are synthetic. `ACCEPTED` represents a simulated payment workflow, not a real charge or financial settlement.
 
-## Arquitectura V2
+## What this reference demonstrates
 
-| Servicio | Epica / contexto | Puerto interno | Persistencia |
-|---|---|---:|---|
-| `payments-api` | Core financiero | 8081 | MariaDB |
-| `audit-api` | Auditoria | 8082 | MongoDB `audit` |
-| `experiences-api` | Gastronomia | 8083 | MongoDB `experiences` |
-| `travel-benefits-api` | Viajes | 8084 | MongoDB `travel` |
-| `events-api` | Eventos premium | 8085 | PostgreSQL `events` + Redis TTL |
-| `social-split-api` | Social Split | 8086 | PostgreSQL `social_split` |
-| `console` | Edge + UI | 8080 host | Nginx |
+- Transactional Social Split state and outbox records in PostgreSQL.
+- Stable event identity, aggregate revision and idempotent replay through Redpanda.
+- An owned analytics projection with checkpoints, coverage and freshness state.
+- Three business KPIs recalculated by events and timers.
+- A native Grafana Live panel that rejects stale revisions and marks frozen data as stale.
+- Recovery after broker outage, analytics restart and duplicate delivery.
+- A required release gate that distinguishes technical health from business correctness.
 
-Los puertos 8081-8086 permanecen dentro de la red Docker. El navegador entra por `console:8080`, que funciona como edge/reverse proxy de laboratorio.
+## Data flow
 
-
-## Frontend interactivo V2.1
-
-La UI del puerto `8080` ahora permite recorrer las cuatro épicas desde una experiencia bancaria:
-
-- **Experiencias:** consulta MongoDB a través de `experiences-api` y genera una garantía demo en `payments-api`.
-- **Viajes:** consulta elegibilidad, emite credencial firmada y permite demostrar disponibilidad offline local.
-- **Eventos:** renderiza un mapa de asientos y crea HOLDs reales en Redis con TTL; un segundo intento obtiene HTTP 409.
-- **Social Split:** crea sesiones/participantes reales, usa referencias de pagos y aplica la invariante de cierre.
-- **Platform:** muestra health de seis servicios, C4 simplificado, ownership y enlaces a la observabilidad real.
-
-Use el selector **Cliente / Arquitecto** para alternar entre experiencia de usuario y explicaciones técnicas.
-
-## Data ownership
-
-La V2 aplica **single-writer ownership**. Compartir un motor fisico en Codespaces no significa compartir modelo de datos:
-
-- `payments-api` es la unica autoridad financiera.
-- `events-api` posee eventos y holds; Redis solo contiene estado temporal.
-- `social-split-api` almacena referencias de pago, no transacciones financieras.
-- `experiences-api` y `travel-benefits-api` usan bases Mongo separadas.
-- `audit-api` es una proyeccion de auditoria y no modifica dominios de origen.
-
-Consulte `docs/architecture/DATA-OWNERSHIP.md` y use `docs/adr/ADR-TEMPLATE-DATA-OWNERSHIP.md` como entregable de equipo.
-
-## Inicio rapido en GitHub Codespaces
-
-El Dev Container incluye el fix de Yarn requerido por Docker-in-Docker:
-
-```dockerfile
-FROM mcr.microsoft.com/devcontainers/java:1-21-bookworm
-RUN rm -f /etc/apt/sources.list.d/yarn.list
+```mermaid
+flowchart LR
+    C[Client operation] --> S[Social Split API]
+    S --> DB[(PostgreSQL state + outbox)]
+    DB --> R[Outbox relay]
+    R --> K[Redpanda]
+    K --> A[Business analytics]
+    A --> P[(Projection + checkpoints)]
+    A --> L[Grafana Live]
+    L --> D[Business dashboard]
+    S & A --> M[Prometheus]
 ```
 
-1. Abra **Code -> Codespaces -> Create codespace on main**.
-2. Espere el build inicial de los servicios.
-3. Verifique:
+The API commits the aggregate and its fact together. The relay publishes only committed facts. Analytics deduplicates by event identity, advances checkpoints after persistence and reports incomplete coverage instead of inventing history.
+
+## Run the product
+
+Requirements: Docker Compose v2 and about 8 GB available to Docker. Parallel image builds are limited to reduce memory pressure.
 
 ```bash
-docker --version
-docker compose version
-docker compose ps
+COMPOSE_BAKE=false COMPOSE_PARALLEL_LIMIT=2 docker compose build
+docker compose up -d --wait --wait-timeout 300
+docker compose -f observability/compose.yaml up -d prometheus grafana
+bash scripts/readiness.sh
 ```
 
-4. Abra el puerto **8080** reenviado por Codespaces.
+| Surface | Local URL |
+| --- | --- |
+| Product console and APIs | <http://localhost:18080> |
+| Live business dashboard | <http://localhost:13000/d/bankpulse-business> |
+| Prometheus | <http://localhost:19090> |
+| cAdvisor, optional | <http://localhost:18088> |
+| Business snapshot | <http://localhost:18080/api/business/snapshot> |
 
-No se requiere IP del Codespace.
+Grafana's anonymous viewer is bound to loopback for this development environment. Databases are not published to the host. Do not expose the stack to the Internet or reuse its demo credentials.
 
-## Inicio manual
-
-```bash
-cp .env.example .env
-docker compose config
-docker compose up -d --build --wait
-docker compose ps
-```
-
-Prueba integral:
-
-```bash
-bash scripts/smoke-v2.sh
-```
-
-## Observabilidad
-
-El stack se mantiene separado de la aplicacion:
-
-```bash
-docker compose -f observability/compose.yaml up -d
-docker compose -f observability/compose.yaml ps
-```
-
-Puertos de Codespaces:
-
-- 3000: Grafana
-- 9090: Prometheus
-- 8088: cAdvisor
-
-Grafana demo:
-
-- usuario: `admin`
-- password: `bankpulse_demo`
-
-Estas credenciales son exclusivamente docentes. Para produccion use un secret manager.
-
-Prometheus scrapea `/actuator/prometheus` de los seis microservicios. El dashboard `BANKdragon V2 Platform Overview` incluye disponibilidad, throughput HTTP, heap JVM, p95 y CPU de contenedores.
-
-## CI
-
-`.github/workflows/ci.yml` implementa las siguientes comprobaciones:
-
-1. **Architecture contract:** verifica la existencia de los seis servicios, ownership docs y Compose/observabilidad validos.
-2. **Integration test:** construye el stack real, ejecuta `smoke-v2.sh`, levanta Prometheus/Grafana y valida sus health endpoints.
-3. **Release gate:** exige que ambas etapas terminen correctamente; un fallo, cancelación u omisión bloquea la integración.
-
-El gate reúne las comprobaciones actuales. La prueba de negocio contra el falso verde y las verificaciones de tiempo real del Deber 01 se desarrollan en las issues del equipo; todavía no están implementadas por este cambio de configuración.
-
-Flujo esperado:
-
-```text
-feature/* -> Pull Request -> GitHub Actions -> CI verde -> review -> squash merge -> main
-```
-
-CI no significa deployment. El workflow demuestra integrabilidad y calidad automatizada; CD puede incorporarse posteriormente con GHCR + Argo CD/Kubernetes.
-
-## Distribucion por equipos
-
-- Equipo Gastronomia -> `services/experiences-api`
-- Equipo Viajes -> `services/travel-benefits-api`
-- Equipo Eventos -> `services/events-api`
-- Equipo Social Split -> `services/social-split-api`
-
-Cada equipo debe entregar DDD, C4, ADR de Data Ownership, implementacion, tests, evidencia CI y metricas operacionales.
-
-## Recursos de Codespaces
-
-La configuracion objetivo es 4 CPU / 8 GB. La persistencia comparte motores fisicos para no multiplicar consumo, manteniendo aislamiento logico. Al terminar:
+Stop the stack while preserving volumes and recovery history:
 
 ```bash
 docker compose -f observability/compose.yaml down
 docker compose down
 ```
 
-Luego use **Stop Codespace**.
+## Try Social Split
 
-## Seguridad
+The product accepts a USD 100 group expense split as 33.34 + 33.33 + 33.33. Each authorized share receives a demo payment reference; closing is allowed only when every participant consents and the exact total matches.
 
-No suba `.env`, tokens, claves institucionales o credenciales reales. Los passwords incluidos son solamente para un entorno local efimero de aprendizaje.
+```bash
+bash scripts/smoke-v2.sh
+bash scripts/business-test.sh
+```
 
-## Registros de decisiones de arquitectura (ADR)
+The business test also verifies that 60+30, 60+50, missing consent and an empty session cannot close. It stores the observed facts in `artifacts/business/result.json` and fails independently of infrastructure health.
 
-ADR-Tools está incluido en el proyecto y sus registros se validan dentro de
-`architecture-contract`. Ver [instalación, comandos y alcance del control](docs/adr/README.md).
+## Validate the full system
+
+```bash
+bash scripts/unit-test.sh
+bash scripts/projection-test.sh
+python3 scripts/resilience_test.py
+npm ci
+npx playwright install --with-deps chromium
+npm run browser-test
+```
+
+The browser test performs at least 100 identifiable operations and waits until the same event and revision appear on the Grafana panel for two animation frames. It records losses, errors and latency from the browser's own clock; p95 above one second fails. The resilience test covers broker interruption, pending outbox delivery, analytics restart, duplicate replay and a real 120-second no-traffic deadline.
+
+The final branch passed:
+
+- all required GitHub checks and `Release gate`;
+- 100/100 correlated Grafana renders with no loss or browser errors;
+- 29 business checks, 9 projection checks and 8 recovery checks;
+- a clean local devcontainer reproduction;
+- a fresh 4-core Codespace reproduction with p95 358 ms.
+
+See the [versioned Codespaces evidence](docs/evidence/codespaces-20260915/README.md), [business event contract](docs/events-deber-01.md), [KPI definitions](docs/kpis-deber-01.md) and [observability guide](observability/README.md).
+
+## Failure story
+
+The reference preserves a deliberately broken revision where six services report healthy while invalid splits close. The business oracle fails and the required gate blocks the pull request at that exact SHA. The corrected revision restores the invariant and passes the same pipeline. This red-to-green history is retained as engineering evidence rather than described as an expected result.
+
+## Relationship to the team project
+
+| Shared workstream | Reference implementation |
+| --- | --- |
+| Domain and events | `services/social-split-api`, event contracts and transactional tests |
+| Analytics | `services/business-analytics`, projection and replay tests |
+| Live experience | Grafana plugin, dashboard and browser harness |
+| Platform integration | Isolated Compose stack, readiness and required CI gate |
+| Verification | Business, resilience, browser and evidence scripts |
+
+This reference was implemented by Roberto Villafuerte with Codex assistance. It preserves the original repository history but does not imply that other team members authored its changes. Their portfolio credit belongs to work reviewed and integrated in the shared repository.
+
+## Project context
+
+The system also satisfies a graded software-engineering scenario. Course-specific diagnosis, rubric evidence and submission records remain in [docs/deber-01.md](docs/deber-01.md). They are secondary to the product narrative but remain explicit for auditability.

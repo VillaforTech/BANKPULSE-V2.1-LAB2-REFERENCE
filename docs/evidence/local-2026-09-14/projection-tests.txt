@@ -1,0 +1,4 @@
+NOTICE:  schema "analytics_contract_test" already exists, skipping
+CREATE SCHEMA
+.........                                                                [100%]
+9 passed in 0.56s

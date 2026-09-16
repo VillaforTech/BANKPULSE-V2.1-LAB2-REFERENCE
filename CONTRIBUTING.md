@@ -45,4 +45,4 @@ Use only synthetic accounts and amounts. Never commit `.env`, tokens, institutio
 
 Preserve authorship accurately. The reference was implemented by Roberto Villafuerte with Codex assistance; adaptations in the shared repository receive credit through their own commits, reviews and merged pull requests.
 
-Course-specific evidence remains in `docs/deber-01.md`, but the repository should read first as an engineering reference that another developer can run, inspect and challenge.
+Keep reproducible verification evidence in `docs/business-verification.md` so another developer can run, inspect and challenge the results.

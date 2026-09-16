@@ -45,7 +45,7 @@ jobs:
           for file in observability/compose.yaml observability/prometheus.yml \
             observability/grafana/dashboards/bankpulse-overview.json \
             observability/grafana/dashboards/bankpulse-business.json \
-            docs/architecture/DATA-OWNERSHIP.md docs/deber-01.md docs/kpis-deber-01.md \
+            docs/architecture/DATA-OWNERSHIP.md docs/business-verification.md docs/business-kpis.md \
             frontend/index.html frontend/app.js frontend/styles.css \
             scripts/unit-test.sh scripts/business_test.py scripts/projection-test.sh scripts/resilience_test.py scripts/browser-test.mjs; do
             test -s "$file"

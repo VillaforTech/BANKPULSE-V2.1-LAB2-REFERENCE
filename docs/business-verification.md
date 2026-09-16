@@ -1,4 +1,4 @@
-# Deber 01: El Falso Verde en BankPulse
+# BankPulse — Business verification and recovery
 
 Roberto Villafuerte · CMP4008 · Referencia independiente · 14 de septiembre de 2026.
 
@@ -65,11 +65,11 @@ Payments: el fallo histórico era diferencia del JSON inicial y reintento. La im
 
 La corrección continúa en el [mismo PR #2](https://github.com/VillaforTech/bankpulse-reference/pull/2). Su cuerpo y checks identifican el SHA y el run posterior exactos una vez terminada la ejecución; este documento no anticipa un PASS. La integración requiere todos los checks verdes y se limita al código sano. La evidencia verde inicial y roja queda versionada; el artifact de la corrección se conserva además localmente.
 
-[Guía reproducible de Codespaces](CODESPACES.md): scripts reales de setup/start, observabilidad, puertos 18080/13000/19090, pruebas y parada. La [ejecución en Codespaces limpio](evidence/codespaces-20260915/README.md) pasó el 15 de septiembre en `7097e44040a4`: smoke, unitarias/persistencia, 29 controles de negocio, 100/100 renders con p95 358 ms y 8 controles de recuperación. Se guardó la evidencia y se retiró el entorno temporal; no se atribuye reproducción a otro integrante. El envío del deber y su recibo quedan separados de preparar o publicar esta referencia.
+[Guía reproducible de Codespaces](CODESPACES.md): scripts reales de setup/start, observabilidad, puertos 18080/13000/19090, pruebas y parada. La [ejecución en Codespaces limpio](evidence/codespaces-20260915/README.md) pasó el 15 de septiembre en `7097e44040a4`: smoke, unitarias/persistencia, 29 controles de negocio, 100/100 renders con p95 358 ms y 8 controles de recuperación. Se guardó la evidencia y se retiró el entorno temporal; no se atribuye reproducción a otro integrante.
 
 ## Extras y evidencia
 
-Contratos: [eventos](events-deber-01.md) y [KPIs](kpis-deber-01.md). Herramientas: `scripts/projection-test.sh`, `scripts/resilience_test.py` y `scripts/browser-test.mjs`. Raw JSON/capturas se guardan bajo artifacts y se publican como artifacts de CI; las selecciones sanas y rojas están versionadas en `docs/evidence/` con hashes SHA-256 y revisión independiente.
+Contratos: [eventos](business-events.md) y [KPIs](business-kpis.md). Herramientas: `scripts/projection-test.sh`, `scripts/resilience_test.py` y `scripts/browser-test.mjs`. Raw JSON/capturas se guardan bajo artifacts y se publican como artifacts de CI; las selecciones sanas y rojas están versionadas en `docs/evidence/` con hashes SHA-256 y revisión independiente.
 
 La primera medida exploratoria 100/100 observó revisiones sin pérdidas, p95 ≈ 233 ms, pero permitía estado INCOMPLETO transitorio; por eso no acredita la aceptación visual estricta. El harness final exige el contador y B-K1 visibles, formato exacto, misma revisión/evento y calidad VIGENTE; vuelve a comprobarlos al terminar los dos frames de render. El [resultado estricto local](evidence/local-2026-09-14/README.md) observó 100/100 eventos, cero pérdidas/errores, p95 de 915,5 ms y máximo de 1.116,3 ms. Conserva todas las muestras y capturas. El máximo se muestra aunque el criterio evalúa p95.
 

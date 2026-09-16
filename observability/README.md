@@ -16,4 +16,4 @@ El heartbeat entrega un snapshot completo vigente a clientes nuevos/reconectados
 
 `npm run browser-test` verifica al menos 100 operaciones, valor visible, revisión, evento y calidad. Guarda muestras con reloj de la misma página, p50/p95/máximo, pérdidas y errores. La prueba falla con cualquier actualización perdida, error de página o p95 > 1 s. Desconecta y reconecta la misma pestaña, sin usar reload como recuperación. Capturas: vivo, desconectado y recuperado.
 
-Para una comparación válida, ejecutar sin otra carga de negocio concurrente. Recursos y resultados concretos están en `docs/deber-01.md`. La primera prueba exploratoria puede distinguirse del benchmark de aceptación; no reemplazar artifacts que exhiben limitaciones.
+Para una comparación válida, ejecutar sin otra carga de negocio concurrente. Recursos y resultados concretos están en `docs/business-verification.md`. La primera prueba exploratoria puede distinguirse del benchmark de aceptación; no reemplazar artifacts que exhiben limitaciones.

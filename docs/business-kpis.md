@@ -1,6 +1,6 @@
 # KPIs propios de Social Split
 
-Son decisiones del laboratorio, no SLAs del profesor ni garantías financieras. Fuente: hechos confirmados por Social Split y una proyección propia de analítica. Reloj: UTC; cálculo con Decimal. La ventana es `(ahora - 15 minutos, ahora]`, usando `closedAt`, nunca el instante de recepción. Monedas separadas. El dashboard predeterminado selecciona USD; la opción Moneda del panel permite otra moneda sin cambiar su fórmula.
+Son parámetros de demostración, no compromisos de servicio ni garantías financieras. Fuente: hechos confirmados por Social Split y una proyección propia de analítica. Reloj: UTC; cálculo con Decimal. La ventana es `(ahora - 15 minutos, ahora]`, usando `closedAt`, nunca el instante de recepción. Monedas separadas. El dashboard predeterminado selecciona USD; la opción Moneda del panel permite otra moneda sin cambiar su fórmula.
 
 | KPI | Población y fórmula | Unidad / estado sano |
 |---|---|---|

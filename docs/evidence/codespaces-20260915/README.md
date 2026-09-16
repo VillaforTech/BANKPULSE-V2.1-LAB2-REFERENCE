@@ -8,4 +8,4 @@ Salida final: 0. Arranque, smoke, pruebas unitarias/persistencia, negocio, naveg
 
 El archivo completo descargado tiene SHA-256 `0d7dd6ac44da5945ba66f1e574e25bc9c80f04369035b5a1c180d2335f2c30f8`. Los archivos seleccionados aquí están hashados en `manifest.json`. Se verificaron localmente el archivo, el SHA ejecutado y los resultados antes de borrar exclusivamente este Codespace temporal. Los entornos anteriores del usuario permanecieron intactos. Los puertos permanecieron privados; no se habilitó acceso público.
 
-Esta reproducción la realizó Roberto con asistencia de Codex; no acredita reproducción de otro integrante, fusión ni entrega a D2L.
+Esta reproducción la realizó Roberto con asistencia de Codex; no acredita reproducción de otro integrante ni fusión.

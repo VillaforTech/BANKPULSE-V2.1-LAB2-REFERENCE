@@ -1,12 +1,12 @@
-# BankPulse Reference — Reliable Social Split observability
+# BankPulse Social Split
 
-This repository is the complete engineering reference for BankPulse's Social Split flow. It turns a shared-expense operation into durable domain facts, a recoverable business projection and live Grafana indicators, then proves that the release process catches a business failure even when every service remains healthy.
+BankPulse Social Split manages shared expenses: creating a split, collecting each participant's authorization and closing it only when the shares match the total. We are building durable event delivery, live payment-status dashboards and recovery after service interruptions.
 
-It complements the team-owned [BankPulse repository](https://github.com/VillaforTech/bankpulse). The code provides an executable integration target and evidence model; teammates review and adapt it through their own pull requests rather than receiving automatic contribution credit.
+The project develops the shared-expense workflow also explored in the team-owned [BankPulse repository](https://github.com/VillaforTech/bankpulse). Team contributions and integrations are tracked through pull requests.
 
 > Accounts, amounts, references and authorizations are synthetic. `ACCEPTED` represents a simulated payment workflow, not a real charge or financial settlement.
 
-## What this reference demonstrates
+## What we are building
 
 - Transactional Social Split state and outbox records in PostgreSQL.
 - Stable event identity, aggregate revision and idempotent replay through Redpanda.
@@ -97,11 +97,11 @@ See the [versioned Codespaces evidence](docs/evidence/codespaces-20260915/README
 
 ## Failure story
 
-The reference preserves a deliberately broken revision where six services report healthy while invalid splits close. The business oracle fails and the required gate blocks the pull request at that exact SHA. The corrected revision restores the invariant and passes the same pipeline. This red-to-green history is retained as engineering evidence rather than described as an expected result.
+The project preserves a deliberately broken revision where six services report healthy while invalid splits close. The business oracle fails and the required gate blocks the pull request at that exact SHA. The corrected revision restores the invariant and passes the same pipeline. This red-to-green history is retained as engineering evidence rather than described as an expected result.
 
 ## Relationship to the team project
 
-| Shared workstream | Reference implementation |
+| Workstream | Implementation |
 | --- | --- |
 | Domain and events | `services/social-split-api`, event contracts and transactional tests |
 | Analytics | `services/business-analytics`, projection and replay tests |
@@ -109,7 +109,7 @@ The reference preserves a deliberately broken revision where six services report
 | Platform integration | Isolated Compose stack, readiness and required CI gate |
 | Verification | Business, resilience, browser and evidence scripts |
 
-This reference was implemented by Roberto Villafuerte with Codex assistance. It preserves the original repository history but does not imply that other team members authored its changes. Their portfolio credit belongs to work reviewed and integrated in the shared repository.
+This project was implemented by Roberto Villafuerte with Codex assistance. It preserves the original repository history but does not imply that other team members authored its changes. Their portfolio credit belongs to work reviewed and integrated in the shared repository.
 
 
 ## Verification evidence

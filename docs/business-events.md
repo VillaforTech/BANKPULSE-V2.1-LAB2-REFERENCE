@@ -46,7 +46,7 @@ Estructura de evento compartida con LogistPulse, con datos propios de cada domin
 }
 ```
 
-Tipos finales: `SPLIT_CREATED`, `PARTICIPANT_ADDED`, `PARTICIPANT_AUTHORIZED`, `SPLIT_COMPLETED`. Son nombres definitivos de la referencia para los conceptos inicialmente propuestos en CamelCase. `data` contiene el estado posterior completo; no se confía en una bandera `valid=true`. Importes: cadenas decimales finitas con dos posiciones. Timestamps con zona UTC; dominio persiste precisión de milisegundos. Los identificadores de miembro/referencia son exclusivamente fixtures demo; no usar datos personales o financieros reales.
+Tipos finales: `SPLIT_CREATED`, `PARTICIPANT_ADDED`, `PARTICIPANT_AUTHORIZED`, `SPLIT_COMPLETED`. Son nombres del contrato de eventos para los conceptos inicialmente propuestos en CamelCase. `data` contiene el estado posterior completo; no se confía en una bandera `valid=true`. Importes: cadenas decimales finitas con dos posiciones. Timestamps con zona UTC; dominio persiste precisión de milisegundos. Los identificadores de miembro/referencia son exclusivamente fixtures demo; no usar datos personales o financieros reales.
 
 ## Commit, entrega y replay
 

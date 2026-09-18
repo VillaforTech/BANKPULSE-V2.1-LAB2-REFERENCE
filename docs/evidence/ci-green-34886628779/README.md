@@ -1,6 +1,6 @@
-# Referencia sana: CI completo verde
+# Versión sana: CI completo verde
 
-[PR #1](https://github.com/VillaforTech/bankpulse-reference/pull/1), [run 34886628779](https://github.com/VillaforTech/bankpulse-reference/actions/runs/34886628779), SHA `3fcfa686dcedf5b41ec6f0cf152ddcb7f21fccb0`. Todos los jobs y el Release gate terminaron success.
+[PR #1](https://github.com/VillaforTech/bankpulse-social-split/pull/1), [run 34886628779](https://github.com/VillaforTech/bankpulse-social-split/actions/runs/34886628779), SHA `3fcfa686dcedf5b41ec6f0cf152ddcb7f21fccb0`. Todos los jobs y el Release gate terminaron success.
 
 - Negocio: 29/29; resiliencia: 8/8. `current-state.json` conserva seis servicios HTTP 200 / UP después de las pruebas y el SHA observado.
 - Navegador Ubuntu: Playwright 1.55.1 / Chromium 140.0.7339.186. 100/100 muestras correlacionadas, sin pérdida ni error de muestra/página. p50 832.1 ms, p95 945.4 ms, máximo 1931.9 ms; cuatro muestras alcanzan o superan 1 s. El criterio es p95 ≤1 s, no máximo ≤1 s.

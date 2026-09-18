@@ -1,12 +1,12 @@
-# Ejecutar el gemelo BankPulse en Codespaces
+# Ejecutar BankPulse Social Split en Codespaces
 
-Esta guía corresponde a [BANKPULSE-V2.1-LAB2-REFERENCE](https://github.com/VillaforTech/bankpulse-reference). No hay que subir otra copia ni trabajar sobre el repositorio compartido. Los datos, cuentas y autorizaciones son demo; cada Codespace conserva sus propias bases y red.
+Esta guía corresponde a [BankPulse Social Split](https://github.com/VillaforTech/bankpulse-social-split). Crear el Codespace desde este repositorio para utilizar su configuración y sus pruebas. Los datos, cuentas y autorizaciones son demo; cada Codespace conserva sus propias bases y red.
 
 La reproducción completa en un Codespace limpio pasó el 15 de septiembre de 2026: [evidencia cloud](evidence/codespaces-20260915/README.md). Se verificaron 100/100 renders, p95 358 ms, negocio y recuperación. Esto acredita la ejecución asistida de Roberto; no la reproducción de otro integrante.
 
 ## Crear y arrancar
 
-1. Iniciar sesión en GitHub, abrir el gemelo y seleccionar **Code → Codespaces → Create codespace**. Elegir la rama o revisión que se va a evaluar; registrar el SHA con `git rev-parse HEAD`.
+1. Iniciar sesión en GitHub, abrir el repositorio y seleccionar **Code → Codespaces → Create codespace**. Elegir la rama o revisión que se va a evaluar; registrar el SHA con `git rev-parse HEAD`.
 2. Usar como objetivo 4 CPU, 8 GB de RAM y 32 GB de disco, tal como declara `.devcontainer/devcontainer.json`.
 3. Esperar a que termine `postCreateCommand` (`.devcontainer/setup.sh`): prepara los archivos locales de entorno y construye los servicios con un máximo de dos builds simultáneos.
 4. Esperar `postStartCommand` (`.devcontainer/start-lab.sh`): arranca la plataforma y exige sus health checks. Después iniciar observabilidad, que usa otro archivo Compose:
@@ -16,7 +16,7 @@ docker compose -f observability/compose.yaml up -d prometheus grafana
 bash scripts/readiness.sh
 ```
 
-Si se necesita ejecutar manualmente los pasos del devcontainer, desde la raíz del gemelo:
+Si se necesita ejecutar manualmente los pasos del devcontainer, desde la raíz del repositorio:
 
 ```bash
 bash .devcontainer/setup.sh

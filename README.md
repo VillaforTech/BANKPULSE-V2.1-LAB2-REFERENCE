@@ -1,12 +1,12 @@
-# BankPulse Reference — Reliable Social Split observability
+# BankPulse Social Split — Shared expenses with reliable events
 
-This repository is the complete engineering reference for BankPulse's Social Split flow. It turns a shared-expense operation into durable domain facts, a recoverable business projection and live Grafana indicators, then proves that the release process catches a business failure even when every service remains healthy.
+BankPulse Social Split is an event-driven application for managing shared expenses and monitoring their business integrity. It turns a shared-expense operation into durable domain facts, a recoverable business projection and live Grafana indicators, then proves that the release process catches a business failure even when every service remains healthy.
 
-It complements the team-owned [BankPulse repository](https://github.com/VillaforTech/bankpulse). The code provides an executable integration target and evidence model; teammates review and adapt it through their own pull requests rather than receiving automatic contribution credit.
+The application covers the full shared-expense lifecycle: participant consent, exact monetary totals, durable event delivery and visible recovery after failures. The broader [BankPulse platform](https://github.com/VillaforTech/bankpulse) develops additional banking experiences through its own contribution workflow.
 
-> Accounts, amounts, references and authorizations are synthetic. `ACCEPTED` represents a simulated payment workflow, not a real charge or financial settlement.
+> Accounts, amounts, payment identifiers and authorizations are synthetic. `ACCEPTED` represents a simulated payment workflow, not a real charge or financial settlement.
 
-## What this reference demonstrates
+## Product capabilities
 
 - Transactional Social Split state and outbox records in PostgreSQL.
 - Stable event identity, aggregate revision and idempotent replay through Redpanda.
@@ -63,7 +63,7 @@ docker compose down
 
 ## Try Social Split
 
-The product accepts a USD 100 group expense split as 33.34 + 33.33 + 33.33. Each authorized share receives a demo payment reference; closing is allowed only when every participant consents and the exact total matches.
+The product accepts a USD 100 group expense split as 33.34 + 33.33 + 33.33. Each authorized share receives a demo payment identifier; closing is allowed only when every participant consents and the exact total matches.
 
 ```bash
 bash scripts/smoke-v2.sh
@@ -97,11 +97,11 @@ See the [versioned Codespaces evidence](docs/evidence/codespaces-20260915/README
 
 ## Failure story
 
-The reference preserves a deliberately broken revision where six services report healthy while invalid splits close. The business oracle fails and the required gate blocks the pull request at that exact SHA. The corrected revision restores the invariant and passes the same pipeline. This red-to-green history is retained as engineering evidence rather than described as an expected result.
+The project preserves a deliberately broken revision where six services report healthy while invalid splits close. The business oracle fails and the required gate blocks the pull request at that exact SHA. The corrected revision restores the invariant and passes the same pipeline. This red-to-green history is retained as engineering evidence rather than described as an expected result.
 
-## Relationship to the team project
+## Engineering workstreams
 
-| Shared workstream | Reference implementation |
+| Workstream | Implementation |
 | --- | --- |
 | Domain and events | `services/social-split-api`, event contracts and transactional tests |
 | Analytics | `services/business-analytics`, projection and replay tests |
@@ -109,8 +109,7 @@ The reference preserves a deliberately broken revision where six services report
 | Platform integration | Isolated Compose stack, readiness and required CI gate |
 | Verification | Business, resilience, browser and evidence scripts |
 
-This reference was implemented by Roberto Villafuerte with Codex assistance. It preserves the original repository history but does not imply that other team members authored its changes. Their portfolio credit belongs to work reviewed and integrated in the shared repository.
-
+Implementation: Roberto Villafuerte, with Codex assistance. The repository preserves its original history; contributor credit follows the commits, reviews and merged pull requests in each project.
 
 ## Verification evidence
 

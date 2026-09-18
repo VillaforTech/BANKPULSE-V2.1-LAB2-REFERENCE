@@ -1,4 +1,4 @@
-# C4 - Container View (texto de referencia)
+# C4 - Container View
 
 ```text
 Socio / Operador

@@ -1,6 +1,6 @@
 # Demostración roja: infraestructura UP, negocio incorrecto y PR bloqueado
 
-[PR #2](https://github.com/VillaforTech/bankpulse-reference/pull/2), [run 34888923085](https://github.com/VillaforTech/bankpulse-reference/actions/runs/34888923085), SHA congelado `90745a4a58a84078b8557c0616dd8df5764ba2a6`. Su base sana exacta es `3fcfa68`; PR #1 aún no estaba integrado al crear esta rama. El delta contra esa base es una sola línea que desactiva la comparación de suma; no cambia tests ni el consumidor.
+[PR #2](https://github.com/VillaforTech/bankpulse-social-split/pull/2), [run 34888923085](https://github.com/VillaforTech/bankpulse-social-split/actions/runs/34888923085), SHA congelado `90745a4a58a84078b8557c0616dd8df5764ba2a6`. Su base sana exacta es `3fcfa68`; PR #1 aún no estaba integrado al crear esta rama. El delta contra esa base es una sola línea que desactiva la comparación de suma; no cambia tests ni el consumidor.
 
 `business.json` contiene cuatro comprobaciones rojas: no se rechazan under/over y ambos presentan cierres indebidos. Under `3aecd371-d131-4853-9570-e37bc11c9781` responde HTTP 200, persiste COMPLETED con total 100 y cuotas 60 + 30. Over `7caf8ae1-9532-4950-b76b-bbeff445b540` hace lo mismo con 60 + 50. Cada cohorte individual muestra B-K1 = 0% y B-K2 = 10.00 USD demo. Las dos pruebas de dominio de suma fallan con la misma causa.
 

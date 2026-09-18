@@ -1,6 +1,6 @@
 # Security policy
 
-This BankPulse reference is a development environment built with synthetic data and local demo credentials. Do not reuse those credentials or expose the default stack to the public Internet.
+This BankPulse Social Split development environment is built with synthetic data and local demo credentials. Do not reuse those credentials or expose the default stack to the public Internet.
 
 - Never commit `.env`, access tokens, institutional credentials, certificates or real customer data.
 - Report a suspected vulnerability privately to the repository owner instead of opening an issue with exploit details.

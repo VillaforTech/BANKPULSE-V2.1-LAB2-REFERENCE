@@ -1,4 +1,4 @@
-# Observabilidad del gemelo
+# Observabilidad de BankPulse Social Split
 
 Arrancar primero la aplicación y luego `docker compose -f observability/compose.yaml up -d prometheus grafana`. Panel: http://localhost:13000/d/bankpulse-business. Auto-refresh queda apagado. Prometheus 19090 conserva salud/historial; sus scrapes no actualizan el panel Live.
 

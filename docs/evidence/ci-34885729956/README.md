@@ -1,6 +1,6 @@
 # CI de diagnóstico: navegador verificado y baseline de resiliencia prematuro
 
-[Run 34885729956](https://github.com/VillaforTech/bankpulse-reference/actions/runs/34885729956), SHA `bf01463899fae24eb118cad76972d9c07300a8ae`, 14 de septiembre de 2026. **El run completo falló**; esta selección no representa aceptación final.
+[Run 34885729956](https://github.com/VillaforTech/bankpulse-social-split/actions/runs/34885729956), SHA `bf01463899fae24eb118cad76972d9c07300a8ae`, 14 de septiembre de 2026. **El run completo falló**; esta selección no representa aceptación final.
 
 El locale explícito `en-US` permitió arrancar Grafana en Ubuntu. Playwright 1.55.1 / Chromium 140.0.7339.186 observó 100 de 100 eventos, sin pérdidas, errores ni errores de página: p50 848.6 ms, p95 882.2 ms, máximo 915.2 ms. `latency.json` conserva las muestras, sus valores visibles, UTC, computedAt y revisiones antes/después de desconexión. Las tres capturas corresponden a la misma pestaña, sin reload.
 

@@ -1,6 +1,6 @@
 # Evidencia local de desarrollo · 14 de septiembre de 2026
 
-Referencia candidata `5a40e4b`; entorno macOS, Docker Desktop (VM 8 GB / 12 CPU), Playwright 1.62.1 del runtime local y Chrome 152.0.7977.84. CI instala Playwright 1.55.1 y su Chromium; la corrida de Ubuntu queda registrada por GitHub Actions en su propio SHA y artifacts. Los JSON son fixtures demo; no prueban pagos reales.
+Versión candidata `5a40e4b`; entorno macOS, Docker Desktop (VM 8 GB / 12 CPU), Playwright 1.62.1 del runtime local y Chrome 152.0.7977.84. CI instala Playwright 1.55.1 y su Chromium; la corrida de Ubuntu queda registrada por GitHub Actions en su propio SHA y artifacts. Los JSON son fixtures demo; no prueban pagos reales.
 
 - API/business: 29 comprobaciones correctas, con persistencia y Audit correlacionados.
 - Java: 10 tests, incluidos dos fallos de escritura del outbox que revierten estado y versión.
